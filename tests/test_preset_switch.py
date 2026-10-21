@@ -25,10 +25,9 @@ from unittest import mock
 os.environ.setdefault("QT_QPA_PLATFORM", "offscreen")
 
 from plasmify import backup, capture, cli, engine, presets, record, schema  # noqa: E402
-from plasmify.steps import colors  # noqa: E402
+from plasmify.steps import colors, splash  # noqa: E402
 from plasmify.steps import effects as fx  # noqa: E402
 from plasmify.steps import panelstyle as ps  # noqa: E402
-from plasmify.steps import splash  # noqa: E402
 from plasmify.steps.base import Context  # noqa: E402
 from plasmify.system import Runner  # noqa: E402
 

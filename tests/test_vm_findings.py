@@ -28,7 +28,7 @@ ROOT = Path(__file__).resolve().parent.parent
 
 class InstallerMessageTests(unittest.TestCase):
     def test_the_last_line_names_the_command_that_opens_the_window(self):
-        """"plasmify" alone prints the help now; "plasmify gui" opens the window."""
+        """ "plasmify" alone prints the help now; "plasmify gui" opens the window."""
         text = (ROOT / "install.sh").read_text()
         self.assertIn("or run: $command_name gui", text)
 
@@ -148,7 +148,7 @@ class ClockTests(unittest.TestCase):
         bar = panels.layout_panels({"panels": [{"edge": "bottom", "thickness": 44, "widgets": ["tasks", "clock"]}]})
         script = panel_script(bar, "start-here", [])
         self.assertIn('w.writeConfig("dateDisplayFormat", 1);', script)
-        self.assertNotIn("BesideTime\")", script)
+        self.assertNotIn('BesideTime")', script)
 
 
 class DistributionDefaultTests(unittest.TestCase):
