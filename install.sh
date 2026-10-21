@@ -205,7 +205,9 @@ sed "s|^Exec=plasmify|Exec=\"$BIN\"|" "$SRC_DIR/data/io.github.heyquatch.plasmif
 chmod 644 "$DESKTOP.new"
 mv -f "$DESKTOP.new" "$DESKTOP"
 install -m644 "$SRC_DIR/src/plasmify/assets/plasmify.svg" "$ICON"
-command -v update-desktop-database >/dev/null && update-desktop-database -q "$(dirname "$DESKTOP")" || true
+if command -v update-desktop-database >/dev/null; then
+    update-desktop-database -q "$(dirname "$DESKTOP")" || true
+fi
 
 command_name=plasmify
 case ":$PATH:" in
