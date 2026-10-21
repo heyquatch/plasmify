@@ -27,7 +27,7 @@ jobs:
     if: github.repository == 'heyquatch/plasmify'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: Wiki links
         run: python3 scripts/check_wiki.py
       - name: Publish
