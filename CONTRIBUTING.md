@@ -64,7 +64,7 @@ cd plasmify
 # Fedora:        sudo dnf install python3 python3-pyqt6 git
 # openSUSE:      sudo zypper install python3 python3-PyQt6 git
 # Debian/Ubuntu: sudo apt install python3 python3-pyqt6 git
-PYTHONPATH=src python -m plasmify          # run the GUI from the checkout
+PYTHONPATH=src python -m plasmify gui      # run the GUI from the checkout
 PYTHONPATH=src python -m plasmify --help   # or the CLI
 ```
 
