@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Install | Plasmify documentation</title>
+<meta name="description" content="Requirements and installation of Plasmify with install.sh (per user, into ~/.local) or as an Arch Linux package built from the included PKGBUILD.">
+<link rel="canonical" href="https://plasmify.github.io/install.html">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Plasmify">
+<meta property="og:title" content="Install | Plasmify documentation">
+<meta property="og:description" content="Requirements and installation of Plasmify with install.sh (per user, into ~/.local) or as an Arch Linux package built from the included PKGBUILD.">
+<meta property="og:url" content="https://plasmify.github.io/install.html">
+<meta property="og:image" content="https://plasmify.github.io/images/plasmify.png">
+<meta property="og:image:width" content="1274">
+<meta property="og:image:height" content="720">
+<meta property="og:image:alt" content="The Plasmify main window with the preset gallery, a live preview and the settings.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#content">Skip to the content</a>
+<header class="topbar">
+  <a class="brand" href="index.html"><svg viewBox="0 0 128 128" width="30" height="30" aria-hidden="true" focusable="false"><defs><linearGradient id="plasmify-logo-top" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#cba6f7"/><stop offset="0.55" stop-color="#89b4fa"/><stop offset="1" stop-color="#94e2d5"/></linearGradient></defs><rect x="8" y="8" width="112" height="112" rx="28" fill="url(#plasmify-logo-top)"/><rect x="22" y="24" width="84" height="10" rx="5" fill="#1e1e2e" opacity="0.85"/><rect x="40" y="94" width="48" height="12" rx="6" fill="#1e1e2e" opacity="0.85"/><circle cx="48" cy="100" r="3" fill="#f5c2e7"/><circle cx="58" cy="100" r="3" fill="#a6e3a1"/><circle cx="68" cy="100" r="3" fill="#f9e2af"/><circle cx="78" cy="100" r="3" fill="#89b4fa"/><path d="M64 44 L69.5 58.5 L84 64 L69.5 69.5 L64 84 L58.5 69.5 L44 64 L58.5 58.5 Z" fill="#ffffff"/><path d="M88 42 L90.5 48.5 L97 51 L90.5 53.5 L88 60 L85.5 53.5 L79 51 L85.5 48.5 Z" fill="#ffffff" opacity="0.85"/></svg><span>Plasmify<small>Documentation</small></span></a>
+  <a class="menu-link" href="#nav">Menu</a>
+</header>
+<div class="layout">
+<nav class="sidebar" id="nav" aria-label="Wiki pages">
+  <a class="brand" href="index.html"><svg viewBox="0 0 128 128" width="36" height="36" aria-hidden="true" focusable="false"><defs><linearGradient id="plasmify-logo-nav" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#cba6f7"/><stop offset="0.55" stop-color="#89b4fa"/><stop offset="1" stop-color="#94e2d5"/></linearGradient></defs><rect x="8" y="8" width="112" height="112" rx="28" fill="url(#plasmify-logo-nav)"/><rect x="22" y="24" width="84" height="10" rx="5" fill="#1e1e2e" opacity="0.85"/><rect x="40" y="94" width="48" height="12" rx="6" fill="#1e1e2e" opacity="0.85"/><circle cx="48" cy="100" r="3" fill="#f5c2e7"/><circle cx="58" cy="100" r="3" fill="#a6e3a1"/><circle cx="68" cy="100" r="3" fill="#f9e2af"/><circle cx="78" cy="100" r="3" fill="#89b4fa"/><path d="M64 44 L69.5 58.5 L84 64 L69.5 69.5 L64 84 L58.5 69.5 L44 64 L58.5 58.5 Z" fill="#ffffff"/><path d="M88 42 L90.5 48.5 L97 51 L90.5 53.5 L88 60 L85.5 53.5 L79 51 L85.5 48.5 Z" fill="#ffffff" opacity="0.85"/></svg><span>Plasmify<small>Documentation</small></span></a>
+  <p class="nav-group">Start here</p>
+  <ul>
+    <li><a href="index.html">Overview</a></li>
+    <li><a href="install.html" aria-current="page">Install</a></li>
+    <li><a href="update.html">Update</a></li>
+    <li><a href="uninstall.html">Uninstall</a></li>
+  </ul>
+  <p class="nav-group">Using Plasmify</p>
+  <ul>
+    <li><a href="getting-started.html">Getting started</a></li>
+    <li><a href="customize.html">Customize</a></li>
+    <li><a href="wallpapers.html">Wallpapers</a></li>
+    <li><a href="dark-light.html">Dark and light</a></li>
+    <li><a href="theme-studio.html">Theme studio</a></li>
+    <li><a href="sharing.html">Sharing presets</a></li>
+    <li><a href="backups.html">Backups and restore</a></li>
+  </ul>
+  <p class="nav-group">Reference</p>
+  <ul>
+    <li><a href="cli.html">Command line</a></li>
+    <li><a href="troubleshooting.html">Troubleshooting</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="security.html">Security and privacy</a></li>
+    <li><a href="contributing.html">Contributing</a></li>
+  </ul>
+</nav>
+<main id="content">
+<article>
+<h1>Install</h1>
+<p class="lead">Plasmify installs into your home folder in a few seconds. Root is only needed if Python, PyQt6 or git is missing.</p>
+
+<nav class="toc" aria-label="On this page">
+  <strong>On this page</strong>
+  <ul>
+    <li><a href="#requirements">Requirements</a></li>
+    <li><a href="#install-sh">Install with install.sh</a></li>
+    <li><a href="#files">Where the files go</a></li>
+    <li><a href="#path">The PATH note</a></li>
+    <li><a href="#arch">Arch Linux package</a></li>
+    <li><a href="#checkout">Run without installing</a></li>
+    <li><a href="#first-start">First start</a></li>
+  </ul>
+</nav>
+
+<h2 id="requirements">Requirements</h2>
+
+<ul>
+  <li><strong>KDE Plasma 6</strong> on Wayland. X11 also works on Plasma versions that still offer an X11 session; Plasma 6.8 dropped it. Plasmify runs inside your Plasma session.</li>
+  <li><strong>Python 3.11 or newer, PyQt6 and git.</strong> The installer adds whichever of them are missing.</li>
+  <li>For <a href="wallpapers.html#shimmer">living wallpapers</a>: Qt's image formats plugin (WebP support), which most Plasma desktops already have. Without it, the wallpapers simply stay still. Kvantum, which glass and some presets use, is installed by Plasmify itself when it is needed.</li>
+  <li>A distribution from one of these families:</li>
+</ul>
+
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Family</th><th>Examples</th><th>Package manager</th><th>Status</th></tr></thead>
+  <tbody>
+    <tr><td>Arch</td><td>Arch Linux, CachyOS, EndeavourOS, Manjaro, Garuda</td><td>pacman</td><td>Tested on real hardware</td></tr>
+    <tr><td>Fedora</td><td>Fedora KDE 43+, Nobara</td><td>dnf</td><td>Tested in a Fedora 44 KDE virtual machine, package names checked in CI</td></tr>
+    <tr><td>openSUSE</td><td>Tumbleweed, Slowroll</td><td>zypper</td><td>Package names checked in CI, not yet tested on a desktop</td></tr>
+    <tr><td>Debian/Ubuntu</td><td>Debian 13+, Kubuntu 25.10+, KDE neon, TUXEDO OS</td><td>apt</td><td>Package names checked in CI, not yet tested on a desktop</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>Distributions that still ship Plasma 5 (for example Kubuntu 24.04 or openSUSE Leap 15) are not supported. If you use one of the families that are not yet tested on a desktop, a short report in the project's Discussions helps a lot.</p>
+
+<div class="callout">
+  <span class="callout-title">Known differences between distributions</span>
+  <ul>
+    <li><strong>Fedora:</strong> Starship is not in the official repositories, so the Starship prompt is left out there. The fastfetch greeting and zoxide still work. Plasmify will not add a COPR.</li>
+    <li>Fonts a distribution does not package (for example Nunito on Debian, or the Nerd Font symbols everywhere except Arch) are downloaded for your user only, from the Google Fonts repository or the font's own GitHub release.</li>
+  </ul>
+</div>
+
+<p>When the window opens, Plasmify also checks for a few tools that every Plasma 6 desktop has: <code>plasmashell</code>, <code>kwriteconfig6</code>, <code>kreadconfig6</code>, <code>plasma-apply-colorscheme</code> and a D-Bus tool (<code>qdbus</code> for Qt 6, or <code>gdbus</code>). If something is missing, or you are not in a Plasma session, a red banner at the top of the window says what, and <span class="ui">Apply theme</span> stays disabled.</p>
+
+<h2 id="install-sh">Install with install.sh (recommended)</h2>
+
+<pre><code>git clone https://github.com/heyquatch/plasmify.git
+cd plasmify
+./install.sh</code></pre>
+
+<p>The installer:</p>
+
+<ol class="steps">
+  <li>Checks that Plasma 6 is installed. It stops if <code>plasmashell</code> is missing or older than version 6.</li>
+  <li>Finds your package manager and checks for Python, PyQt6 and git. <strong>Only if one of them is missing</strong> does it run <code>sudo</code> to install it, without optional extras (recommended or weak dependencies).</li>
+  <li>Checks that Python is version 3.11 or newer.</li>
+  <li>Copies the app into <code>~/.local/lib/plasmify</code> and adds the <code>plasmify</code> command, the menu entry and the icon (see below). Nothing is written outside your home folder.</li>
+</ol>
+
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Package manager</th><th>Dependencies it checks</th><th>Command used if any are missing</th></tr></thead>
+  <tbody>
+    <tr><td>pacman</td><td><code>python python-pyqt6 git</code></td><td><code>sudo pacman -S --needed</code></td></tr>
+    <tr><td>dnf</td><td><code>python3 python3-pyqt6 git</code></td><td><code>sudo dnf install --setopt=install_weak_deps=False</code></td></tr>
+    <tr><td>zypper</td><td><code>python3 python3-PyQt6 git</code></td><td><code>sudo zypper install --no-recommends</code></td></tr>
+    <tr><td>apt</td><td><code>python3 python3-pyqt6 git</code></td><td><code>sudo apt-get install --no-install-recommends</code></td></tr>
+  </tbody>
+</table>
+</div>
+
+<h3 id="files">Where the files go</h3>
+
+<div class="table-wrap">
+<table class="stack">
+  <thead><tr><th>Path</th><th>What it is</th></tr></thead>
+  <tbody>
+    <tr><td><code>~/.local/lib/plasmify/</code></td><td>The app itself (a copy of <code>src/plasmify</code> from the repository)</td></tr>
+    <tr><td><code>~/.local/bin/plasmify</code></td><td>The <code>plasmify</code> command, a tiny launcher script</td></tr>
+    <tr><td><code>~/.local/share/applications/io.github.heyquatch.plasmify.desktop</code></td><td>The application menu entry (in the Settings category)</td></tr>
+    <tr><td><code>~/.local/share/icons/hicolor/scalable/apps/io.github.heyquatch.plasmify.svg</code></td><td>The app icon</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>Your presets, downloads, settings and backups are stored separately (in <code>~/.config/plasmify</code>, <code>~/.local/share/plasmify</code> and <code>~/.local/state/plasmify</code>), so reinstalling or <a href="update.html">updating</a> never touches them.</p>
+
+<div class="callout tip">
+  <span class="callout-title">Another location</span>
+  <p>Set <code>PREFIX</code> to install somewhere other than <code>~/.local</code>, for example <code>PREFIX="$HOME/apps" ./install.sh</code>. Use the same <code>PREFIX</code> later for <code>--uninstall</code>.</p>
+</div>
+
+<h3 id="path">The PATH note</h3>
+
+<p>At the end the installer checks whether <code>~/.local/bin</code> is in your <code>PATH</code>. If it is not, it prints a note with the command's full path. The application menu entry starts Plasmify by that full path, so it works either way. To use the short <code>plasmify</code> command in a terminal, add the folder to your <code>PATH</code>:</p>
+
+<pre><code># bash
+echo 'export PATH="$HOME/.local/bin:$PATH"' &gt;&gt; ~/.bashrc
+
+# zsh
+echo 'export PATH="$HOME/.local/bin:$PATH"' &gt;&gt; ~/.zshrc
+
+# fish
+fish_add_path ~/.local/bin</code></pre>
+
+<p>Then open a new terminal. Many distributions also add <code>~/.local/bin</code> to the session's <code>PATH</code> by themselves at the next login, if the folder existed then.</p>
+
+<h2 id="arch">Arch Linux package (PKGBUILD)</h2>
+
+<p>On Arch-based systems you can build a regular pacman package instead. The recipe is in <a href="https://github.com/heyquatch/plasmify/blob/main/packaging/arch/PKGBUILD"><code>packaging/arch/PKGBUILD</code></a>. It is not in the AUR: you build it yourself from the repository.</p>
+
+<pre><code>cd plasmify/packaging/arch
+makepkg -si</code></pre>
+
+<ul>
+  <li>It downloads the source archive of the release tagged <code>v&lt;pkgver&gt;</code> from the project's GitHub page, builds it, runs the unit tests and installs it with pacman.</li>
+  <li>Files go to the system: the <code>plasmify</code> command to <code>/usr/bin</code>, the Python package to your Python site-packages, the menu entry to <code>/usr/share/applications</code> and the icon to <code>/usr/share/icons/hicolor/scalable/apps</code>.</li>
+  <li>Dependencies: <code>python</code>, <code>python-pyqt6</code>, <code>git</code>, <code>plasma-workspace</code>, <code>kconfig</code> and <code>qt6-tools</code>. <code>kvantum</code> and <code>papirus-icon-theme</code> are optional; Plasmify installs them itself (from your distribution's repositories) when a preset needs them.</li>
+  <li><code>makepkg -s</code> installs the build tools it needs (<code>python-build</code>, <code>python-installer</code>, <code>python-setuptools</code>, <code>python-wheel</code>).</li>
+</ul>
+
+<div class="callout warn">
+  <span class="callout-title">Pick one way</span>
+  <p>Use either <code>install.sh</code> or the package, not both. Otherwise you have two copies, and whichever comes first in your <code>PATH</code> (usually the one in <code>~/.local/bin</code>) is the one that runs. Package users remove Plasmify with pacman, see <a href="uninstall.html#arch">Uninstall</a>.</p>
+</div>
+
+<h2 id="checkout">Run without installing</h2>
+
+<p>You can also run Plasmify straight from the cloned folder, which is handy for trying a branch:</p>
+
+<pre><code>cd plasmify
+PYTHONPATH=src python3 -m plasmify gui      # the window
+PYTHONPATH=src python3 -m plasmify --help   # the command line</code></pre>
+
+<h2 id="first-start">First start</h2>
+
+<p>Open <span class="ui">Plasmify</span> from the application menu, or type <code>plasmify gui</code>. Other commands, such as <code>plasmify list</code>, work in the terminal, and <code>plasmify</code> on its own lists them (see <a href="cli.html">Command line</a>). Continue with <a href="getting-started.html">Getting started</a>.</p>
+</article>
+<nav class="pager" aria-label="Previous and next page">
+  <a class="prev" href="index.html"><span>Previous</span>Overview</a>
+  <a class="next" href="update.html"><span>Next</span>Update</a>
+</nav>
+<footer class="site-footer">
+  <p>Plasmify is free software under the <a href="https://github.com/heyquatch/plasmify/blob/main/LICENSE">GNU General Public License, version 3 or later</a>. These pages live in <code>docs/wiki</code>; corrections are welcome as pull requests (see <a href="contributing.html">Contributing</a>).</p>
+</footer>
+</main>
+</div>
+</body>
+</html>

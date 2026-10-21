@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Documentation
+    url: https://plasmify.github.io
+    about: Install, customize, troubleshoot and the FAQ. Many answers are already there.
+  - name: Questions and ideas
+    url: https://github.com/heyquatch/plasmify/discussions
+    about: Ask questions and share your setups in Discussions.
+  - name: Security issue
+    url: https://github.com/heyquatch/plasmify/security/advisories/new
+    about: Report security problems privately.

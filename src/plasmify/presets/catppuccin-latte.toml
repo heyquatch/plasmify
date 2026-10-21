@@ -1,0 +1,114 @@
+schema = 1
+
+[meta]
+id = "catppuccin-latte"
+name = "Catppuccin Latte"
+description = "Catppuccin's soft light flavour with mauve accents, bright painted landscapes and three calm islands along the bottom of the screen."
+tags = ["pastel", "calm", "landscapes", "light"]
+
+# https://github.com/catppuccin/palette (MIT), "latte" flavour
+[palette]
+base = "#eff1f5"
+mantle = "#e6e9ef"
+crust = "#dce0e8"
+surface = "#ccd0da"
+overlay = "#9ca0b0"
+text = "#4c4f69"
+subtext = "#6c6f85"
+accent = "#8839ef"
+red = "#d20f39"
+green = "#40a02b"
+yellow = "#df8e1d"
+blue = "#1e66f5"
+magenta = "#ea76cb"
+cyan = "#179299"
+orange = "#fe640b"
+bright_black = "#acb0be"
+
+[style.kvantum]
+repo = "https://github.com/catppuccin/kvantum"
+path = "themes/catppuccin-latte-mauve"
+name = "catppuccin-latte-mauve"
+
+[icons]
+theme = "Papirus-Light"
+folder_color = "cat-latte-mauve"
+folder_source = { repo = "https://github.com/catppuccin/papirus-folders", path = "src" }
+
+[cursor]
+name = "catppuccin-latte-mauve-cursors"
+url = "https://github.com/catppuccin/cursors/releases/download/v2.0.0/catppuccin-latte-mauve-cursors.zip"
+size = 24
+
+[fonts]
+ui = "Nunito"
+ui_size = 10
+mono = "JetBrains Mono"
+mono_size = 10
+packages = ["ttf-nunito", "ttf-jetbrains-mono"]
+
+# Three islands along the bottom: menu and desktops, open apps in the middle, tray and clock.
+[layout]
+launcher_icon = "https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/logos/exports/1544x1544_circle.png"
+
+[[layout.panels]]
+edge = "bottom"
+style = "islands"
+thickness = 44
+widgets = ["launcher", "pager", "spacer", "tasks", "spacer", "tray", "clock"]
+
+[panel_style]
+radius = 14
+opacity = 0.92
+border = "subtle"
+padding = 4
+colour = "mantle"
+
+[effects]
+blur = true
+blur_strength = 8
+open_close = "scale"
+minimize = "magiclamp"
+desktop_switch = "slide"
+sheet = true
+
+[terminal]
+opacity = 0.95
+blur = true
+padding = 14
+font_size = 12
+
+[shell]
+prompt = "powerline"
+zoxide = true
+logo = "text"
+logo_text = "LATTE"
+logo_colour = "gradient"
+
+[wallpaper]
+mode = "slideshow"
+interval = 1800
+
+[[wallpaper.images]]
+url = "https://raw.githubusercontent.com/zhichaoh/catppuccin-wallpapers/main/landscapes/Clearday.jpg"
+credit = "Clearday.jpg, from the zhichaoh/catppuccin-wallpapers collection (original artist uncredited)"
+
+[[wallpaper.images]]
+url = "https://raw.githubusercontent.com/zhichaoh/catppuccin-wallpapers/main/landscapes/tropic_island_day.jpg"
+credit = "tropic_island_day.jpg, from the zhichaoh/catppuccin-wallpapers collection (original artist uncredited)"
+
+[[wallpaper.images]]
+url = "https://raw.githubusercontent.com/zhichaoh/catppuccin-wallpapers/main/landscapes/forrest.png"
+credit = "forrest.png, from the zhichaoh/catppuccin-wallpapers collection (original artist uncredited)"
+
+[[wallpaper.images]]
+url = "https://raw.githubusercontent.com/zhichaoh/catppuccin-wallpapers/main/landscapes/tropic_island_morning.jpg"
+credit = "tropic_island_morning.jpg, from the zhichaoh/catppuccin-wallpapers collection (original artist uncredited)"
+
+[[wallpaper.images]]
+url = "https://raw.githubusercontent.com/zhichaoh/catppuccin-wallpapers/main/waves/wavy_lines_v02_5120x2880.png"
+credit = "wavy_lines_v02_5120x2880.png, from the zhichaoh/catppuccin-wallpapers collection (original artist uncredited)"
+
+[[wallpaper.images]]
+url = "https://raw.githubusercontent.com/zhichaoh/catppuccin-wallpapers/main/gradients/magenta_pink.png"
+credit = "magenta_pink.png, from the zhichaoh/catppuccin-wallpapers collection (original artist uncredited)"

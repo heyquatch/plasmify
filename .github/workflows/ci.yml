@@ -1,0 +1,94 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install ruff==0.17.1
+      - run: ruff check .
+      - run: ruff format --check .
+      - name: Wiki links
+        run: python scripts/check_wiki.py
+      - name: shellcheck
+        run: shellcheck install.sh
+
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.11", "3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Unit tests
+        run: PYTHONPATH=src python -m unittest discover -s tests -t . -v
+      - name: Validate presets
+        run: PYTHONPATH=src python -m plasmify validate
+
+  gui-smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install Qt runtime
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libegl1 libxkbcommon0 libgl1 libfontconfig1 libdbus-1-3
+          pip install PyQt6
+      - name: Build the main window offscreen
+        env:
+          QT_QPA_PLATFORM: offscreen
+        run: PYTHONPATH=src python -m unittest tests.test_gui tests.test_layout_script -v
+
+  packages:
+    # Verifies the package name map against the real package managers.
+    name: packages (${{ matrix.image }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        image:
+          - archlinux:latest
+          - fedora:latest
+          - opensuse/tumbleweed:latest
+          - debian:trixie
+          - ubuntu:rolling
+    container: ${{ matrix.image }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Python and refresh package metadata
+        shell: sh
+        run: |
+          if command -v pacman >/dev/null; then pacman -Sy --noconfirm python
+          elif command -v dnf >/dev/null; then dnf -y install python3 && dnf makecache
+          elif command -v zypper >/dev/null; then zypper --non-interactive refresh && zypper --non-interactive install python3
+          else apt-get update && apt-get install -y python3; fi
+      - name: Check package names
+        run: PYTHONPATH=src python3 scripts/check_packages.py
+
+  links:
+    # Upstream assets move; this catches dead download links in presets early.
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: PYTHONPATH=src python scripts/check_links.py

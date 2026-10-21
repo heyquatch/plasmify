@@ -1,0 +1,50 @@
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for sharing your look! Others download your preset and open it with *File → Import preset*.
+
+        **GitHub does not accept `.plasmify` uploads.** Rename the file to `.zip` first, for example
+        `my-desktop.plasmify` → `my-desktop.plasmify.zip`. Plasmify imports the `.zip` as it is.
+
+        **Your own pictures travel inside the file:** wallpapers you added, the terminal photo, and the
+        splash and login images. Post it only if they are yours to share and you are happy for them to be
+        public. Other artists' wallpapers are never copied; the file only links to where they are published.
+  - type: input
+    id: name
+    attributes:
+      label: Preset name
+      placeholder: "Velvet Dusk"
+    validations:
+      required: true
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots
+      description: Drag one or more screenshots of your desktop here.
+    validations:
+      required: true
+  - type: textarea
+    id: file
+    attributes:
+      label: Preset file
+      description: Drag the `.plasmify.zip` here. *Share…* in Plasmify or `plasmify export <preset>` writes the `.plasmify` file.
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+      description: The idea behind it, the wallpapers and fonts it uses, anything worth knowing.
+  - type: input
+    id: setup
+    attributes:
+      label: Plasmify, distribution and Plasma version
+      placeholder: "Plasmify 0.1.0, Fedora 43 KDE, Plasma 6.5.2"
+  - type: checkboxes
+    id: pictures
+    attributes:
+      label: Pictures
+      options:
+        - label: The pictures inside the file are mine to share, and I am happy for them to be public.
+          required: true

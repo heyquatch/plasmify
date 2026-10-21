@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Sharing presets | Plasmify documentation</title>
+<meta name="description" content="Save your look as a preset, share it as a .plasmify file, import presets from others and save your current desktop, safely.">
+<link rel="canonical" href="https://plasmify.github.io/sharing.html">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Plasmify">
+<meta property="og:title" content="Sharing presets | Plasmify documentation">
+<meta property="og:description" content="Save your look as a preset, share it as a .plasmify file, import presets from others and save your current desktop, safely.">
+<meta property="og:url" content="https://plasmify.github.io/sharing.html">
+<meta property="og:image" content="https://plasmify.github.io/images/plasmify.png">
+<meta property="og:image:width" content="1274">
+<meta property="og:image:height" content="720">
+<meta property="og:image:alt" content="The Plasmify main window with the preset gallery, a live preview and the settings.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#content">Skip to the content</a>
+<header class="topbar">
+  <a class="brand" href="index.html"><svg viewBox="0 0 128 128" width="30" height="30" aria-hidden="true" focusable="false"><defs><linearGradient id="plasmify-logo-top" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#cba6f7"/><stop offset="0.55" stop-color="#89b4fa"/><stop offset="1" stop-color="#94e2d5"/></linearGradient></defs><rect x="8" y="8" width="112" height="112" rx="28" fill="url(#plasmify-logo-top)"/><rect x="22" y="24" width="84" height="10" rx="5" fill="#1e1e2e" opacity="0.85"/><rect x="40" y="94" width="48" height="12" rx="6" fill="#1e1e2e" opacity="0.85"/><circle cx="48" cy="100" r="3" fill="#f5c2e7"/><circle cx="58" cy="100" r="3" fill="#a6e3a1"/><circle cx="68" cy="100" r="3" fill="#f9e2af"/><circle cx="78" cy="100" r="3" fill="#89b4fa"/><path d="M64 44 L69.5 58.5 L84 64 L69.5 69.5 L64 84 L58.5 69.5 L44 64 L58.5 58.5 Z" fill="#ffffff"/><path d="M88 42 L90.5 48.5 L97 51 L90.5 53.5 L88 60 L85.5 53.5 L79 51 L85.5 48.5 Z" fill="#ffffff" opacity="0.85"/></svg><span>Plasmify<small>Documentation</small></span></a>
+  <a class="menu-link" href="#nav">Menu</a>
+</header>
+<div class="layout">
+<nav class="sidebar" id="nav" aria-label="Wiki pages">
+  <a class="brand" href="index.html"><svg viewBox="0 0 128 128" width="36" height="36" aria-hidden="true" focusable="false"><defs><linearGradient id="plasmify-logo-nav" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#cba6f7"/><stop offset="0.55" stop-color="#89b4fa"/><stop offset="1" stop-color="#94e2d5"/></linearGradient></defs><rect x="8" y="8" width="112" height="112" rx="28" fill="url(#plasmify-logo-nav)"/><rect x="22" y="24" width="84" height="10" rx="5" fill="#1e1e2e" opacity="0.85"/><rect x="40" y="94" width="48" height="12" rx="6" fill="#1e1e2e" opacity="0.85"/><circle cx="48" cy="100" r="3" fill="#f5c2e7"/><circle cx="58" cy="100" r="3" fill="#a6e3a1"/><circle cx="68" cy="100" r="3" fill="#f9e2af"/><circle cx="78" cy="100" r="3" fill="#89b4fa"/><path d="M64 44 L69.5 58.5 L84 64 L69.5 69.5 L64 84 L58.5 69.5 L44 64 L58.5 58.5 Z" fill="#ffffff"/><path d="M88 42 L90.5 48.5 L97 51 L90.5 53.5 L88 60 L85.5 53.5 L79 51 L85.5 48.5 Z" fill="#ffffff" opacity="0.85"/></svg><span>Plasmify<small>Documentation</small></span></a>
+  <p class="nav-group">Start here</p>
+  <ul>
+    <li><a href="index.html">Overview</a></li>
+    <li><a href="install.html">Install</a></li>
+    <li><a href="update.html">Update</a></li>
+    <li><a href="uninstall.html">Uninstall</a></li>
+  </ul>
+  <p class="nav-group">Using Plasmify</p>
+  <ul>
+    <li><a href="getting-started.html">Getting started</a></li>
+    <li><a href="customize.html">Customize</a></li>
+    <li><a href="wallpapers.html">Wallpapers</a></li>
+    <li><a href="dark-light.html">Dark and light</a></li>
+    <li><a href="theme-studio.html">Theme studio</a></li>
+    <li><a href="sharing.html" aria-current="page">Sharing presets</a></li>
+    <li><a href="backups.html">Backups and restore</a></li>
+  </ul>
+  <p class="nav-group">Reference</p>
+  <ul>
+    <li><a href="cli.html">Command line</a></li>
+    <li><a href="troubleshooting.html">Troubleshooting</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="security.html">Security and privacy</a></li>
+    <li><a href="contributing.html">Contributing</a></li>
+  </ul>
+</nav>
+<main id="content">
+<article>
+<h1>Sharing presets</h1>
+<p class="lead">Keep the look you built, send it to a friend as one file, or turn the desktop you already have into a preset.</p>
+
+<nav class="toc" aria-label="On this page">
+  <strong>On this page</strong>
+  <ul>
+    <li><a href="#save">Save as my preset</a></li>
+    <li><a href="#share">Share</a></li>
+    <li><a href="#import">Import</a></li>
+    <li><a href="#save-desktop">Save current desktop as preset</a></li>
+    <li><a href="#hosts">Untrusted hosts</a></li>
+    <li><a href="#privacy">Privacy notes</a></li>
+    <li><a href="#manage">Managing your presets</a></li>
+  </ul>
+</nav>
+
+<h2 id="save">Save as my preset</h2>
+
+<p><span class="ui">Save as my preset…</span> (at the bottom of the main window) saves the selected preset, including everything you changed in the Customize tab, as a preset of your own. Give it a name (up to 60 characters). It appears in the gallery with <q>(yours)</q> in front of its name, and your own pictures are stored with it.</p>
+
+<h2 id="share">Share</h2>
+
+<p><span class="ui">Share…</span> (or <span class="ui">File &gt; Share selected preset…</span>, <kbd>Ctrl+S</kbd>) writes the selected preset to a single <code>.plasmify</code> file. Send it to anyone; they open it with <span class="ui">File &gt; Import preset…</span>.</p>
+
+<ul>
+  <li><strong>Your own pictures travel inside the file:</strong> wallpapers you added, your terminal photo, and your splash and login images.</li>
+  <li><strong>Other artists' wallpapers stay linked to their source.</strong> They are never copied into the file; the file keeps their original address, and your friend's Plasmify downloads them from there when they apply. The artists keep their credit.</li>
+</ul>
+
+<p>A <code>.plasmify</code> file is a zip archive holding a <code>preset.toml</code> and an <code>assets</code> folder with the pictures. From the command line: <code>plasmify export &lt;preset&gt;</code>.</p>
+
+<p>To share your look with everyone, post it with a screenshot in the <a href="https://github.com/heyquatch/plasmify/discussions/categories/presets">Presets category of Discussions</a>, where you can also find presets other people made. GitHub only accepts <code>.zip</code> uploads, so rename the file first, for example <code>my-desktop.plasmify</code> to <code>my-desktop.plasmify.zip</code>. Your own pictures travel inside the file, so post it only if they are yours to share and you are happy for them to be public.</p>
+
+<h2 id="import">Import</h2>
+
+<p><span class="ui">File &gt; Import preset…</span> (<kbd>Ctrl+O</kbd>) adds a <code>.plasmify</code> file (also when renamed to <code>.zip</code>) or a plain <code>.toml</code> preset to your gallery. Afterwards Plasmify tells you how many pictures of its own it contains, which servers it downloads from when applied, and whether you will be asked before an untrusted server is contacted. If you already have a preset with the same name, you are asked whether to replace it.</p>
+
+<p>Importing never applies anything: look at the preset, check the preview and <span class="ui">Credits</span>, and apply it when you are ready. A preset that needs its own pictures must be imported as the <code>.plasmify</code> file, not as the bare <code>.toml</code>. You can also drop <code>.toml</code> presets into <code>~/.config/plasmify/presets</code> (<span class="ui">File &gt; Open presets folder</span>). Command line: <code>plasmify import &lt;file&gt;</code>.</p>
+
+<h2 id="save-desktop">Save current desktop as preset</h2>
+
+<p><span class="ui">File &gt; Save current desktop as preset…</span> turns the look you built by hand into a preset. Colours, application style (with the glass look and how see-through it is), fonts, panels, the panel style Plasmify made for them, window effects (every setting of the Windows section in Customize), terminal and wallpapers are read from your current setup, so applying the saved preset brings this look back (apart from the parts listed below). <strong>Your exact panels are captured</strong> from the running Plasma shell, including the order of the widgets.</p>
+
+<ul>
+  <li>Give it a name and, if you like, a description.</li>
+  <li><span class="ui">Include my wallpapers</span> copies your wallpaper pictures into the preset. Only share pictures you are allowed to share.</li>
+  <li>Parts that others could not install automatically are left out, and you are told which: for example an icon theme or cursor Plasmify cannot download, widgets it does not know, or fonts others would have to install themselves. A Plasma style of your own is not part of a preset either: others keep theirs.</li>
+</ul>
+
+<p>Command line: <code>plasmify save-desktop "My Desktop"</code>.</p>
+
+<h2 id="hosts">Untrusted hosts</h2>
+
+<p>A preset can list files to download. Plasmify contacts GitHub, Codeberg and GitLab without asking, and the built-in presets only use those. If a shared preset wants to download from <strong>any other server</strong>, Plasmify lists those servers and asks before contacting them, because a server learns the IP address of everyone who downloads from it. Only continue if you trust whoever shared the preset.</p>
+
+<ul>
+  <li>In the window, a dialog lists the servers when you press <span class="ui">Apply theme</span>.</li>
+  <li>On the command line, Plasmify asks in the terminal, or you approve each server with <code>--allow-host HOST</code>. <code>--yes</code> never approves them.</li>
+  <li>Downloads from servers you did not approve are refused, and so are redirects to such servers or to plain HTTP. Git downloads follow no redirects at all.</li>
+</ul>
+
+<h2 id="privacy">Privacy notes</h2>
+
+<ul>
+  <li><strong>Nothing is uploaded.</strong> Share and Export only write a file on your computer; you decide where it goes.</li>
+  <li><strong>Pictures are copied as they are,</strong> including any information your camera or phone stored in them (such as the place a photo was taken). Remove it first if that matters to you.</li>
+  <li>The terminal greeting hides <code>user@host</code> unless you switch it on, so screenshots of your themed terminal do not reveal your user and computer name.</li>
+  <li>What a shared preset can and cannot do on your computer is summarised in <a href="security.html">Security and privacy</a>.</li>
+</ul>
+
+<h2 id="manage">Managing your presets</h2>
+
+<ul>
+  <li>Your presets live in <code>~/.config/plasmify/presets</code>: one <code>.toml</code> file each, plus a folder with its pictures.</li>
+  <li><span class="ui">Delete</span> (shown for your own presets only) removes a preset and its pictures from your gallery, together with its remembered tweaks.</li>
+  <li>Built-in presets cannot be deleted or replaced: a preset of yours can never take the id (the short name, such as <code>nord-minimal</code>) of a built-in one.</li>
+  <li>To write a preset by hand, see the <a href="https://github.com/heyquatch/plasmify/blob/main/docs/presets.md">preset reference</a> and check it with <code>plasmify validate my-preset.toml</code>.</li>
+</ul>
+</article>
+<nav class="pager" aria-label="Previous and next page">
+  <a class="prev" href="theme-studio.html"><span>Previous</span>Theme studio</a>
+  <a class="next" href="backups.html"><span>Next</span>Backups and restore</a>
+</nav>
+<footer class="site-footer">
+  <p>Plasmify is free software under the <a href="https://github.com/heyquatch/plasmify/blob/main/LICENSE">GNU General Public License, version 3 or later</a>. These pages live in <code>docs/wiki</code>; corrections are welcome as pull requests (see <a href="contributing.html">Contributing</a>).</p>
+</footer>
+</main>
+</div>
+</body>
+</html>

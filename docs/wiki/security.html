@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Security and privacy | Plasmify documentation</title>
+<meta name="description" content="What a shared Plasmify preset can and cannot do, when Plasmify uses root, how downloads are protected, what stays private, and how it is tested.">
+<link rel="canonical" href="https://plasmify.github.io/security.html">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Plasmify">
+<meta property="og:title" content="Security and privacy | Plasmify documentation">
+<meta property="og:description" content="What a shared Plasmify preset can and cannot do, when Plasmify uses root, how downloads are protected, what stays private, and how it is tested.">
+<meta property="og:url" content="https://plasmify.github.io/security.html">
+<meta property="og:image" content="https://plasmify.github.io/images/plasmify.png">
+<meta property="og:image:width" content="1274">
+<meta property="og:image:height" content="720">
+<meta property="og:image:alt" content="The Plasmify main window with the preset gallery, a live preview and the settings.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#content">Skip to the content</a>
+<header class="topbar">
+  <a class="brand" href="index.html"><svg viewBox="0 0 128 128" width="30" height="30" aria-hidden="true" focusable="false"><defs><linearGradient id="plasmify-logo-top" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#cba6f7"/><stop offset="0.55" stop-color="#89b4fa"/><stop offset="1" stop-color="#94e2d5"/></linearGradient></defs><rect x="8" y="8" width="112" height="112" rx="28" fill="url(#plasmify-logo-top)"/><rect x="22" y="24" width="84" height="10" rx="5" fill="#1e1e2e" opacity="0.85"/><rect x="40" y="94" width="48" height="12" rx="6" fill="#1e1e2e" opacity="0.85"/><circle cx="48" cy="100" r="3" fill="#f5c2e7"/><circle cx="58" cy="100" r="3" fill="#a6e3a1"/><circle cx="68" cy="100" r="3" fill="#f9e2af"/><circle cx="78" cy="100" r="3" fill="#89b4fa"/><path d="M64 44 L69.5 58.5 L84 64 L69.5 69.5 L64 84 L58.5 69.5 L44 64 L58.5 58.5 Z" fill="#ffffff"/><path d="M88 42 L90.5 48.5 L97 51 L90.5 53.5 L88 60 L85.5 53.5 L79 51 L85.5 48.5 Z" fill="#ffffff" opacity="0.85"/></svg><span>Plasmify<small>Documentation</small></span></a>
+  <a class="menu-link" href="#nav">Menu</a>
+</header>
+<div class="layout">
+<nav class="sidebar" id="nav" aria-label="Wiki pages">
+  <a class="brand" href="index.html"><svg viewBox="0 0 128 128" width="36" height="36" aria-hidden="true" focusable="false"><defs><linearGradient id="plasmify-logo-nav" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#cba6f7"/><stop offset="0.55" stop-color="#89b4fa"/><stop offset="1" stop-color="#94e2d5"/></linearGradient></defs><rect x="8" y="8" width="112" height="112" rx="28" fill="url(#plasmify-logo-nav)"/><rect x="22" y="24" width="84" height="10" rx="5" fill="#1e1e2e" opacity="0.85"/><rect x="40" y="94" width="48" height="12" rx="6" fill="#1e1e2e" opacity="0.85"/><circle cx="48" cy="100" r="3" fill="#f5c2e7"/><circle cx="58" cy="100" r="3" fill="#a6e3a1"/><circle cx="68" cy="100" r="3" fill="#f9e2af"/><circle cx="78" cy="100" r="3" fill="#89b4fa"/><path d="M64 44 L69.5 58.5 L84 64 L69.5 69.5 L64 84 L58.5 69.5 L44 64 L58.5 58.5 Z" fill="#ffffff"/><path d="M88 42 L90.5 48.5 L97 51 L90.5 53.5 L88 60 L85.5 53.5 L79 51 L85.5 48.5 Z" fill="#ffffff" opacity="0.85"/></svg><span>Plasmify<small>Documentation</small></span></a>
+  <p class="nav-group">Start here</p>
+  <ul>
+    <li><a href="index.html">Overview</a></li>
+    <li><a href="install.html">Install</a></li>
+    <li><a href="update.html">Update</a></li>
+    <li><a href="uninstall.html">Uninstall</a></li>
+  </ul>
+  <p class="nav-group">Using Plasmify</p>
+  <ul>
+    <li><a href="getting-started.html">Getting started</a></li>
+    <li><a href="customize.html">Customize</a></li>
+    <li><a href="wallpapers.html">Wallpapers</a></li>
+    <li><a href="dark-light.html">Dark and light</a></li>
+    <li><a href="theme-studio.html">Theme studio</a></li>
+    <li><a href="sharing.html">Sharing presets</a></li>
+    <li><a href="backups.html">Backups and restore</a></li>
+  </ul>
+  <p class="nav-group">Reference</p>
+  <ul>
+    <li><a href="cli.html">Command line</a></li>
+    <li><a href="troubleshooting.html">Troubleshooting</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="security.html" aria-current="page">Security and privacy</a></li>
+    <li><a href="contributing.html">Contributing</a></li>
+  </ul>
+</nav>
+<main id="content">
+<article>
+<h1>Security and privacy</h1>
+<p class="lead">Plasmify is built so that applying a preset someone shared with you is safe, even if that person means harm. A preset is data, never code.</p>
+
+<p>This page is a short summary for users. The full threat model, with every defence, is in <a href="https://github.com/heyquatch/plasmify/blob/main/SECURITY.md">SECURITY.md</a>.</p>
+
+<h2 id="presets">What a shared preset can and cannot do</h2>
+
+<p>Every value in a preset is treated as untrusted. Presets are checked against a strict schema before anything happens: every value has a type, a range and an allowed set of characters, unknown keys are errors, and line breaks or control characters are refused everywhere.</p>
+
+<h3 id="can">A shared preset can</h3>
+
+<ul>
+  <li>Change the parts of your theme that Plasmify offers, within their allowed values</li>
+  <li>Download themes, cursors and wallpapers over HTTPS from GitHub, Codeberg and GitLab</li>
+  <li>Download from other servers after you approve them</li>
+  <li>Ask for packages from a reviewed list, from your distribution's configured repositories, shown to you before you apply</li>
+  <li>Bring its own pictures (checked to really be PNG, JPEG, WebP or GIF images of a sane size)</li>
+</ul>
+
+<h3 id="cannot">A shared preset cannot</h3>
+
+<ul>
+  <li>Run code or scripts, or slip extra lines into your terminal, shell or Plasma configuration</li>
+  <li>Choose where files are written or deleted (names are restricted and every path is checked)</li>
+  <li>Install arbitrary packages</li>
+  <li>Contact other servers without asking you</li>
+  <li>Replace or pose as a built-in preset or another preset you have</li>
+  <li>Show fake links or formatting (all preset text is shown as plain text)</li>
+  <li>Smuggle scripts or huge files in a <code>.plasmify</code> bundle (only <code>preset.toml</code> and images are accepted, with size and count limits)</li>
+</ul>
+
+<p>To stop look-alikes, your own and imported presets always show <q>(yours)</q> before their name, invisible and right-to-left characters are refused, and a preset whose colour scheme would clash with one you already have is refused.</p>
+
+<h2 id="downloads">Downloads</h2>
+
+<ul>
+  <li>HTTPS only, and download redirects are checked by the same rules. Git downloads follow no redirects at all, so git only ever talks to the server that was checked.</li>
+  <li>Archives are checked before they are unpacked: no paths or links that climb out of the folder, no hard links, and limits on size and file count. One apply may download at most 1.5 GB in total.</li>
+  <li>Git sources are fetched over HTTPS only, without submodules, with symbolic links and Git LFS turned off.</li>
+  <li>Polonium, the one piece of downloaded code, is pinned to a release and checked against its SHA-256 before it is installed.</li>
+  <li>The template for <a href="customize.html#glass">glass</a> (Catppuccin's Kvantum theme, used when a preset has no Kvantum theme of its own) is pinned the same way: it comes from one fixed version and must match its SHA-256 before it is recoloured, or Breeze stays.</li>
+  <li>Pictures are checked before they are opened: the file type comes from the first bytes, never the name, and the size and frame count from the file's header. A picture over 8192 pixels on a side or with more than 1500 frames is refused, so a small file cannot claim to be a huge one and eat your memory.</li>
+  <li>Glass only ever replaces Kvantum theme folders that Plasmify made (they carry a <code>made-by-plasmify.txt</code> file). A theme of yours with the same name is left alone.</li>
+</ul>
+
+<p>Known limits, on purpose: the trusted hosts are trusted for your privacy, not for their content, so theme files from them are installed like any theme you would download yourself. Fonts that a distribution does not package come from the google/fonts repository or the font's own GitHub release, with no pinned checksum; the download history records their SHA-256.</p>
+
+<h2 id="root">Root for packages and the login screen</h2>
+
+<p>Plasmify writes your desktop theme as you, never as root. Installing missing packages uses your package manager through the normal system password prompt; Plasmify calls <code>pkexec</code> and the package manager by their full path. Apart from that, the login screen background is the one thing that runs as root, and everything it does is kept in one small, fixed piece of code:</p>
+
+<ul>
+  <li>Root never reads a file path a normal program could swap. Plasmify reads the picture as you (refusing links, non-images and files over 50 MB) and hands it to root directly.</li>
+  <li>Root writes it under a fixed name into a folder only root can write (<code>/usr/share/wallpapers/plasmify-login</code>), and sets one or two known settings.</li>
+  <li>Restore never copies a file from your (writable) backup folder as root. It only writes back the values of the settings Plasmify changed, after they match strict patterns.</li>
+  <li>The scripts are fixed text. <code>pkexec</code>, <code>sh</code> and every program the scripts run, <code>kwriteconfig6</code> included, are called by their full path, never looked up in a search path. If <code>/usr/bin/kwriteconfig6</code> is missing, Plasmify says so before it asks for your password.</li>
+</ul>
+
+<h2 id="privacy">Privacy</h2>
+
+<ul>
+  <li><strong>No telemetry, analytics, accounts or background services.</strong> Plasmify only runs while you use it.</li>
+  <li><strong>Plasmify downloads nothing until you apply a preset,</strong> and then fetches what that preset needs. Your package manager talks to your distribution's mirrors to install missing packages, and may also do so while Plasmify checks which ones are missing. Nothing is uploaded.</li>
+  <li>Downloads use a generic Python User-Agent; Plasmify does not identify itself or its version.</li>
+  <li>To route downloads through a proxy or Tor, set <code>HTTPS_PROXY</code>.</li>
+  <li>The terminal greeting hides <code>user@host</code> unless you switch it on.</li>
+  <li>Every download and package installation is recorded locally in <code>~/.local/state/plasmify/activity.jsonl</code>, so you can check what a preset brought in. <code>plasmify log --clear</code> deletes it.</li>
+  <li>Pictures for the theme studio are analysed on your computer.</li>
+  <li>Living wallpapers (Shimmer) are made on your computer from pictures that are already there, and so is their preview. Shimmer never goes online.</li>
+  <li>Backups, downloads and settings stay in your home folder: <code>~/.local/state/plasmify</code>, <code>~/.local/share/plasmify</code> and <code>~/.config/plasmify</code>, plus the usual places for themes, icons and fonts (<code>~/.config/Kvantum</code>, <code>~/.local/share/icons</code>, <code>~/.local/share/fonts/plasmify</code>). The exception is the login screen: if you change it, its picture and setting are stored system-wide, as described above.</li>
+</ul>
+
+<h2 id="testing">How it is tested</h2>
+
+<ul>
+  <li><code>tests/test_security.py</code> has one test for every defence and for every past finding.</li>
+  <li><code>tests/test_security_fuzz.py</code> puts hostile text into every free-text field and checks that every generated config file, script and splash screen keeps exactly its normal structure.</li>
+  <li><code>tests/test_bundle_fuzz.py</code> feeds hundreds of corrupted and malicious <code>.plasmify</code> bundles to the importer; each must be refused cleanly without writing outside the preset folder.</li>
+  <li>The root scripts are run as a normal user against a temporary folder in <code>tests/test_screens.py</code>.</li>
+  <li>Continuous integration runs the security lint rules (flake8-bandit through <code>ruff</code>) on every change.</li>
+  <li>Changes to panels, wallpapers and the splash screen are tried in a throwaway Plasma sandbox before they reach a real desktop (see <a href="contributing.html#sandbox">Contributing</a>).</li>
+</ul>
+
+<p>Out of scope: the upstream projects themselves (for example a theme author who ships a malicious theme file), your distribution's packages, and anything you run outside Plasmify.</p>
+
+<h2 id="report">Reporting a vulnerability</h2>
+
+<p>Please do <strong>not</strong> open a public issue for security problems. Use GitHub's private vulnerability reporting on the project's page (the Security tab, <q>Report a vulnerability</q>). You can expect a first answer within a week. Only the latest release receives fixes. Details are in <a href="https://github.com/heyquatch/plasmify/blob/main/SECURITY.md">SECURITY.md</a>.</p>
+</article>
+<nav class="pager" aria-label="Previous and next page">
+  <a class="prev" href="faq.html"><span>Previous</span>FAQ</a>
+  <a class="next" href="contributing.html"><span>Next</span>Contributing</a>
+</nav>
+<footer class="site-footer">
+  <p>Plasmify is free software under the <a href="https://github.com/heyquatch/plasmify/blob/main/LICENSE">GNU General Public License, version 3 or later</a>. These pages live in <code>docs/wiki</code>; corrections are welcome as pull requests (see <a href="contributing.html">Contributing</a>).</p>
+</footer>
+</main>
+</div>
+</body>
+</html>

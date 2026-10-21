@@ -1,0 +1,57 @@
+name: Docs
+
+# Publishes docs/wiki to https://plasmify.github.io. GitHub Pages serves that site from the
+# plasmify/plasmify.github.io repository, so this workflow replaces that repository's content
+# with a single fresh commit: no history piles up there, and an empty repository works too.
+# The DOCS_DEPLOY_KEY secret is the private half of a deploy key with write access to that
+# repository only.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "docs/wiki/**"
+      - "scripts/check_wiki.py"
+      - ".github/workflows/docs.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: docs
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    if: github.repository == 'heyquatch/plasmify'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Wiki links
+        run: python3 scripts/check_wiki.py
+      - name: Publish
+        env:
+          DEPLOY_KEY: ${{ secrets.DOCS_DEPLOY_KEY }}
+          SITE_REPO: git@github.com:plasmify/plasmify.github.io.git
+        run: |
+          mkdir -p ~/.ssh
+          install -m 600 /dev/null ~/.ssh/docs_deploy_key
+          printf '%s\n' "$DEPLOY_KEY" > ~/.ssh/docs_deploy_key
+          # GitHub's published host key (https://api.github.com/meta), so ssh never trusts a stranger.
+          echo "github.com ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOMqqnkVzrm0SdG6UOoqKLsabgH5C9okWi0dh2l9GKJl" > ~/.ssh/known_hosts
+          export GIT_SSH_COMMAND="ssh -i $HOME/.ssh/docs_deploy_key -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes"
+          site="$RUNNER_TEMP/site"
+          cp -r docs/wiki "$site"
+          touch "$site/.nojekyll"
+          printf '%s\n' "# plasmify.github.io" "" \
+            "The Plasmify documentation, served at https://plasmify.github.io." \
+            "This repository is generated from docs/wiki in https://github.com/heyquatch/plasmify," \
+            "so please send corrections there." > "$site/README.md"
+          cd "$site"
+          git init -q -b main
+          git add -A
+          git -c user.name="github-actions[bot]" \
+            -c user.email="41898283+github-actions[bot]@users.noreply.github.com" \
+            commit -q -m "Publish docs from heyquatch/plasmify@${GITHUB_SHA::7}"
+          git push -q --force "$SITE_REPO" main

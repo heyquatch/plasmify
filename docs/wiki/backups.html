@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Backups and restore | Plasmify documentation</title>
+<meta name="description" content="What Plasmify backs up before every apply, where backups are stored, which ones are kept, and how restoring puts your settings back as they were at an earlier moment.">
+<link rel="canonical" href="https://plasmify.github.io/backups.html">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Plasmify">
+<meta property="og:title" content="Backups and restore | Plasmify documentation">
+<meta property="og:description" content="What Plasmify backs up before every apply, where backups are stored, which ones are kept, and how restoring puts your settings back as they were at an earlier moment.">
+<meta property="og:url" content="https://plasmify.github.io/backups.html">
+<meta property="og:image" content="https://plasmify.github.io/images/plasmify.png">
+<meta property="og:image:width" content="1274">
+<meta property="og:image:height" content="720">
+<meta property="og:image:alt" content="The Plasmify main window with the preset gallery, a live preview and the settings.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#content">Skip to the content</a>
+<header class="topbar">
+  <a class="brand" href="index.html"><svg viewBox="0 0 128 128" width="30" height="30" aria-hidden="true" focusable="false"><defs><linearGradient id="plasmify-logo-top" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#cba6f7"/><stop offset="0.55" stop-color="#89b4fa"/><stop offset="1" stop-color="#94e2d5"/></linearGradient></defs><rect x="8" y="8" width="112" height="112" rx="28" fill="url(#plasmify-logo-top)"/><rect x="22" y="24" width="84" height="10" rx="5" fill="#1e1e2e" opacity="0.85"/><rect x="40" y="94" width="48" height="12" rx="6" fill="#1e1e2e" opacity="0.85"/><circle cx="48" cy="100" r="3" fill="#f5c2e7"/><circle cx="58" cy="100" r="3" fill="#a6e3a1"/><circle cx="68" cy="100" r="3" fill="#f9e2af"/><circle cx="78" cy="100" r="3" fill="#89b4fa"/><path d="M64 44 L69.5 58.5 L84 64 L69.5 69.5 L64 84 L58.5 69.5 L44 64 L58.5 58.5 Z" fill="#ffffff"/><path d="M88 42 L90.5 48.5 L97 51 L90.5 53.5 L88 60 L85.5 53.5 L79 51 L85.5 48.5 Z" fill="#ffffff" opacity="0.85"/></svg><span>Plasmify<small>Documentation</small></span></a>
+  <a class="menu-link" href="#nav">Menu</a>
+</header>
+<div class="layout">
+<nav class="sidebar" id="nav" aria-label="Wiki pages">
+  <a class="brand" href="index.html"><svg viewBox="0 0 128 128" width="36" height="36" aria-hidden="true" focusable="false"><defs><linearGradient id="plasmify-logo-nav" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#cba6f7"/><stop offset="0.55" stop-color="#89b4fa"/><stop offset="1" stop-color="#94e2d5"/></linearGradient></defs><rect x="8" y="8" width="112" height="112" rx="28" fill="url(#plasmify-logo-nav)"/><rect x="22" y="24" width="84" height="10" rx="5" fill="#1e1e2e" opacity="0.85"/><rect x="40" y="94" width="48" height="12" rx="6" fill="#1e1e2e" opacity="0.85"/><circle cx="48" cy="100" r="3" fill="#f5c2e7"/><circle cx="58" cy="100" r="3" fill="#a6e3a1"/><circle cx="68" cy="100" r="3" fill="#f9e2af"/><circle cx="78" cy="100" r="3" fill="#89b4fa"/><path d="M64 44 L69.5 58.5 L84 64 L69.5 69.5 L64 84 L58.5 69.5 L44 64 L58.5 58.5 Z" fill="#ffffff"/><path d="M88 42 L90.5 48.5 L97 51 L90.5 53.5 L88 60 L85.5 53.5 L79 51 L85.5 48.5 Z" fill="#ffffff" opacity="0.85"/></svg><span>Plasmify<small>Documentation</small></span></a>
+  <p class="nav-group">Start here</p>
+  <ul>
+    <li><a href="index.html">Overview</a></li>
+    <li><a href="install.html">Install</a></li>
+    <li><a href="update.html">Update</a></li>
+    <li><a href="uninstall.html">Uninstall</a></li>
+  </ul>
+  <p class="nav-group">Using Plasmify</p>
+  <ul>
+    <li><a href="getting-started.html">Getting started</a></li>
+    <li><a href="customize.html">Customize</a></li>
+    <li><a href="wallpapers.html">Wallpapers</a></li>
+    <li><a href="dark-light.html">Dark and light</a></li>
+    <li><a href="theme-studio.html">Theme studio</a></li>
+    <li><a href="sharing.html">Sharing presets</a></li>
+    <li><a href="backups.html" aria-current="page">Backups and restore</a></li>
+  </ul>
+  <p class="nav-group">Reference</p>
+  <ul>
+    <li><a href="cli.html">Command line</a></li>
+    <li><a href="troubleshooting.html">Troubleshooting</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="security.html">Security and privacy</a></li>
+    <li><a href="contributing.html">Contributing</a></li>
+  </ul>
+</nav>
+<main id="content">
+<article>
+<h1>Backups and restore</h1>
+<p class="lead">Before every apply, Plasmify saves the settings files it is about to change. Restoring a backup puts your settings back as they were at that moment.</p>
+
+<nav class="toc" aria-label="On this page">
+  <strong>On this page</strong>
+  <ul>
+    <li><a href="#what">What is backed up</a></li>
+    <li><a href="#where">Where backups are stored</a></li>
+    <li><a href="#kept">Which backups are kept</a></li>
+    <li><a href="#restore">What restoring does</a></li>
+    <li><a href="#gui">Restore in the window</a></li>
+    <li><a href="#cli">Restore from the command line</a></li>
+    <li><a href="#login">The login screen part</a></li>
+  </ul>
+</nav>
+
+<h2 id="what">What is backed up</h2>
+
+<p>Every apply starts with a backup of every configuration file the selected steps will change. Files that did not exist yet are recorded too, so that restoring removes what Plasmify created. Folders that Plasmify generates, such as the icon overlay or the splash screen, are backed up as a whole. Plasmify's own record of your Customize changes (<code>~/.local/state/plasmify/applied-tweaks.json</code>) is saved with every backup as well.</p>
+
+<div class="table-wrap">
+<table class="stack">
+  <thead><tr><th>Step</th><th>Files</th></tr></thead>
+  <tbody>
+    <tr><td>Colours</td><td><code>kdeglobals</code>, <code>kwinrc</code>, <code>plasmarc</code>, the generated <code>~/.local/share/color-schemes/Plasmify*.colors</code></td></tr>
+    <tr><td>Application style</td><td><code>kdeglobals</code>, <code>~/.config/Kvantum/kvantum.kvconfig</code> and a Kvantum theme folder of the same name; with glass, also its glass theme folder (<code>&lt;theme&gt;-glass</code> or <code>plasmify-glass</code>), and <code>kwinrc</code> when Frosted or Glass turns on blur for a preset without effects</td></tr>
+    <tr><td>Icons</td><td><code>kdeglobals</code>, the overlay theme <code>~/.local/share/icons/Plasmify-*</code></td></tr>
+    <tr><td>Cursor</td><td><code>kcminputrc</code></td></tr>
+    <tr><td>Fonts</td><td><code>kdeglobals</code></td></tr>
+    <tr><td>Panel layout and Panel style</td><td><code>plasma-org.kde.plasma.desktop-appletsrc</code>, <code>plasmashellrc</code>, <code>plasmarc</code>, the generated panel style</td></tr>
+    <tr><td>Wallpapers</td><td><code>plasma-org.kde.plasma.desktop-appletsrc</code>, <code>kscreenlockerrc</code></td></tr>
+    <tr><td>Effects</td><td><code>kwinrc</code>, <code>kdeglobals</code></td></tr>
+    <tr><td>Terminal</td><td><code>konsolerc</code>, Plasmify's Konsole profile and colours, <code>alacritty.toml</code>, <code>kitty.conf</code> and its theme file</td></tr>
+    <tr><td>Shell prompt</td><td><code>starship.toml</code>, the fastfetch config and logo, <code>config.fish</code>, <code>.bashrc</code>, <code>.zshrc</code></td></tr>
+    <tr><td>Splash screen</td><td><code>ksplashrc</code>, the generated splash package</td></tr>
+    <tr><td>Login screen</td><td>The values of the keys Plasmify changes in the login manager's config (see <a href="#login">below</a>)</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>Downloaded themes, cursors, wallpapers (with their living Shimmer versions) and fonts are not backed up, and packages Plasmify installed stay installed: none of them change your desktop on their own. <span class="ui">File &gt; Clean up unused downloads</span> (or <code>plasmify clean</code>) removes the downloads you no longer use.</p>
+
+<h2 id="where">Where backups are stored</h2>
+
+<p>In <code>~/.local/state/plasmify/backups</code>, one folder per backup, named after the date and time it was made (for example <code>20261018-214503</code>). That name is the backup's id. Each folder holds the copied files and a small <code>manifest.json</code> that lists them. Backups are labelled after the preset that was about to be applied, such as <q>Before Nord Minimal</q>.</p>
+
+<h2 id="kept">Which backups are kept</h2>
+
+<ul>
+  <li><strong>The first backup is always kept.</strong> The very first time you apply anything, the backup is labelled <q>Your setup before Plasmify</q> and marked <q>(always kept)</q>. It is never deleted.</li>
+  <li><strong>It keeps growing with you.</strong> Whenever a later apply changes a file that the first backup does not hold yet, the original version of that file is added to it. So it holds the original of every file in the table above that Plasmify ever changed, even after hundreds of applies.</li>
+  <li><strong>The 10 newest backups are kept</strong> as well. Older ones are deleted automatically.</li>
+</ul>
+
+<h2 id="restore">What restoring does</h2>
+
+<p>Restoring a backup <strong>puts your settings back as they were at the moment that backup was taken.</strong> A backup only holds the files its own apply changed, so Plasmify also puts back every file that later applies changed, each one as it was at that moment. Colours, effects or the prompt from a later apply do not linger.</p>
+
+<ul>
+  <li>If panels or the wallpaper are involved, Plasma restarts once, so your panels disappear for a moment.</li>
+  <li>The colour scheme, cursor and icons are re-applied, and the window manager reloads its settings.</li>
+  <li>When a Plasmify theme is back on screen, its Customize changes come back as they were at that moment, so the window, <code>plasmify theme</code> and the next change all start from what you see. The changes you made to other presets stay remembered.</li>
+  <li>Terminals that are already open keep their prompt; new terminal windows use the restored one.</li>
+  <li>Restoring does not delete any backups.</li>
+</ul>
+
+<div class="callout">
+  <span class="callout-title">Restore is not a redo</span>
+  <p>Backups hold the setup from <em>before</em> each apply. To get a theme back after restoring, simply apply it again; your Customize tweaks for it are remembered.</p>
+</div>
+
+<h2 id="gui">Restore in the window</h2>
+
+<ol class="steps">
+  <li>Press <span class="ui">Restore…</span> at the bottom of the main window, or use <span class="ui">File &gt; Restore a backup…</span>.</li>
+  <li>Pick a backup. Each line shows its date and label; the first one ever is marked <q>(always kept)</q>.</li>
+  <li>Press <span class="ui">Restore</span> and confirm. Wait until the log says <q>Restored.</q>; the dialog stays open until the restore has finished.</li>
+</ol>
+
+<h2 id="cli">Restore from the command line</h2>
+
+<pre><code>plasmify restore                  # list backups, newest first
+plasmify restore latest           # undo the last apply
+plasmify restore original         # your setup from before Plasmify
+plasmify restore 20261018-214503  # a specific backup, by its id
+plasmify restore latest --dry-run # show what would happen, change nothing</code></pre>
+
+<p>After every apply, the command line also prints the exact command to undo it, for example <code>Undo with: plasmify restore 20261018-214503</code>.</p>
+
+<h2 id="login">The login screen part</h2>
+
+<p>The login screen is the only part that lives in a system file, so restoring it <strong>asks for your password once</strong>. For safety, the backup does not keep a copy of that file. It keeps only the values of the few settings Plasmify writes there, and root writes them back only after they pass strict checks. When no login setting refers to Plasmify's login picture any more, its folder (<code>/usr/share/wallpapers/plasmify-login</code>) is removed.</p>
+
+<p>Backups made by very old versions of Plasmify cannot restore the login screen; in that case reset it in System Settings.</p>
+</article>
+<nav class="pager" aria-label="Previous and next page">
+  <a class="prev" href="sharing.html"><span>Previous</span>Sharing presets</a>
+  <a class="next" href="cli.html"><span>Next</span>Command line</a>
+</nav>
+<footer class="site-footer">
+  <p>Plasmify is free software under the <a href="https://github.com/heyquatch/plasmify/blob/main/LICENSE">GNU General Public License, version 3 or later</a>. These pages live in <code>docs/wiki</code>; corrections are welcome as pull requests (see <a href="contributing.html">Contributing</a>).</p>
+</footer>
+</main>
+</div>
+</body>
+</html>

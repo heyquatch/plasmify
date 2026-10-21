@@ -1,0 +1,11 @@
+# Security-sensitive code needs a maintainer's review.
+/src/plasmify/schema.py      @heyquatch
+/src/plasmify/downloads.py   @heyquatch
+/src/plasmify/system.py      @heyquatch
+/src/plasmify/packages.py    @heyquatch
+/src/plasmify/package_map.py @heyquatch
+/src/plasmify/rootops.py     @heyquatch
+/src/plasmify/bundle.py      @heyquatch
+/src/plasmify/templates/     @heyquatch
+/install.sh                  @heyquatch
+/SECURITY.md                 @heyquatch

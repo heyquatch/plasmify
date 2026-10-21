@@ -1,0 +1,788 @@
+/* Plasmify wiki: one shared stylesheet, no external fonts or scripts. */
+
+:root {
+  color-scheme: light dark;
+  --bg: #fdfcff;
+  --sidebar: #f4f1fb;
+  --surface: #f7f5fc;
+  --text: #1f1d2b;
+  --muted: #5d5a70;
+  --border: #e2ddf0;
+  --accent: #6d28d9;
+  --accent-soft: #ede7fb;
+  --link: #5b21b6;
+  --link-hover: #0f766e;
+  --code-bg: #f1eef8;
+  --code-text: #2a2740;
+  --pre-bg: #1e1e2e;
+  --pre-text: #e4e2f0;
+  --pre-border: #2e2c42;
+  --note-bg: #eef4ff;
+  --note-line: #3b6fd8;
+  --tip-bg: #ebfaf3;
+  --tip-line: #138a5e;
+  --warn-bg: #fff5e3;
+  --warn-line: #c46a07;
+  --shadow: 0 1px 2px rgba(31, 29, 43, 0.06), 0 8px 24px rgba(31, 29, 43, 0.08);
+  --radius: 12px;
+  --sans: system-ui, -apple-system, "Segoe UI", "Noto Sans", Cantarell, Ubuntu, "Helvetica Neue", Arial, sans-serif;
+  --mono: ui-monospace, "JetBrains Mono", "Hack", "Fira Code", "DejaVu Sans Mono", "Noto Sans Mono", Menlo, Consolas, monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #181724;
+    --sidebar: #13121d;
+    --surface: #1f1e2e;
+    --text: #e7e5f2;
+    --muted: #a9a6bd;
+    --border: #302e45;
+    --accent: #c4a7ff;
+    --accent-soft: #2a2442;
+    --link: #c9b1ff;
+    --link-hover: #8ce0cf;
+    --code-bg: #26243a;
+    --code-text: #ece9fa;
+    --pre-bg: #11101a;
+    --pre-text: #e4e2f0;
+    --pre-border: #2e2c42;
+    --note-bg: #182238;
+    --note-line: #7aa2f7;
+    --tip-bg: #13291f;
+    --tip-line: #5fd3a2;
+    --warn-bg: #2c2214;
+    --warn-line: #f0a64a;
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.35);
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+}
+
+img,
+svg {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: var(--link);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+
+a:hover {
+  color: var(--link-hover);
+}
+
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.skip {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  z-index: 10;
+  padding: 0.5rem 0.9rem;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.skip:focus {
+  top: 1rem;
+}
+
+/* ----- layout ----------------------------------------------------------- */
+
+.layout {
+  display: grid;
+  grid-template-columns: 17rem minmax(0, 1fr);
+  min-height: 100vh;
+}
+
+.sidebar {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  padding: 1.4rem 1.1rem 2rem;
+  background: var(--sidebar);
+  border-right: 1px solid var(--border);
+  font-size: 0.95rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0 0 1.4rem 0.35rem;
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.2rem;
+  line-height: 1.2;
+}
+
+.brand svg {
+  width: 2.2rem;
+  height: 2.2rem;
+  flex: none;
+}
+
+.brand small {
+  display: block;
+  color: var(--muted);
+  font-weight: 500;
+  font-size: 0.8rem;
+}
+
+.nav-group {
+  margin: 1.2rem 0 0.35rem 0.6rem;
+  color: var(--muted);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.sidebar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar li a {
+  display: block;
+  padding: 0.32rem 0.6rem;
+  border-radius: 8px;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.sidebar li a:hover {
+  background: var(--accent-soft);
+  color: var(--text);
+}
+
+.sidebar li a[aria-current="page"] {
+  background: var(--accent-soft);
+  color: var(--link);
+  font-weight: 650;
+  box-shadow: inset 3px 0 0 var(--accent);
+}
+
+main {
+  min-width: 0;
+  padding: 2.4rem clamp(1rem, 4vw, 3.5rem) 3rem;
+}
+
+article,
+.pager,
+.site-footer {
+  max-width: 46rem;
+}
+
+/* ----- typography ------------------------------------------------------- */
+
+h1,
+h2,
+h3,
+h4 {
+  line-height: 1.25;
+  font-weight: 700;
+  scroll-margin-top: 1rem;
+}
+
+h1 {
+  margin: 0 0 0.6rem;
+  font-size: clamp(1.8rem, 1.4rem + 1.6vw, 2.4rem);
+  letter-spacing: -0.01em;
+}
+
+h2 {
+  margin: 2.6rem 0 0.7rem;
+  font-size: 1.5rem;
+  border-top: 1px solid var(--border);
+  padding-top: 1.6rem;
+}
+
+h3 {
+  margin: 1.9rem 0 0.5rem;
+  font-size: 1.18rem;
+}
+
+/* Questions on the FAQ page: real h2 headings, styled like h3. */
+h2.q {
+  margin: 1.9rem 0 0.5rem;
+  padding-top: 0;
+  border-top: 0;
+  font-size: 1.18rem;
+}
+
+h4 {
+  margin: 1.4rem 0 0.4rem;
+  font-size: 1.02rem;
+}
+
+p,
+ul,
+ol,
+dl,
+pre,
+table,
+figure,
+.callout {
+  margin: 0 0 1.1rem;
+}
+
+ul,
+ol {
+  padding-left: 1.4rem;
+}
+
+li {
+  margin: 0.25rem 0;
+}
+
+li > ul,
+li > ol {
+  margin: 0.3rem 0 0.4rem;
+}
+
+.lead {
+  color: var(--muted);
+  font-size: 1.15rem;
+}
+
+strong {
+  font-weight: 650;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--border);
+  margin: 2rem 0;
+}
+
+/* Interface labels such as menu entries and buttons. */
+.ui {
+  font-weight: 650;
+  white-space: normal;
+}
+
+kbd {
+  display: inline-block;
+  padding: 0.05em 0.42em;
+  border: 1px solid var(--border);
+  border-bottom-width: 2px;
+  border-radius: 6px;
+  background: var(--surface);
+  font-family: var(--mono);
+  font-size: 0.85em;
+  line-height: 1.4;
+}
+
+/* ----- code ------------------------------------------------------------- */
+
+code {
+  font-family: var(--mono);
+  font-size: 0.88em;
+  padding: 0.1em 0.38em;
+  border-radius: 6px;
+  background: var(--code-bg);
+  color: var(--code-text);
+  overflow-wrap: anywhere;
+}
+
+pre {
+  overflow-x: auto;
+  padding: 0.95rem 1.1rem;
+  border: 1px solid var(--pre-border);
+  border-radius: var(--radius);
+  background: var(--pre-bg);
+  color: var(--pre-text);
+  font-family: var(--mono);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  tab-size: 4;
+}
+
+pre code {
+  padding: 0;
+  border-radius: 0;
+  background: none;
+  color: inherit;
+  font-size: inherit;
+  overflow-wrap: normal;
+  white-space: pre;
+}
+
+pre .comment {
+  color: #9a97b3;
+}
+
+/* ----- tables ----------------------------------------------------------- */
+
+.table-wrap {
+  overflow-x: auto;
+  margin: 0 0 1.2rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+table {
+  width: 100%;
+  margin: 0;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+th,
+td {
+  padding: 0.55rem 0.8rem;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--border);
+}
+
+th {
+  background: var(--surface);
+  font-weight: 650;
+}
+
+tr:last-child td {
+  border-bottom: 0;
+}
+
+td code,
+th code {
+  white-space: normal;
+}
+
+/* ----- callouts --------------------------------------------------------- */
+
+.callout {
+  padding: 0.8rem 1rem 0.8rem 1.1rem;
+  border-left: 4px solid var(--note-line);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  background: var(--note-bg);
+}
+
+.callout > :last-child {
+  margin-bottom: 0;
+}
+
+.callout-title {
+  display: block;
+  margin-bottom: 0.2rem;
+  font-weight: 700;
+}
+
+.callout.tip {
+  border-left-color: var(--tip-line);
+  background: var(--tip-bg);
+}
+
+.callout.warn {
+  border-left-color: var(--warn-line);
+  background: var(--warn-bg);
+}
+
+/* ----- on this page ----------------------------------------------------- */
+
+.toc {
+  margin: 1.4rem 0 1.8rem;
+  padding: 0.9rem 1.1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  font-size: 0.95rem;
+}
+
+.toc strong {
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.toc ul {
+  margin: 0;
+  padding-left: 1.2rem;
+  columns: 2 15rem;
+  column-gap: 2rem;
+}
+
+.toc li {
+  margin: 0 0 0.2rem;
+  break-inside: avoid;
+}
+
+/* ----- steps ------------------------------------------------------------ */
+
+ol.steps {
+  list-style: none;
+  padding-left: 0;
+  counter-reset: step;
+}
+
+ol.steps > li {
+  position: relative;
+  margin: 0 0 0.9rem;
+  padding-left: 2.6rem;
+  counter-increment: step;
+}
+
+ol.steps > li::before {
+  content: counter(step);
+  position: absolute;
+  left: 0;
+  top: 0.05rem;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  color: var(--link);
+  font-weight: 700;
+  font-size: 0.9rem;
+  line-height: 1.75rem;
+  text-align: center;
+}
+
+/* ----- definition lists (options, files) -------------------------------- */
+
+dl.defs dt {
+  margin-top: 0.9rem;
+  font-weight: 650;
+}
+
+dl.defs dd {
+  margin: 0.2rem 0 0 1.2rem;
+}
+
+/* ----- home page -------------------------------------------------------- */
+
+.hero {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin-bottom: 0.8rem;
+}
+
+.hero svg {
+  width: 4.5rem;
+  height: 4.5rem;
+  flex: none;
+}
+
+.hero h1 {
+  margin: 0;
+}
+
+.hero p {
+  margin: 0.2rem 0 0;
+  color: var(--muted);
+  font-size: 1.15rem;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin: 1.4rem 0 1.8rem;
+}
+
+.button {
+  display: inline-block;
+  padding: 0.55rem 1.1rem;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  color: var(--link);
+  font-weight: 650;
+  text-decoration: none;
+}
+
+.button.primary {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+.button:hover {
+  background: var(--accent-soft);
+  color: var(--link);
+}
+
+figure {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+figure img {
+  display: block;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+figcaption {
+  margin-top: 0.6rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 13.5rem), 1fr));
+  gap: 0.9rem;
+  margin: 0 0 1.4rem;
+  padding: 0;
+  list-style: none;
+}
+
+.cards li {
+  margin: 0;
+}
+
+.cards a {
+  display: block;
+  height: 100%;
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--text);
+  text-decoration: none;
+}
+
+.cards a:hover {
+  border-color: var(--accent);
+  color: var(--text);
+}
+
+.cards strong {
+  display: block;
+  margin-bottom: 0.2rem;
+  color: var(--link);
+}
+
+.cards span {
+  color: var(--muted);
+  font-size: 0.93rem;
+  line-height: 1.5;
+}
+
+/* ----- pager and footer ------------------------------------------------- */
+
+.pager {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 3rem;
+  padding-top: 1.4rem;
+  border-top: 1px solid var(--border);
+}
+
+.pager a {
+  display: block;
+  max-width: 48%;
+  padding: 0.6rem 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  text-decoration: none;
+}
+
+.pager a:hover {
+  border-color: var(--accent);
+}
+
+.pager span {
+  display: block;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.pager .next {
+  margin-left: auto;
+  text-align: right;
+}
+
+.site-footer {
+  margin-top: 2rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+/* ----- phones and narrow windows ---------------------------------------- */
+
+/* The top bar only exists on narrow screens; its Menu link jumps to the navigation. */
+.topbar {
+  display: none;
+}
+
+@media (max-width: 860px) {
+  .topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.7rem 1rem;
+    background: var(--sidebar);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .topbar .brand {
+    margin: 0;
+    font-size: 1.05rem;
+  }
+
+  .topbar .brand svg {
+    width: 1.9rem;
+    height: 1.9rem;
+  }
+
+  .menu-link {
+    padding: 0.35rem 0.9rem;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: var(--bg);
+    color: var(--text);
+    font-weight: 650;
+    text-decoration: none;
+  }
+
+  .menu-link::after {
+    content: " \2193";
+  }
+
+  /* Content first, the full navigation after it. */
+  .layout {
+    display: flex;
+    flex-direction: column;
+  }
+
+  main {
+    order: 1;
+  }
+
+  .sidebar {
+    order: 2;
+    position: static;
+    height: auto;
+    overflow: visible;
+    padding: 1.2rem 1rem 1.6rem;
+    border-right: 0;
+    border-top: 1px solid var(--border);
+  }
+
+  .sidebar .brand {
+    margin-bottom: 0.4rem;
+  }
+
+  .nav-group {
+    margin-top: 0.8rem;
+  }
+
+  .sidebar ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(9.5rem, 1fr));
+    gap: 0.1rem 0.4rem;
+  }
+
+  main {
+    padding: 1.6rem 1rem 2.4rem;
+  }
+
+  h2 {
+    margin-top: 2rem;
+    padding-top: 1.2rem;
+  }
+
+  .hero svg {
+    width: 3.4rem;
+    height: 3.4rem;
+  }
+
+  .pager {
+    flex-direction: column;
+  }
+
+  .pager a {
+    max-width: none;
+  }
+
+  pre {
+    font-size: 0.84rem;
+    padding: 0.8rem 0.9rem;
+  }
+}
+
+/* Two-column tables become a list of small cards on phones: label first, explanation below. */
+@media (max-width: 600px) {
+  table.stack,
+  table.stack tbody,
+  table.stack tr,
+  table.stack td {
+    display: block;
+    width: 100%;
+  }
+
+  table.stack thead {
+    display: none;
+  }
+
+  table.stack tr {
+    padding: 0.55rem 0.8rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  table.stack tr:last-child {
+    border-bottom: 0;
+  }
+
+  table.stack td {
+    padding: 0;
+    border: 0;
+  }
+
+  table.stack td:first-child {
+    margin-bottom: 0.15rem;
+    font-weight: 650;
+  }
+}
+
+@media print {
+  .sidebar,
+  .topbar,
+  .pager,
+  .skip {
+    display: none;
+  }
+
+  .layout {
+    display: block;
+  }
+
+  pre {
+    white-space: pre-wrap;
+  }
+}

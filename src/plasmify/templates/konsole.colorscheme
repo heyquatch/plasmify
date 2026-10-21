@@ -1,0 +1,70 @@
+[General]
+Description=Plasmify {{ name }}
+Opacity={{ konsole_opacity }}
+Blur={{ blur }}
+
+[Background]
+Color={{ base_rgb }}
+
+[BackgroundIntense]
+Color={{ base_rgb }}
+
+[BackgroundFaint]
+Color={{ base_rgb }}
+
+[Foreground]
+Color={{ text_rgb }}
+
+[ForegroundIntense]
+Color={{ text_rgb }}
+
+[ForegroundFaint]
+Color={{ subtext_rgb }}
+
+[Color0]
+Color={{ ansi_black_rgb }}
+
+[Color0Intense]
+Color={{ overlay_rgb }}
+
+[Color1]
+Color={{ red_rgb }}
+
+[Color1Intense]
+Color={{ red_rgb }}
+
+[Color2]
+Color={{ green_rgb }}
+
+[Color2Intense]
+Color={{ green_rgb }}
+
+[Color3]
+Color={{ yellow_rgb }}
+
+[Color3Intense]
+Color={{ yellow_rgb }}
+
+[Color4]
+Color={{ blue_rgb }}
+
+[Color4Intense]
+Color={{ blue_rgb }}
+
+[Color5]
+Color={{ magenta_rgb }}
+
+[Color5Intense]
+Color={{ magenta_rgb }}
+
+[Color6]
+Color={{ cyan_rgb }}
+
+[Color6Intense]
+Color={{ cyan_rgb }}
+
+[Color7]
+Color={{ ansi_white_rgb }}
+
+[Color7Intense]
+Color={{ text_rgb }}

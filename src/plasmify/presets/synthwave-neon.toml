@@ -1,0 +1,129 @@
+schema = 1
+
+[meta]
+id = "synthwave-neon"
+name = "Synthwave Neon"
+description = "Hot pink and electric cyan from SynthWave '84, neon retro wallpapers with drifting bokeh lights, glowing island panels, wobbly windows, a desktop cube and windows that fall apart when they close."
+tags = ["neon", "synthwave", "retro", "dark"]
+
+# https://github.com/robb0wen/synthwave-vscode (MIT), SynthWave '84 by Robb Owen: editor, side bar
+# and activity bar backgrounds, word highlight as surface, comments as overlay and the token
+# colours. It has no real blue, so blue and cyan are its two cyans.
+[palette]
+base = "#262335"
+mantle = "#241b2f"
+crust = "#171520"
+surface = "#34294f"
+overlay = "#848bbd"
+text = "#ffffff"
+subtext = "#b6b1b1"
+accent = "#ff7edb"
+red = "#fe4450"
+green = "#72f1b8"
+yellow = "#fede5d"
+blue = "#2ee2fa"
+magenta = "#ff7edb"
+cyan = "#36f9f6"
+orange = "#f97e72"
+bright_black = "#614d85"
+
+# Sweet keeps its KDE files on the "nova" branch only.
+[style.kvantum]
+repo = "https://github.com/EliverLara/Sweet"
+path = "kde/Kvantum/Sweet"
+ref = "nova"
+name = "Sweet"
+
+[icons]
+theme = "Papirus-Dark"
+folder_color = "magenta"
+
+[cursor]
+name = "catppuccin-mocha-pink-cursors"
+url = "https://github.com/catppuccin/cursors/releases/download/v2.0.0/catppuccin-mocha-pink-cursors.zip"
+size = 24
+
+[fonts]
+ui = "Roboto"
+ui_size = 10
+mono = "Hack"
+mono_size = 10
+packages = ["ttf-roboto", "ttf-hack"]
+
+# Islands on top (menu and desktops, music and clock, tray) and a floating dock for apps.
+[[layout.panels]]
+edge = "top"
+style = "islands"
+thickness = 36
+widgets = ["launcher", "pager", "spacer", "media", "clock", "spacer", "tray"]
+
+[[layout.panels]]
+edge = "bottom"
+style = "dock"
+thickness = 56
+hiding = "dodge"
+widgets = ["tasks"]
+
+[panel_style]
+radius = 14
+opacity = 0.75
+border = "accent"
+padding = 4
+colour = "mantle"
+
+[effects]
+blur = true
+blur_strength = 12
+blur_saturation = 240
+open_close = "glide"
+minimize = "magiclamp"
+desktop_switch = "slide"
+wobbly = true
+wobbly_level = 3
+fall_apart = true
+cube = true
+
+[terminal]
+opacity = 0.85
+blur = true
+padding = 12
+font_size = 11
+
+[shell]
+prompt = "powerline"
+zoxide = true
+logo = "text"
+logo_text = "SYNTHWAVE"
+logo_colour = "neon"
+logo_direction = "diagonal"
+
+# Shimmer brings the first six pictures to life (more would play still).
+[wallpaper]
+mode = "slideshow"
+interval = 1800
+shimmer = "bokeh"
+shimmer_colour = "magenta"
+
+[[wallpaper.images]]
+url = "https://raw.githubusercontent.com/D3Ext/aesthetic-wallpapers/main/images/neon-circle.jpg"
+credit = "neon-circle.jpg, from the D3Ext/aesthetic-wallpapers collection (original artist uncredited)"
+
+[[wallpaper.images]]
+url = "https://raw.githubusercontent.com/dharmx/walls/main/outrun/a_astronaut_walking_through_a_doorway.jpg"
+credit = "a_astronaut_walking_through_a_doorway.jpg, from the dharmx/walls collection (original artist uncredited)"
+
+[[wallpaper.images]]
+url = "https://raw.githubusercontent.com/D3Ext/aesthetic-wallpapers/main/images/shiny_purple.png"
+credit = "shiny_purple.png, from the D3Ext/aesthetic-wallpapers collection (original artist uncredited)"
+
+[[wallpaper.images]]
+url = "https://raw.githubusercontent.com/dharmx/walls/main/outrun/a_person%27s_feet_in_a_car.png"
+credit = "a_person's_feet_in_a_car.png, from the dharmx/walls collection (original artist uncredited)"
+
+[[wallpaper.images]]
+url = "https://raw.githubusercontent.com/D3Ext/aesthetic-wallpapers/main/images/sunset_city.png"
+credit = "sunset_city.png, from the D3Ext/aesthetic-wallpapers collection (original artist uncredited)"
+
+[[wallpaper.images]]
+url = "https://raw.githubusercontent.com/D3Ext/aesthetic-wallpapers/main/images/wide_shiny_waves.png"
+credit = "wide_shiny_waves.png, from the D3Ext/aesthetic-wallpapers collection (original artist uncredited)"

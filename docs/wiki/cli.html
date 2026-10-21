@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Command line | Plasmify documentation</title>
+<meta name="description" content="Every plasmify command and option: theme, set, reset, gui, list, show, apply, restore, clean, validate, import, export, save-desktop, log and steps.">
+<link rel="canonical" href="https://plasmify.github.io/cli.html">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Plasmify">
+<meta property="og:title" content="Command line | Plasmify documentation">
+<meta property="og:description" content="Every plasmify command and option: theme, set, reset, gui, list, show, apply, restore, clean, validate, import, export, save-desktop, log and steps.">
+<meta property="og:url" content="https://plasmify.github.io/cli.html">
+<meta property="og:image" content="https://plasmify.github.io/images/plasmify.png">
+<meta property="og:image:width" content="1274">
+<meta property="og:image:height" content="720">
+<meta property="og:image:alt" content="The Plasmify main window with the preset gallery, a live preview and the settings.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#content">Skip to the content</a>
+<header class="topbar">
+  <a class="brand" href="index.html"><svg viewBox="0 0 128 128" width="30" height="30" aria-hidden="true" focusable="false"><defs><linearGradient id="plasmify-logo-top" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#cba6f7"/><stop offset="0.55" stop-color="#89b4fa"/><stop offset="1" stop-color="#94e2d5"/></linearGradient></defs><rect x="8" y="8" width="112" height="112" rx="28" fill="url(#plasmify-logo-top)"/><rect x="22" y="24" width="84" height="10" rx="5" fill="#1e1e2e" opacity="0.85"/><rect x="40" y="94" width="48" height="12" rx="6" fill="#1e1e2e" opacity="0.85"/><circle cx="48" cy="100" r="3" fill="#f5c2e7"/><circle cx="58" cy="100" r="3" fill="#a6e3a1"/><circle cx="68" cy="100" r="3" fill="#f9e2af"/><circle cx="78" cy="100" r="3" fill="#89b4fa"/><path d="M64 44 L69.5 58.5 L84 64 L69.5 69.5 L64 84 L58.5 69.5 L44 64 L58.5 58.5 Z" fill="#ffffff"/><path d="M88 42 L90.5 48.5 L97 51 L90.5 53.5 L88 60 L85.5 53.5 L79 51 L85.5 48.5 Z" fill="#ffffff" opacity="0.85"/></svg><span>Plasmify<small>Documentation</small></span></a>
+  <a class="menu-link" href="#nav">Menu</a>
+</header>
+<div class="layout">
+<nav class="sidebar" id="nav" aria-label="Wiki pages">
+  <a class="brand" href="index.html"><svg viewBox="0 0 128 128" width="36" height="36" aria-hidden="true" focusable="false"><defs><linearGradient id="plasmify-logo-nav" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#cba6f7"/><stop offset="0.55" stop-color="#89b4fa"/><stop offset="1" stop-color="#94e2d5"/></linearGradient></defs><rect x="8" y="8" width="112" height="112" rx="28" fill="url(#plasmify-logo-nav)"/><rect x="22" y="24" width="84" height="10" rx="5" fill="#1e1e2e" opacity="0.85"/><rect x="40" y="94" width="48" height="12" rx="6" fill="#1e1e2e" opacity="0.85"/><circle cx="48" cy="100" r="3" fill="#f5c2e7"/><circle cx="58" cy="100" r="3" fill="#a6e3a1"/><circle cx="68" cy="100" r="3" fill="#f9e2af"/><circle cx="78" cy="100" r="3" fill="#89b4fa"/><path d="M64 44 L69.5 58.5 L84 64 L69.5 69.5 L64 84 L58.5 69.5 L44 64 L58.5 58.5 Z" fill="#ffffff"/><path d="M88 42 L90.5 48.5 L97 51 L90.5 53.5 L88 60 L85.5 53.5 L79 51 L85.5 48.5 Z" fill="#ffffff" opacity="0.85"/></svg><span>Plasmify<small>Documentation</small></span></a>
+  <p class="nav-group">Start here</p>
+  <ul>
+    <li><a href="index.html">Overview</a></li>
+    <li><a href="install.html">Install</a></li>
+    <li><a href="update.html">Update</a></li>
+    <li><a href="uninstall.html">Uninstall</a></li>
+  </ul>
+  <p class="nav-group">Using Plasmify</p>
+  <ul>
+    <li><a href="getting-started.html">Getting started</a></li>
+    <li><a href="customize.html">Customize</a></li>
+    <li><a href="wallpapers.html">Wallpapers</a></li>
+    <li><a href="dark-light.html">Dark and light</a></li>
+    <li><a href="theme-studio.html">Theme studio</a></li>
+    <li><a href="sharing.html">Sharing presets</a></li>
+    <li><a href="backups.html">Backups and restore</a></li>
+  </ul>
+  <p class="nav-group">Reference</p>
+  <ul>
+    <li><a href="cli.html" aria-current="page">Command line</a></li>
+    <li><a href="troubleshooting.html">Troubleshooting</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="security.html">Security and privacy</a></li>
+    <li><a href="contributing.html">Contributing</a></li>
+  </ul>
+</nav>
+<main id="content">
+<article>
+<h1>Command line</h1>
+<p class="lead">Presets, light and dark, many settings, backups and sharing also work from a terminal; the theme studio and the panel builder are in the window only. <code>plasmify gui</code> opens the window, and <code>plasmify</code> on its own shows the list of commands.</p>
+
+<pre><code>usage: plasmify [-h] [--version] &lt;command&gt; ...</code></pre>
+
+<nav class="toc" aria-label="Commands">
+  <strong>Commands</strong>
+  <ul>
+    <li><a href="#theme">theme</a></li>
+    <li><a href="#set">set</a></li>
+    <li><a href="#reset">reset</a></li>
+    <li><a href="#gui">gui</a></li>
+    <li><a href="#list">list</a></li>
+    <li><a href="#show">show</a></li>
+    <li><a href="#apply">apply</a></li>
+    <li><a href="#restore">restore</a></li>
+    <li><a href="#clean">clean</a></li>
+    <li><a href="#validate">validate</a></li>
+    <li><a href="#import">import</a></li>
+    <li><a href="#export">export</a></li>
+    <li><a href="#save-desktop">save-desktop</a></li>
+    <li><a href="#log">log</a></li>
+    <li><a href="#steps">steps</a></li>
+  </ul>
+</nav>
+
+<h2 id="global">Global options</h2>
+
+<dl class="defs">
+  <dt><code>-h</code>, <code>--help</code></dt>
+  <dd>Show help. Works after every command too, for example <code>plasmify apply --help</code>.</dd>
+  <dt><code>--version</code></dt>
+  <dd>Show the version, for example <code>plasmify 0.1.0</code>.</dd>
+</dl>
+
+<p>Most commands name a preset by its id, the short name that <code>plasmify list</code> shows (such as <code>nord-minimal</code>). <code>plasmify theme</code> is more forgiving and also takes a preset's name or a part of it. Output from servers and files is cleaned of terminal control characters before it is printed.</p>
+
+<h2 id="quick">Quick commands for the applied theme</h2>
+
+<p><code>theme</code>, <code>set</code> and <code>reset</code> work on the <strong>applied theme</strong>: the Plasmify theme on your desktop right now, the preset marked <q>● Active</q> in the window. They share what the window knows: changes you make with <code>plasmify set</code> show up on the <span class="ui">Customize</span> tab, and changes you made in the window come along when you apply the preset again with <code>plasmify theme</code>.</p>
+
+<pre><code>plasmify theme                    # show the applied theme and its key settings
+plasmify theme nord               # apply Nord Minimal (a part of the name is enough)
+plasmify theme --toggle           # switch the applied theme between light and dark
+plasmify set accent ff79c6 blur on
+plasmify reset                    # drop your changes to the applied theme</code></pre>
+
+<p>Before they change the desktop, they print what will run and ask <q>[Y/n]</q>. They share these options:</p>
+
+<dl class="defs">
+  <dt><code>-y</code>, <code>--yes</code></dt>
+  <dd>Do not ask before changing the desktop. Without a terminal to ask in, nothing changes unless you add <code>--yes</code>. It never approves untrusted servers.</dd>
+  <dt><code>--dry-run</code></dt>
+  <dd>Print what would happen, including every command that would run, without changing anything.</dd>
+  <dt><code>--allow-host HOST</code></dt>
+  <dd>Approve downloads from a server outside the trusted list, like <a href="#apply"><code>apply</code></a>. Repeat it once per server.</dd>
+</dl>
+
+<p>Every change is backed up first, so <code>plasmify restore latest</code> undoes it like any apply.</p>
+
+<h2 id="theme">theme</h2>
+
+<pre><code>plasmify theme [--light | --dark | --toggle] [--only ONLY] [--skip SKIP] [--plain] [-y] [--dry-run] [--allow-host HOST] [name]</code></pre>
+
+<p>Shows the applied theme, applies a preset by a forgiving name, or switches the applied theme between light and dark like the window's button.</p>
+
+<ul>
+  <li><strong>Without anything,</strong> it prints the applied theme, whether it is dark or light (and whether that was switched from the preset's own colours), and its key settings. A <code>*</code> marks the settings you changed from the preset, in the window or with <code>plasmify set</code>. If no Plasmify theme is applied yet, it says so and tells you how to apply one.</li>
+  <li><strong>With a name,</strong> it applies that preset. The name can be a preset id, its name, the start of either, one of its words or tags, or a close spelling: <code>nord</code>, <code>nordic</code> and <code>"Nord Minimal"</code> all mean Nord Minimal, and <code>latte</code> means Catppuccin Latte. When it fits several presets, such as <code>rose</code> (Rosé Pine Cozy and Rosé Pine Dawn), they are listed and nothing changes. Changes you made to that preset come along; <code>--plain</code> applies the preset exactly as it is defined.</li>
+  <li><strong>With <code>--light</code>, <code>--dark</code> or <code>--toggle</code>,</strong> it turns the applied theme into its light or dark version, or the other mode. The colours and the parts that depend on them change; wallpapers, panel layout, fonts, cursor and effects stay. See <a href="dark-light.html">Dark and light</a>.</li>
+</ul>
+
+<dl class="defs">
+  <dt><code>--light</code>, <code>--dark</code>, <code>--toggle</code></dt>
+  <dd>Switch the applied theme to light colours, dark colours, or the other mode. Leave out the name, <code>--only</code>, <code>--skip</code> and <code>--plain</code>.</dd>
+  <dt><code>--only ONLY</code>, <code>--skip SKIP</code></dt>
+  <dd>Comma-separated steps to apply or to skip, with the same ids as <a href="#apply"><code>apply</code></a>.</dd>
+  <dt><code>--plain</code></dt>
+  <dd>Leave out the changes you made to this preset.</dd>
+</dl>
+
+<p>Examples:</p>
+
+<pre><code>plasmify theme                       # show the applied theme, its mode and key settings
+plasmify theme nord                  # apply Nord Minimal ("nordic" or "Nord Minimal" work too)
+plasmify theme tokyo --skip layout,effects
+plasmify theme dracula --dry-run     # show the commands without running them
+plasmify theme --toggle              # switch the applied theme between light and dark
+plasmify theme --light               # switch it to light colours (--dark for dark)</code></pre>
+
+<h2 id="set">set</h2>
+
+<pre><code>plasmify set [--list] [-y] [--dry-run] [--allow-host HOST] [KEY VALUE ...]</code></pre>
+
+<p>Changes settings of the applied theme. Give one or more settings, each followed by its new value (up to 32 at once). They are applied at once, after a backup, but only the parts of the desktop they touch run again. They are kept, so the window shows them as Customize changes and <code>plasmify theme</code> brings them along next time. Before it asks, <code>set</code> prints each change as <q>old value -&gt; new value</q> and the steps that will run; it also warns when a new accent is hard to see on the background.</p>
+
+<dl class="defs">
+  <dt><code>--list</code></dt>
+  <dd>List every setting with the values it takes.</dd>
+</dl>
+
+<div class="table-wrap">
+<table class="stack">
+  <thead><tr><th>Setting</th><th>Values</th></tr></thead>
+  <tbody>
+    <tr><td><code>accent</code></td><td>A <code>#rrggbb</code> colour, or a palette colour: red, orange, yellow, green, cyan, blue or magenta</td></tr>
+    <tr><td><code>glass</code></td><td>See-through app windows, one of four looks: <code>off</code> (solid), <code>frosted</code> (blurred, a little see-through), <code>glass</code> (clearly see-through, light blur) or <code>clear</code> (see-through, no blur). <code>solid</code>, <code>none</code> and <code>no</code> mean <code>off</code>; <code>on</code> and <code>yes</code> mean <code>glass</code>; the older <code>subtle</code> means <code>frosted</code></td></tr>
+    <tr><td><code>transparency</code></td><td>How see-through glass windows are: <code>10%</code> to <code>70%</code> (<code>45</code>, <code>45%</code> and <code>0.45</code> all work). Also called <code>see-through</code>. Each look has its own default, lower on light palettes; see <a href="customize.html#see-through">See-through</a></td></tr>
+    <tr><td><code>focused-solid</code></td><td><code>on</code> or <code>off</code>: keep the window you use solid, so only the windows behind it are see-through. Also called <code>solid-focus</code>. On in every look unless you turn it off; see <a href="customize.html#focused-solid">The window you use</a></td></tr>
+    <tr><td><code>shimmer</code></td><td>Living wallpapers: <code>none</code>, <code>sparkle</code>, <code>embers</code>, <code>petals</code>, <code>snow</code>, <code>fireflies</code>, <code>bokeh</code>, <code>starfall</code>, <code>rain</code>, <code>magic</code>, <code>speedlines</code> or <code>calm</code></td></tr>
+    <tr><td><code>shimmer-light</code></td><td>The light over the picture: <code>auto</code>, <code>glint</code>, <code>rays</code>, <code>flare</code>, <code>pulse</code> or <code>none</code> (<code>auto</code> suits the style)</td></tr>
+    <tr><td><code>shimmer-motion</code></td><td>How the picture moves: <code>auto</code>, <code>breathe</code>, <code>drift</code> or <code>still</code> (<code>auto</code> suits the style)</td></tr>
+    <tr><td><code>shimmer-density</code></td><td>How many particles: <code>low</code>, <code>normal</code> or <code>high</code></td></tr>
+    <tr><td><code>shimmer-fps</code></td><td>Frames per second: <code>12</code> (lighter) or <code>24</code> (smoother)</td></tr>
+    <tr><td><code>shimmer-colour</code></td><td>A palette colour name (accent, yellow, orange, magenta…) or <code>#rrggbb</code></td></tr>
+    <tr><td><code>shimmer-always</code></td><td><code>on</code> or <code>off</code>: keep the shimmer moving while windows cover the desktop</td></tr>
+    <tr><td><code>interval</code></td><td>Time between slideshow pictures: <code>300</code>, <code>90s</code>, <code>15m</code> or <code>1h</code> (1 minute to 24 hours)</td></tr>
+    <tr><td><code>blur</code></td><td><code>on</code> or <code>off</code>: blur behind panels and menus</td></tr>
+    <tr><td><code>blur-strength</code></td><td>1 to 15</td></tr>
+    <tr><td><code>wobbly</code></td><td><code>off</code>, <code>on</code>, or a level from 0 (a little) to 4 (a lot)</td></tr>
+    <tr><td><code>cube</code></td><td><code>on</code> or <code>off</code>: the desktop cube (<kbd>Meta+C</kbd>)</td></tr>
+    <tr><td><code>fall-apart</code></td><td><code>on</code> or <code>off</code>: closing windows fall apart</td></tr>
+    <tr><td><code>sheet</code></td><td><code>on</code> or <code>off</code>: dialogs slide down out of their window's title bar</td></tr>
+    <tr><td><code>blur-saturation</code></td><td>How vivid colours behind blur look: <code>100%</code> (as they are) to <code>500%</code></td></tr>
+    <tr><td><code>blur-noise</code></td><td>Grain on blurred surfaces, for a frosted look: 0 (none) to 14</td></tr>
+    <tr><td><code>moving-opacity</code></td><td>How opaque windows are while you move them: <code>30%</code> to <code>100%</code> (or 0.3 to 1.0)</td></tr>
+    <tr><td><code>dim-inactive</code></td><td><code>off</code>, or how much to dim windows you are not using: 10 to 90</td></tr>
+    <tr><td><code>panel-opacity</code></td><td>20% to 100% (or 0.2 to 1.0)</td></tr>
+    <tr><td><code>radius</code></td><td>Panel corners: 0 to 30 pixels</td></tr>
+    <tr><td><code>ui-font</code></td><td>An installed font, for example <code>"Noto Sans"</code> (quote names with spaces)</td></tr>
+    <tr><td><code>mono-font</code></td><td>An installed monospace font, for example <code>"JetBrains Mono"</code></td></tr>
+    <tr><td><code>font-size</code></td><td>Interface font size: 6 to 24</td></tr>
+    <tr><td><code>mono-size</code></td><td>Monospace font size: 6 to 32</td></tr>
+    <tr><td><code>icons</code></td><td>An installed icon theme, for example <code>Papirus-Dark</code></td></tr>
+    <tr><td><code>cursor</code></td><td>An installed cursor theme, for example <code>Bibata-Modern-Ice</code></td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>Every setting also takes <code>default</code>: back to the preset's own value. A <code>#</code> starts a comment in the shell, so quote colours (<code>'#ff79c6'</code>) or leave the <code>#</code> out (<code>ff79c6</code>). Fonts, icon themes and cursors must already be installed; a near miss gets a <q>Did you mean</q> suggestion. The Shimmer settings and <code>interval</code> need a theme that sets the wallpaper, and <code>interval</code> needs more than one picture. <code>blur-strength</code>, <code>blur-saturation</code> and <code>blur-noise</code> only take effect while blur is on. <code>transparency</code> and <code>focused-solid</code> need glass: while glass is off, give a look in the same command, such as <code>plasmify set glass frosted transparency 30%</code>. <code>plasmify set transparency default</code> goes back to the preset's own amount, which for the built-in presets is the look's default.</p>
+
+<p>Examples:</p>
+
+<pre><code>plasmify set accent ff79c6                  # a new accent colour
+plasmify set accent magenta                 # or one from the palette
+plasmify set glass frosted blur-strength 12
+plasmify set glass clear transparency 50%   # see-through windows without blur
+plasmify set transparency 45%               # more or less see-through glass
+plasmify set glass clear focused-solid off  # see through the window you use too
+plasmify set wobbly 3 cube on
+plasmify set panel-opacity 80% radius 14
+plasmify set ui-font "Noto Sans" font-size 11
+plasmify set shimmer petals shimmer-colour accent
+plasmify set shimmer magic shimmer-light flare shimmer-motion drift
+plasmify set interval 15m
+plasmify set radius default                 # back to the preset's own value
+plasmify set --list                         # every setting and its values</code></pre>
+
+<h2 id="reset">reset</h2>
+
+<pre><code>plasmify reset [-y] [--dry-run] [--allow-host HOST]</code></pre>
+
+<p>Drops the changes made to the applied theme (in the window or with <code>plasmify set</code>) and applies it as the preset defines it. Only the parts of the desktop your changes touched run again, after a backup. If you changed something the preset itself leaves alone, that change stays on the desktop, and <code>reset</code> says so; <code>plasmify restore</code> can undo it. <code>plasmify restore</code> puts back all the settings of an earlier backup instead.</p>
+
+<pre><code>plasmify reset              # drop your changes and apply the preset as it is defined
+plasmify reset --dry-run    # show what would run without changing anything</code></pre>
+
+<h2 id="gui">gui</h2>
+
+<pre><code>plasmify gui</code></pre>
+
+<p>Opens the window, like the application menu entry does. Without a command, <code>plasmify</code> shows the list of commands instead.</p>
+
+<h2 id="list">list</h2>
+
+<pre><code>plasmify list</code></pre>
+
+<p>Lists all presets, built-in and your own, with their id, name and description. The active preset is marked with <code>*</code>.</p>
+
+<h2 id="show">show</h2>
+
+<pre><code>plasmify show &lt;preset&gt;</code></pre>
+
+<p>Shows what a preset changes and installs: its steps, the packages it needs, the servers it downloads from (and which of them are not on the trusted list), the install summary and the wallpaper credits. Changes nothing.</p>
+
+<h2 id="apply">apply</h2>
+
+<pre><code>plasmify apply [--only ONLY] [--skip SKIP] [-y] [--dry-run] [--allow-host HOST] &lt;preset&gt;</code></pre>
+
+<p>Applies a preset: backs up, installs missing packages, downloads and runs every step, printing each one. At the end it prints the command that undoes it, such as <code>Undo with: plasmify restore 20261018-214503</code>.</p>
+
+<dl class="defs">
+  <dt><code>--only ONLY</code></dt>
+  <dd>Comma-separated steps to apply, and nothing else.</dd>
+  <dt><code>--skip SKIP</code></dt>
+  <dd>Comma-separated steps to skip.</dd>
+  <dt><code>-y</code>, <code>--yes</code></dt>
+  <dd>Do not ask before installing packages. It never approves untrusted servers.</dd>
+  <dt><code>--dry-run</code></dt>
+  <dd>Print what would happen, including every command that would run, without changing anything.</dd>
+  <dt><code>--allow-host HOST</code></dt>
+  <dd>Approve downloads from a server outside the trusted list. Repeat it once per server. Without it, Plasmify asks interactively, and refuses when it cannot ask (with <code>--yes</code> or without a terminal). A preset whose greeting shows the weather counts <code>wttr.in</code> as such a server, because every new terminal would contact it.</dd>
+</dl>
+
+<p>Step ids for <code>--only</code> and <code>--skip</code>:</p>
+
+<div class="table-wrap">
+<table class="stack">
+  <thead><tr><th>Id</th><th>Step</th></tr></thead>
+  <tbody>
+    <tr><td><code>colors</code></td><td>Colours</td></tr>
+    <tr><td><code>style</code></td><td>Application style</td></tr>
+    <tr><td><code>icons</code></td><td>Icons</td></tr>
+    <tr><td><code>cursor</code></td><td>Cursor</td></tr>
+    <tr><td><code>fonts</code></td><td>Fonts</td></tr>
+    <tr><td><code>layout</code></td><td>Panel layout</td></tr>
+    <tr><td><code>panelstyle</code></td><td>Panel style</td></tr>
+    <tr><td><code>wallpaper</code></td><td>Wallpapers</td></tr>
+    <tr><td><code>effects</code></td><td>Effects</td></tr>
+    <tr><td><code>terminal</code></td><td>Terminal</td></tr>
+    <tr><td><code>shell</code></td><td>Shell prompt</td></tr>
+    <tr><td><code>splash</code></td><td>Splash screen</td></tr>
+    <tr><td><code>login</code></td><td>Login screen</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>Examples:</p>
+
+<pre><code>plasmify apply nord-minimal                          # everything
+plasmify apply rose-pine-cozy --skip layout,effects  # keep your panels and effects
+plasmify apply tokyo-night-neon --only terminal,shell
+plasmify apply gruvbox-retro --dry-run               # show the commands only
+plasmify apply friends-preset --allow-host example.org</code></pre>
+
+<p><code>apply</code> takes the preset exactly as it is defined, by its exact id, without the changes you made in the window or with <code>plasmify set</code>; afterwards the window shows no changes for it. To apply a preset together with your changes, use <a href="#theme"><code>plasmify theme &lt;name&gt;</code></a>.</p>
+
+<h2 id="restore">restore</h2>
+
+<pre><code>plasmify restore [--dry-run] [backup]</code></pre>
+
+<p>Without an argument, lists your backups, newest first, with their id, date and label; the oldest one, your setup before Plasmify, is marked <q>(always kept)</q>. With an argument, restores one:</p>
+
+<dl class="defs">
+  <dt><code>latest</code></dt>
+  <dd>The newest backup: undoes the last apply.</dd>
+  <dt><code>original</code></dt>
+  <dd>The always-kept <q>Your setup before Plasmify</q> backup. If an older version already removed it, the oldest backup left is used instead, and the command says so.</dd>
+  <dt><code>&lt;id&gt;</code></dt>
+  <dd>A specific backup, for example <code>20261018-214503</code>.</dd>
+  <dt><code>--dry-run</code></dt>
+  <dd>Show what would happen without changing anything.</dd>
+</dl>
+
+<p>Restoring puts your settings back as they were at that moment, including files changed by later applies; packages and downloads stay. See <a href="backups.html">Backups and restore</a>.</p>
+
+<h2 id="clean">clean</h2>
+
+<pre><code>plasmify clean [--dry-run]</code></pre>
+
+<p>Deletes the downloaded assets (wallpapers, themes, cursors and generated files) of presets that are not active, and prints how much space was freed. Files every preset shares, such as fonts or the Konsole profile, and themes you are currently using are kept. <code>--dry-run</code> lists what would be removed.</p>
+
+<h2 id="validate">validate</h2>
+
+<pre><code>plasmify validate [files ...]</code></pre>
+
+<p>Checks preset files for errors and prints <code>ok</code> or <code>FAIL</code> with the reason for each one. Without files, it checks all built-in presets. Exits with an error if any file fails, which makes it handy in scripts.</p>
+
+<pre><code>plasmify validate my-preset.toml</code></pre>
+
+<h2 id="import">import</h2>
+
+<pre><code>plasmify import [--replace] &lt;file&gt;</code></pre>
+
+<p>Imports a <code>.plasmify</code> bundle (also when renamed to <code>.zip</code>, as presets shared in Discussions are) or a <code>.toml</code> preset into your presets and tells you how to apply it. It also notes when the preset downloads from servers outside the trusted list.</p>
+
+<dl class="defs">
+  <dt><code>--replace</code></dt>
+  <dd>Overwrite a preset of yours with the same id. Without it, the import stops if one exists.</dd>
+</dl>
+
+<h2 id="export">export</h2>
+
+<pre><code>plasmify export [-o OUTPUT] &lt;preset&gt;</code></pre>
+
+<p>Writes a preset to a shareable <code>.plasmify</code> file. Your own pictures go inside; other artists' wallpapers stay linked to their source.</p>
+
+<dl class="defs">
+  <dt><code>-o</code>, <code>--output OUTPUT</code></dt>
+  <dd>The file to write. Default: <code>&lt;id&gt;.plasmify</code> in the current folder.</dd>
+</dl>
+
+<h2 id="save-desktop">save-desktop</h2>
+
+<pre><code>plasmify save-desktop [-d DESCRIPTION] [--no-wallpapers] [--replace] &lt;name&gt;</code></pre>
+
+<p>Saves your current desktop, including your exact panels, as a preset of your own, and lists anything it had to leave out.</p>
+
+<dl class="defs">
+  <dt><code>-d</code>, <code>--description DESCRIPTION</code></dt>
+  <dd>A short description.</dd>
+  <dt><code>--no-wallpapers</code></dt>
+  <dd>Do not include your wallpaper files.</dd>
+  <dt><code>--replace</code></dt>
+  <dd>Overwrite a preset of yours with the same id.</dd>
+</dl>
+
+<pre><code>plasmify save-desktop "My Desktop" -d "Calm blues with a side dock"
+plasmify export my-desktop</code></pre>
+
+<h2 id="log">log</h2>
+
+<pre><code>plasmify log [-n LIMIT] [--clear]</code></pre>
+
+<p>Shows what Plasmify downloaded or installed, newest first: when, whether it worked, what kind (<code>download</code>, <code>git</code>, <code>packages</code> or <code>fonts</code>), for which preset, from where, where it was saved (for git, the path in the repository), its size and its SHA-256 or git commit. The history stays on your computer, in <code>~/.local/state/plasmify/activity.jsonl</code>.</p>
+
+<dl class="defs">
+  <dt><code>-n</code>, <code>--limit LIMIT</code></dt>
+  <dd>Number of entries to show (default 50).</dd>
+  <dt><code>--clear</code></dt>
+  <dd>Delete the history.</dd>
+</dl>
+
+<h2 id="steps">steps</h2>
+
+<pre><code>plasmify steps</code></pre>
+
+<p>Lists the steps a preset is made of, with their ids and a short description of each.</p>
+</article>
+<nav class="pager" aria-label="Previous and next page">
+  <a class="prev" href="backups.html"><span>Previous</span>Backups and restore</a>
+  <a class="next" href="troubleshooting.html"><span>Next</span>Troubleshooting</a>
+</nav>
+<footer class="site-footer">
+  <p>Plasmify is free software under the <a href="https://github.com/heyquatch/plasmify/blob/main/LICENSE">GNU General Public License, version 3 or later</a>. These pages live in <code>docs/wiki</code>; corrections are welcome as pull requests (see <a href="contributing.html">Contributing</a>).</p>
+</footer>
+</main>
+</div>
+</body>
+</html>

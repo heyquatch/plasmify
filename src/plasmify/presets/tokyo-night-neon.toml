@@ -1,0 +1,104 @@
+schema = 1
+
+[meta]
+id = "tokyo-night-neon"
+name = "Tokyo Night Neon"
+description = "Deep navy with neon blue and violet, cyberpunk city wallpapers and a slim top bar built for tiling."
+tags = ["neon", "cyberpunk", "tiling", "dark"]
+
+# https://github.com/folke/tokyonight.nvim (Apache-2.0), "night" variant
+[palette]
+base = "#1a1b26"
+mantle = "#16161e"
+crust = "#101014"
+surface = "#292e42"
+overlay = "#565f89"
+text = "#c0caf5"
+subtext = "#a9b1d6"
+accent = "#bb9af7"
+red = "#f7768e"
+green = "#9ece6a"
+yellow = "#e0af68"
+blue = "#7aa2f7"
+magenta = "#bb9af7"
+cyan = "#7dcfff"
+orange = "#ff9e64"
+bright_black = "#414868"
+
+[style.kvantum]
+repo = "https://github.com/0xsch1zo/Kvantum-Tokyo-Night"
+path = "Kvantum-Tokyo-Night"
+name = "Kvantum-Tokyo-Night"
+
+[icons]
+theme = "Papirus-Dark"
+folder_color = "indigo"
+
+[cursor]
+name = "Bibata-Modern-Classic"
+url = "https://github.com/ful1e5/Bibata_Cursor/releases/download/v2.0.7/Bibata-Modern-Classic.tar.xz"
+size = 24
+
+[fonts]
+ui = "Roboto"
+ui_size = 10
+mono = "Fira Code"
+mono_size = 10
+packages = ["ttf-roboto", "ttf-fira-code"]
+
+[layout]
+name = "top-panel"
+bar_height = 30
+
+[effects]
+blur = true
+blur_strength = 12
+open_close = "glide"
+minimize = "squash"
+desktop_switch = "slide"
+blur_saturation = 180
+moving_opacity = 0.85
+tiling = true
+
+[terminal]
+opacity = 0.9
+blur = true
+padding = 12
+font_size = 11
+
+[shell]
+prompt = "powerline"
+zoxide = true
+fastfetch_logo = "distro"
+
+[wallpaper]
+mode = "slideshow"
+interval = 1800
+
+[[wallpaper.images]]
+url = "https://raw.githubusercontent.com/tokyo-night/wallpapers/main/misc/anime/neon-street_00_2880x1800.jpg"
+credit = "neon-street_00_2880x1800.jpg, from the tokyo-night/wallpapers collection (original artist uncredited)"
+
+[[wallpaper.images]]
+url = "https://raw.githubusercontent.com/tokyo-night/wallpapers/main/misc/cityscape/cafe-at-night_00_3840x2160.png"
+credit = "cafe-at-night_00_3840x2160.png, from the tokyo-night/wallpapers collection (original artist uncredited)"
+
+[[wallpaper.images]]
+url = "https://raw.githubusercontent.com/tokyo-night/wallpapers/main/night/abstract/lockscreen_00_2560x1440.png"
+credit = "lockscreen_00_2560x1440.png, from the tokyo-night/wallpapers collection (original artist uncredited)"
+
+[[wallpaper.images]]
+url = "https://raw.githubusercontent.com/tokyo-night/wallpapers/main/night/minimal/kde_00_2560x1440.png"
+credit = "kde_00_2560x1440.png, from the tokyo-night/wallpapers collection (original artist uncredited)"
+
+[[wallpaper.images]]
+url = "https://raw.githubusercontent.com/dharmx/walls/main/outrun/a_street_with_buildings_and_signs.png"
+credit = "a_street_with_buildings_and_signs.png, from the dharmx/walls collection (original artist uncredited)"
+
+[[wallpaper.images]]
+url = "https://raw.githubusercontent.com/dharmx/walls/main/outrun/a_gas_station_with_purple_lights.jpg"
+credit = "a_gas_station_with_purple_lights.jpg, from the dharmx/walls collection (original artist uncredited)"
+
+[[wallpaper.images]]
+url = "https://raw.githubusercontent.com/dharmx/walls/main/outrun/a_sports_car_with_neon_lights.png"
+credit = "a_sports_car_with_neon_lights.png, from the dharmx/walls collection (original artist uncredited)"

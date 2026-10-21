@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>FAQ | Plasmify documentation</title>
+<meta name="description" content="Frequently asked questions about Plasmify: safety, root, packages, background services, distributions, storage and privacy.">
+<link rel="canonical" href="https://plasmify.github.io/faq.html">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Plasmify">
+<meta property="og:title" content="FAQ | Plasmify documentation">
+<meta property="og:description" content="Frequently asked questions about Plasmify: safety, root, packages, background services, distributions, storage and privacy.">
+<meta property="og:url" content="https://plasmify.github.io/faq.html">
+<meta property="og:image" content="https://plasmify.github.io/images/plasmify.png">
+<meta property="og:image:width" content="1274">
+<meta property="og:image:height" content="720">
+<meta property="og:image:alt" content="The Plasmify main window with the preset gallery, a live preview and the settings.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#content">Skip to the content</a>
+<header class="topbar">
+  <a class="brand" href="index.html"><svg viewBox="0 0 128 128" width="30" height="30" aria-hidden="true" focusable="false"><defs><linearGradient id="plasmify-logo-top" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#cba6f7"/><stop offset="0.55" stop-color="#89b4fa"/><stop offset="1" stop-color="#94e2d5"/></linearGradient></defs><rect x="8" y="8" width="112" height="112" rx="28" fill="url(#plasmify-logo-top)"/><rect x="22" y="24" width="84" height="10" rx="5" fill="#1e1e2e" opacity="0.85"/><rect x="40" y="94" width="48" height="12" rx="6" fill="#1e1e2e" opacity="0.85"/><circle cx="48" cy="100" r="3" fill="#f5c2e7"/><circle cx="58" cy="100" r="3" fill="#a6e3a1"/><circle cx="68" cy="100" r="3" fill="#f9e2af"/><circle cx="78" cy="100" r="3" fill="#89b4fa"/><path d="M64 44 L69.5 58.5 L84 64 L69.5 69.5 L64 84 L58.5 69.5 L44 64 L58.5 58.5 Z" fill="#ffffff"/><path d="M88 42 L90.5 48.5 L97 51 L90.5 53.5 L88 60 L85.5 53.5 L79 51 L85.5 48.5 Z" fill="#ffffff" opacity="0.85"/></svg><span>Plasmify<small>Documentation</small></span></a>
+  <a class="menu-link" href="#nav">Menu</a>
+</header>
+<div class="layout">
+<nav class="sidebar" id="nav" aria-label="Wiki pages">
+  <a class="brand" href="index.html"><svg viewBox="0 0 128 128" width="36" height="36" aria-hidden="true" focusable="false"><defs><linearGradient id="plasmify-logo-nav" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#cba6f7"/><stop offset="0.55" stop-color="#89b4fa"/><stop offset="1" stop-color="#94e2d5"/></linearGradient></defs><rect x="8" y="8" width="112" height="112" rx="28" fill="url(#plasmify-logo-nav)"/><rect x="22" y="24" width="84" height="10" rx="5" fill="#1e1e2e" opacity="0.85"/><rect x="40" y="94" width="48" height="12" rx="6" fill="#1e1e2e" opacity="0.85"/><circle cx="48" cy="100" r="3" fill="#f5c2e7"/><circle cx="58" cy="100" r="3" fill="#a6e3a1"/><circle cx="68" cy="100" r="3" fill="#f9e2af"/><circle cx="78" cy="100" r="3" fill="#89b4fa"/><path d="M64 44 L69.5 58.5 L84 64 L69.5 69.5 L64 84 L58.5 69.5 L44 64 L58.5 58.5 Z" fill="#ffffff"/><path d="M88 42 L90.5 48.5 L97 51 L90.5 53.5 L88 60 L85.5 53.5 L79 51 L85.5 48.5 Z" fill="#ffffff" opacity="0.85"/></svg><span>Plasmify<small>Documentation</small></span></a>
+  <p class="nav-group">Start here</p>
+  <ul>
+    <li><a href="index.html">Overview</a></li>
+    <li><a href="install.html">Install</a></li>
+    <li><a href="update.html">Update</a></li>
+    <li><a href="uninstall.html">Uninstall</a></li>
+  </ul>
+  <p class="nav-group">Using Plasmify</p>
+  <ul>
+    <li><a href="getting-started.html">Getting started</a></li>
+    <li><a href="customize.html">Customize</a></li>
+    <li><a href="wallpapers.html">Wallpapers</a></li>
+    <li><a href="dark-light.html">Dark and light</a></li>
+    <li><a href="theme-studio.html">Theme studio</a></li>
+    <li><a href="sharing.html">Sharing presets</a></li>
+    <li><a href="backups.html">Backups and restore</a></li>
+  </ul>
+  <p class="nav-group">Reference</p>
+  <ul>
+    <li><a href="cli.html">Command line</a></li>
+    <li><a href="troubleshooting.html">Troubleshooting</a></li>
+    <li><a href="faq.html" aria-current="page">FAQ</a></li>
+    <li><a href="security.html">Security and privacy</a></li>
+    <li><a href="contributing.html">Contributing</a></li>
+  </ul>
+</nav>
+<main id="content">
+<article>
+<h1>Frequently asked questions</h1>
+
+<nav class="toc" aria-label="Questions">
+  <strong>Questions</strong>
+  <ul>
+    <li><a href="#safe">Is it safe to try?</a></li>
+    <li><a href="#background">Does anything run in the background?</a></li>
+    <li><a href="#root">Does it need root?</a></li>
+    <li><a href="#packages">What does it install?</a></li>
+    <li><a href="#updates">Will Plasma updates break my theme?</a></li>
+    <li><a href="#partial">Can I keep parts of my setup?</a></li>
+    <li><a href="#platforms">Wayland, X11, Plasma 5, GNOME?</a></li>
+    <li><a href="#terminals">Which terminals and shells?</a></li>
+    <li><a href="#storage">Where does Plasmify store things?</a></li>
+    <li><a href="#space">How do I free disk space?</a></li>
+    <li><a href="#own">Can I make my own preset?</a></li>
+    <li><a href="#cli-tweaks">Does the command line use my tweaks?</a></li>
+    <li><a href="#living">Do living wallpapers slow my computer down?</a></li>
+    <li><a href="#glass">Does glass work with every app?</a></li>
+    <li><a href="#privacy">Does it collect data?</a></li>
+    <li><a href="#proxy">Can downloads go through a proxy?</a></li>
+    <li><a href="#login-users">Does the login screen affect other users?</a></li>
+    <li><a href="#artists">I made one of the wallpapers</a></li>
+    <li><a href="#remove">How do I remove it?</a></li>
+  </ul>
+</nav>
+
+<h2 class="q" id="safe">Is it safe to try?</h2>
+<p>Yes. Every apply starts with a backup, and your setup from before you first used Plasmify is always kept. <code>plasmify restore original</code> (or <span class="ui">File &gt; Restore a backup…</span>) brings it back. Packages Plasmify installed and the themes, wallpapers and fonts it downloaded stay on your disk. See <a href="backups.html">Backups and restore</a>.</p>
+
+<h2 class="q" id="background">Does anything run in the background?</h2>
+<p>No. Plasmify has no daemon, no autostart entry and no tray icon. It only runs while its window is open or a command runs. The only thing that runs later is what a theme is made of: Plasma itself, your terminal, and, if you choose them, the Starship prompt, zoxide and the fastfetch greeting when you open a terminal, the Polonium tiling script inside KWin, and Plasma's own wallpaper playing a living wallpaper.</p>
+
+<h2 class="q" id="root">Does it need root?</h2>
+<p>Not for theming: your desktop's look is written to your home folder. Your password is asked for once, through the normal system prompt, when a package from your distribution is missing. Changing the login screen background also asks for it, and so does restoring it, because the picture and its setting are stored outside your home folder.</p>
+
+<h2 class="q" id="packages">What does it install?</h2>
+<p>Only the packages that the parts you picked need and you do not have yet, from the repositories your package manager already uses. Plasmify never uses the AUR and never adds a COPR or a PPA. The window shows the exact list and download size before you apply. Kvantum themes, cursors, wallpapers, extra Papirus folder colours, the Polonium tiling script and fonts your distribution does not package are not installed as packages: they are downloaded into your home folder, for your user only. On Fedora, Starship is not in the official repositories, so the Starship prompt is left out there. Glass needs Kvantum, which comes from your distribution's repositories like the other packages when a preset uses it. The desktop cube needs your distribution's cube effect package, which Plasmify does not install for you; it tells you the name instead. Living wallpapers need no package at all.</p>
+
+<h2 class="q" id="updates">Will Plasma updates break my theme?</h2>
+<p>They should not. Panels are built from widgets that ship with Plasma, colours are a normal KDE colour scheme, and the panel style, icon overlay and splash screen are small standard Plasma files. Nothing is patched.</p>
+
+<h2 class="q" id="partial">Can I keep parts of my setup?</h2>
+<p>Yes. Untick any step in the <span class="ui">What to apply</span> tab: keep your panels but take the colours, keep your wallpaper, or take only the terminal and prompt. In the Customize tab, options such as title bar buttons and animation speed also offer <q>As before Plasmify</q>: what you had before your first theme.</p>
+
+<h2 class="q" id="platforms">Does it work on Wayland, X11, Plasma 5 or GNOME?</h2>
+<p>Wayland works. X11 also works on Plasma versions that still offer an X11 session; Plasma 6.8 dropped it. Plasmify needs KDE Plasma 6; Plasma 5 and other desktops are not supported. See <a href="install.html#requirements">Requirements</a> for the supported distributions.</p>
+
+<h2 class="q" id="terminals">Which terminals and shells are themed?</h2>
+<p>Konsole, Alacritty and kitty get matching colours, font and translucency (whichever are installed; Plasmify never installs a terminal). The prompt and greeting work in fish, bash and zsh. Photos in the greeting are drawn as real images in Konsole, kitty, Ghostty, WezTerm and foot.</p>
+
+<h2 class="q" id="storage">Where does Plasmify store things?</h2>
+<div class="table-wrap">
+<table class="stack">
+  <thead><tr><th>Path</th><th>What is in it</th></tr></thead>
+  <tbody>
+    <tr><td><code>~/.config/plasmify/presets</code></td><td>Your own presets</td></tr>
+    <tr><td><code>~/.local/share/plasmify</code></td><td>Downloaded wallpapers and their living Shimmer versions, your pictures from Customize, preset logos</td></tr>
+    <tr><td><code>~/.config/Kvantum</code></td><td>Kvantum themes of presets, and the glass themes (<code>&lt;theme&gt;-glass</code>, <code>plasmify-glass</code>), each marked with <code>made-by-plasmify.txt</code></td></tr>
+    <tr><td><code>~/.local/state/plasmify</code></td><td>Backups, download history (<code>activity.jsonl</code>), remembered tweaks, <code>errors.log</code></td></tr>
+    <tr><td><code>~/.local/lib/plasmify</code></td><td>The app itself (with <code>install.sh</code>)</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h2 class="q" id="space">How do I free disk space?</h2>
+<p><span class="ui">File &gt; Clean up unused downloads</span> shows how much space the downloads of presets you are not using take, and deletes them. From a terminal: <code>plasmify clean</code>. Applying such a preset again simply downloads them again.</p>
+
+<h2 class="q" id="own">Can I make my own preset?</h2>
+<p>Yes, in several ways: customize any preset and use <span class="ui">Save as my preset…</span>; create one from a picture in the <a href="theme-studio.html">theme studio</a>; save the desktop you already have (<a href="sharing.html#save-desktop">Save current desktop as preset</a>); or write a TOML file by hand using the <a href="https://github.com/heyquatch/plasmify/blob/main/docs/presets.md">preset reference</a>. Good presets are welcome as pull requests.</p>
+
+<h2 class="q" id="cli-tweaks">Does the command line use my Customize tweaks?</h2>
+<p>Yes, with <code>plasmify theme &lt;name&gt;</code>: it applies the preset together with the changes you made to it in the window (add <code>--plain</code> to leave them out). It works the other way round too: <code>plasmify set accent ff79c6</code> changes the applied theme right away, and the window shows it as a Customize change. <code>plasmify reset</code> drops your changes. Only <code>plasmify apply</code> takes a preset exactly as it is defined, by its id. See <a href="cli.html#quick">Command line</a>.</p>
+
+<h2 class="q" id="living">Do living wallpapers slow my computer down?</h2>
+<p>Hardly. Shimmer does its work once, when you apply: it makes each picture into a short looping animation, which takes a few seconds per picture. After that, Plasma's own wallpaper simply plays the file, and it pauses while a window fills the screen. If you tick <span class="ui">Keep moving while windows are open</span>, it keeps playing, which costs a little more processor time and battery. Shimmer is off unless a preset or you switch it on. See <a href="wallpapers.html#shimmer">Wallpapers</a>.</p>
+
+<h2 class="q" id="glass">Does glass work with every app?</h2>
+<p>With Qt apps such as Dolphin, System Settings and Plasmify itself, yes: glass is made with the Kvantum application style, which Qt apps use. Apps built with other toolkits (GTK apps, for example) are not affected. Glass makes window backgrounds see-through, so apps that paint their main area themselves (an editor's text, a web page, a document) keep that area solid, while Dolphin shows the effect everywhere. Photo, video and drawing apps (Krita, Gwenview, Kdenlive, VLC and a few more) stay solid on purpose, and at a screen scale between whole numbers (such as 125 %) Kvantum keeps every window solid. Apps that were open when you applied glass need a restart. See <a href="customize.html#glass">Customize</a> and <a href="troubleshooting.html#glass">Troubleshooting</a>.</p>
+
+<h2 class="q" id="privacy">Does it collect any data?</h2>
+<p>No telemetry, analytics, accounts or update checks. Plasmify goes online when you apply a preset, to download what it needs, and your package manager may contact your distribution's mirrors when Plasmify checks for or installs missing packages. If you tick the weather line in the terminal greeting, the greeting asks wttr.in for the forecast each time a terminal opens. Nothing is uploaded, and downloads use a generic User-Agent that does not identify Plasmify. Every download is recorded locally so you can check what came in (<code>plasmify log</code>).</p>
+
+<h2 class="q" id="proxy">Can downloads go through a proxy or Tor?</h2>
+<p>Yes. Set <code>HTTPS_PROXY</code> before starting Plasmify; both Python and git honour it.</p>
+
+<h2 class="q" id="login-users">Does changing the login screen affect other users?</h2>
+<p>Yes. The login screen is shared by everyone on the computer, which is also why it needs your password. It works with Plasma Login, or SDDM with the Breeze theme.</p>
+
+<h2 class="q" id="artists">I made one of the wallpapers. Can I change the credit?</h2>
+<p>Of course. Wallpapers remain the property of their authors and are downloaded from where they are published, never re-hosted. Open an issue on the project's page and say how you want the image credited, or whether it should be removed.</p>
+
+<h2 class="q" id="remove">How do I remove Plasmify?</h2>
+<p>Put your desktop back with <code>plasmify restore original</code>, then run <code>./install.sh --uninstall</code>. To delete its presets, wallpapers, backups and generated themes as well, use <code>./install.sh --purge</code>. Details: <a href="uninstall.html">Uninstall</a>.</p>
+</article>
+<nav class="pager" aria-label="Previous and next page">
+  <a class="prev" href="troubleshooting.html"><span>Previous</span>Troubleshooting</a>
+  <a class="next" href="security.html"><span>Next</span>Security and privacy</a>
+</nav>
+<footer class="site-footer">
+  <p>Plasmify is free software under the <a href="https://github.com/heyquatch/plasmify/blob/main/LICENSE">GNU General Public License, version 3 or later</a>. These pages live in <code>docs/wiki</code>; corrections are welcome as pull requests (see <a href="contributing.html">Contributing</a>).</p>
+</footer>
+</main>
+</div>
+</body>
+</html>

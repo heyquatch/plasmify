@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Troubleshooting | Plasmify documentation</title>
+<meta name="description" content="Fixes for a black screen or missing panels, invisible panel colours or corners, blocky terminal photos, missing fonts, Konsole starting the wrong shell, and how to report a bug.">
+<link rel="canonical" href="https://plasmify.github.io/troubleshooting.html">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Plasmify">
+<meta property="og:title" content="Troubleshooting | Plasmify documentation">
+<meta property="og:description" content="Fixes for a black screen or missing panels, invisible panel colours or corners, blocky terminal photos, missing fonts, Konsole starting the wrong shell, and how to report a bug.">
+<meta property="og:url" content="https://plasmify.github.io/troubleshooting.html">
+<meta property="og:image" content="https://plasmify.github.io/images/plasmify.png">
+<meta property="og:image:width" content="1274">
+<meta property="og:image:height" content="720">
+<meta property="og:image:alt" content="The Plasmify main window with the preset gallery, a live preview and the settings.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#content">Skip to the content</a>
+<header class="topbar">
+  <a class="brand" href="index.html"><svg viewBox="0 0 128 128" width="30" height="30" aria-hidden="true" focusable="false"><defs><linearGradient id="plasmify-logo-top" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#cba6f7"/><stop offset="0.55" stop-color="#89b4fa"/><stop offset="1" stop-color="#94e2d5"/></linearGradient></defs><rect x="8" y="8" width="112" height="112" rx="28" fill="url(#plasmify-logo-top)"/><rect x="22" y="24" width="84" height="10" rx="5" fill="#1e1e2e" opacity="0.85"/><rect x="40" y="94" width="48" height="12" rx="6" fill="#1e1e2e" opacity="0.85"/><circle cx="48" cy="100" r="3" fill="#f5c2e7"/><circle cx="58" cy="100" r="3" fill="#a6e3a1"/><circle cx="68" cy="100" r="3" fill="#f9e2af"/><circle cx="78" cy="100" r="3" fill="#89b4fa"/><path d="M64 44 L69.5 58.5 L84 64 L69.5 69.5 L64 84 L58.5 69.5 L44 64 L58.5 58.5 Z" fill="#ffffff"/><path d="M88 42 L90.5 48.5 L97 51 L90.5 53.5 L88 60 L85.5 53.5 L79 51 L85.5 48.5 Z" fill="#ffffff" opacity="0.85"/></svg><span>Plasmify<small>Documentation</small></span></a>
+  <a class="menu-link" href="#nav">Menu</a>
+</header>
+<div class="layout">
+<nav class="sidebar" id="nav" aria-label="Wiki pages">
+  <a class="brand" href="index.html"><svg viewBox="0 0 128 128" width="36" height="36" aria-hidden="true" focusable="false"><defs><linearGradient id="plasmify-logo-nav" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#cba6f7"/><stop offset="0.55" stop-color="#89b4fa"/><stop offset="1" stop-color="#94e2d5"/></linearGradient></defs><rect x="8" y="8" width="112" height="112" rx="28" fill="url(#plasmify-logo-nav)"/><rect x="22" y="24" width="84" height="10" rx="5" fill="#1e1e2e" opacity="0.85"/><rect x="40" y="94" width="48" height="12" rx="6" fill="#1e1e2e" opacity="0.85"/><circle cx="48" cy="100" r="3" fill="#f5c2e7"/><circle cx="58" cy="100" r="3" fill="#a6e3a1"/><circle cx="68" cy="100" r="3" fill="#f9e2af"/><circle cx="78" cy="100" r="3" fill="#89b4fa"/><path d="M64 44 L69.5 58.5 L84 64 L69.5 69.5 L64 84 L58.5 69.5 L44 64 L58.5 58.5 Z" fill="#ffffff"/><path d="M88 42 L90.5 48.5 L97 51 L90.5 53.5 L88 60 L85.5 53.5 L79 51 L85.5 48.5 Z" fill="#ffffff" opacity="0.85"/></svg><span>Plasmify<small>Documentation</small></span></a>
+  <p class="nav-group">Start here</p>
+  <ul>
+    <li><a href="index.html">Overview</a></li>
+    <li><a href="install.html">Install</a></li>
+    <li><a href="update.html">Update</a></li>
+    <li><a href="uninstall.html">Uninstall</a></li>
+  </ul>
+  <p class="nav-group">Using Plasmify</p>
+  <ul>
+    <li><a href="getting-started.html">Getting started</a></li>
+    <li><a href="customize.html">Customize</a></li>
+    <li><a href="wallpapers.html">Wallpapers</a></li>
+    <li><a href="dark-light.html">Dark and light</a></li>
+    <li><a href="theme-studio.html">Theme studio</a></li>
+    <li><a href="sharing.html">Sharing presets</a></li>
+    <li><a href="backups.html">Backups and restore</a></li>
+  </ul>
+  <p class="nav-group">Reference</p>
+  <ul>
+    <li><a href="cli.html">Command line</a></li>
+    <li><a href="troubleshooting.html" aria-current="page">Troubleshooting</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="security.html">Security and privacy</a></li>
+    <li><a href="contributing.html">Contributing</a></li>
+  </ul>
+</nav>
+<main id="content">
+<article>
+<h1>Troubleshooting</h1>
+<p class="lead">Something does not look right? Most problems have a quick fix. And remember: <code>plasmify restore latest</code> undoes the last apply.</p>
+
+<nav class="toc" aria-label="On this page">
+  <strong>On this page</strong>
+  <ul>
+    <li><a href="#black-screen">Black screen or missing panels</a></li>
+    <li><a href="#panel-look">Panel colour or corners not visible</a></li>
+    <li><a href="#hidden-dock">A dock or panel keeps hiding</a></li>
+    <li><a href="#living-paused">The living wallpaper pauses or stays still</a></li>
+    <li><a href="#glass">Windows do not turn to glass</a></li>
+    <li><a href="#cube">The desktop cube does not open</a></li>
+    <li><a href="#blocky-photo">The terminal photo looks blocky</a></li>
+    <li><a href="#fonts">Fonts missing, or boxes in the prompt</a></li>
+    <li><a href="#konsole-bash">Konsole opens bash instead of my shell</a></li>
+    <li><a href="#apply-disabled">Apply theme is greyed out</a></li>
+    <li><a href="#logs">Error log and download history</a></li>
+    <li><a href="#report">Reporting a bug</a></li>
+  </ul>
+</nav>
+
+<h2 id="black-screen">Black screen or missing panels</h2>
+
+<p>Some steps need Plasma's shell (<code>plasmashell</code>, which draws the panels and wallpaper) to restart. Plasma only allows a few restarts per minute, so several quick applies in a row could once leave you with a black screen and no panels. Plasmify now handles this: it resets the limit, waits until the shell is back, starts it directly if systemd still refuses, and builds the panels and wallpaper only after the restart, with a check and one retry. If building the panels fails anyway, it falls back to a plain panel.</p>
+
+<p>If you still end up without panels, start the shell yourself. In a terminal that is still open, or one you open with KRunner (<kbd>Alt+Space</kbd>), run:</p>
+
+<pre><code>systemctl --user reset-failed plasma-plasmashell
+systemctl --user start plasma-plasmashell</code></pre>
+
+<p>If that does not help, start it directly:</p>
+
+<pre><code>kstart plasmashell</code></pre>
+
+<p>If you cannot open any window, switch to a text console with <kbd>Ctrl+Alt+F3</kbd>, log in, run the two <code>systemctl</code> commands above, then switch back to your desktop (usually <kbd>Ctrl+Alt+F1</kbd> or <kbd>Ctrl+Alt+F2</kbd>, depending on your distribution). As a last resort, log out and back in.</p>
+
+<p>Once the desktop is back, <code>plasmify restore latest</code> undoes the apply if you want. If the apply window said <q>Plasma did not come back after the reload; log out and in to finish</q>, logging out and in completes it.</p>
+
+<h2 id="panel-look">Panel colour or rounded corners not visible</h2>
+
+<ul>
+  <li><strong>A window touches the panel.</strong> While a window touches a panel (a maximised window, for example), Plasma attaches the panel to the screen edge, shows square corners and uses its solid background. Move or restore the window and the floating panel with your colour and corners comes back.</li>
+  <li><strong>Tiling is on.</strong> With tiling, windows always touch the panels, so rounded corners only show on an empty desktop. The Customize tab shows a hint about this.</li>
+  <li><strong>The panel does not float.</strong> Corners only show on floating panels. Tick <span class="ui">Floating (gap around it)</span> for the panel in the panel builder.</li>
+  <li><strong>The corners are capped.</strong> The radius can only be a little less than half the thinnest panel (a 32 px bar allows 14 px). Make the panel thicker, or use the <span class="ui">Make panels thicker</span> hint.</li>
+  <li><strong>The theme has no panel style of its own.</strong> Some presets (Tokyo Night Neon, Nord Minimal, Gruvbox Retro, Rosé Pine Cozy and Catppuccin Anime) leave the panels to your own Plasma style, so the corners and colour of an earlier preset go away. The Customize tab says so under <a href="customize.html#panel-style">Panel style</a>. Change any setting there to give the panels Plasmify's corners, opacity, colour and border.</li>
+  <li><strong>The step was off.</strong> For a theme with a panel style, check that <span class="ui">Panel style</span> is ticked in the <span class="ui">What to apply</span> tab.</li>
+</ul>
+
+<h2 id="hidden-dock">A dock or panel keeps hiding</h2>
+
+<p>A panel set to <span class="ui">Hides when a window touches it</span> stays hidden while windows touch it, which with tiling is all the time. Push the mouse to that screen edge to show it, or set its visibility to <span class="ui">Always visible</span> (the <span class="ui">Keep it visible</span> hint does this for you).</p>
+
+<h2 id="living-paused">The living wallpaper pauses or stays still</h2>
+
+<ul>
+  <li><strong>It pauses when a window is maximised.</strong> That is Plasma: it pauses moving wallpapers while a window fills the screen, to save processor time and battery, and plays them again when the desktop shows. To keep them moving anyway, tick <span class="ui">Keep moving while windows are open</span> in the Wallpapers section of the Customize tab (or run <code>plasmify set shimmer-always on</code>) and apply.</li>
+  <li><strong>Only some pictures move.</strong> Shimmer brings the first six pictures of a slideshow to life; the others take their turn as still pictures. Reorder the thumbnails to choose which ones move.</li>
+  <li><strong>Nothing moves at all.</strong> Look at the apply window's notes. <q>Qt cannot write WebP pictures on this system</q> means Qt's image formats plugin is missing; install it with your package manager (on Arch it is <code>qt6-imageformats</code>) and apply again. A note such as <q>… stays still</q> names a picture that could not be brought to life.</li>
+  <li><strong>The lock screen does not move.</strong> That is on purpose: the lock screen, the splash screen and the login screen keep the still picture.</li>
+</ul>
+
+<h2 id="glass">Windows do not turn to glass</h2>
+
+<ul>
+  <li><strong>Restart the app.</strong> Apps that were open when you applied turn to glass after you close and open them again.</li>
+  <li><strong>The window you are using stays solid.</strong> That is on purpose, in every look: only the windows behind it are see-through, so their text never shows through yours. Click another window and the one you left turns to glass. To see through the window you use as well, untick <span class="ui">Keep the window you use solid</span> in the <a href="customize.html#focused-solid">Glass</a> section (<code>plasmify set focused-solid off</code>).</li>
+  <li><strong>Glass needs Kvantum, and Frosted and Glass need blur.</strong> Plasmify installs Kvantum from your distribution and turns blur on when you apply Frosted or Glass. Check that <span class="ui">Application style</span> and <span class="ui">Effects</span> are ticked in the <span class="ui">What to apply</span> tab, and that blur is still on in System Settings (Desktop Effects).</li>
+  <li><strong>Your screen scale is between whole numbers.</strong> At 125 % or 150 %, Kvantum keeps windows solid; glass shows at 100 % or 200 %. The apply window warns about this.</li>
+  <li><strong>Some apps stay solid on purpose.</strong> Photo, video and drawing apps (Krita, OBS, LibreOffice, Gwenview, showFoto, Kdenlive, Shotcut, digiKam, VLC, SMPlayer) keep solid windows, and so do apps the Kvantum theme itself lists.</li>
+  <li><strong>Only part of a window is see-through.</strong> Glass makes window backgrounds see-through. Many apps paint their main area themselves (the text of an editor, a web page, a document), and that area stays solid. Dolphin shows the effect everywhere, so try it there first.</li>
+  <li><strong>It looks frosted, not see-through.</strong> <span class="ui">Frosted</span> is only a little see-through, with a strong blur. Choose <span class="ui">Glass</span> or <span class="ui">Clear</span> in the <a href="customize.html#glass">Glass</a> section, or move the <span class="ui">See-through</span> slider up (<code>plasmify set glass glass</code> or <code>plasmify set transparency 50%</code> from a terminal).</li>
+  <li><strong>Text is hard to read.</strong> Where windows overlap, make sure <span class="ui">Keep the window you use solid</span> is ticked (it is unless you turned it off; <code>plasmify set focused-solid on</code> turns it back on), so the text of a window behind never shows through the one you work in. Move the <span class="ui">See-through</span> slider down or choose <span class="ui">Frosted</span>, whose blur calms a busy wallpaper. Light palettes start with less see-through for this reason.</li>
+  <li><strong>A note says a theme was left alone.</strong> A Kvantum theme folder with the name Plasmify wanted (<code>&lt;theme&gt;-glass</code> or <code>plasmify-glass</code>) already exists in <code>~/.config/Kvantum</code> and was not made by Plasmify, so it is never replaced. Rename or remove it and apply again.</li>
+  <li><strong>A note says Breeze is used instead.</strong> The glass template could not be downloaded, or it did not match its checksum. Apply again later.</li>
+</ul>
+
+<h2 id="cube">The desktop cube does not open</h2>
+
+<p>Press <kbd>Meta+C</kbd> to open it. If nothing happens:</p>
+
+<ul>
+  <li><strong>The cube effect is not installed.</strong> KWin does not ship it, and Plasmify does not install it; the apply window names the package to install: <code>kdeplasma-addons</code> on Arch and Fedora, <code>kdeplasma6-addons</code> on openSUSE, <code>kwin-addons</code> on Debian and Ubuntu. Install it and apply again.</li>
+  <li><strong>There are fewer than three virtual desktops.</strong> The cube needs at least three. Add them in System Settings, Virtual Desktops; Plasmify never changes how many you have.</li>
+</ul>
+
+<h2 id="blocky-photo">The terminal photo looks blocky</h2>
+
+<p>Photos are drawn as real images only in terminals that support it: Konsole, kitty, Ghostty and WezTerm (through the kitty graphics protocol) and foot (through sixel). Every other terminal, Alacritty for example, shows the photo as coloured text blocks, which looks coarser.</p>
+
+<ul>
+  <li>Use one of the terminals above for a sharp photo.</li>
+  <li>Inside tmux, screen or an SSH session the terminal may not be recognised, so you get the text-block version.</li>
+  <li>For a crisp look in any terminal, choose <span class="ui">My own text</span>, <span class="ui">My own drawing</span> or a fastfetch logo instead.</li>
+</ul>
+
+<h2 id="fonts">Fonts missing, or boxes in the prompt</h2>
+
+<ul>
+  <li><strong>The Customize tab only lists installed fonts.</strong> To use another font, install it first (with your package manager or System Settings), then reopen Plasmify.</li>
+  <li><strong>A preset's fonts</strong> are installed from your distribution's repositories when you apply. Fonts your distribution does not package are downloaded for your user only into <code>~/.local/share/fonts/plasmify</code>. If a download failed, the apply window lists it as a note; the download history shows the details. Applying again retries it.</li>
+  <li><strong>Boxes or question marks in the prompt</strong> mean the symbols font for prompt icons is missing. It is installed with the Shell prompt step (unless the prompt is off). Apply again with <span class="ui">Shell prompt</span> ticked.</li>
+  <li><strong>Apps that were already open</strong> may only pick up new fonts after a restart. You can check whether a font is installed with <code>fc-list | grep -i "font name"</code>.</li>
+</ul>
+
+<h2 id="konsole-bash">Konsole opens bash instead of my shell</h2>
+
+<p>Terminals usually start the shell named in <code>$SHELL</code>. After you change your shell with <code>chsh</code>, that variable keeps the old value until your whole session restarts, so Konsole keeps opening bash. Plasmify works around this: its Konsole (and Alacritty) settings start your login shell from your account directly, as long as that shell is listed in <code>/etc/shells</code>.</p>
+
+<ul>
+  <li>Apply again with <span class="ui">Terminal</span> ticked, so Plasmify writes your current login shell into its Konsole profile.</li>
+  <li>Check your login shell with <code>getent passwd "$USER"</code> (the last field) and that it appears in <code>/etc/shells</code>.</li>
+  <li>Or simply log out and back in, which refreshes <code>$SHELL</code> everywhere.</li>
+</ul>
+
+<h2 id="apply-disabled">Apply theme is greyed out</h2>
+
+<ul>
+  <li>While the summary says <q>Checking what needs to be installed…</q>, Plasmify is working out the packages for your current settings. Apply becomes available when it is done.</li>
+  <li>If a red banner is shown at the top of the window, Plasmify found a problem with your system (for example, you are not in a Plasma 6 session, or a Plasma tool is missing). Fix what it names and restart Plasmify.</li>
+  <li>If the summary says <q>These settings are not valid</q>, a Customize setting cannot be used as it is; the message says which one.</li>
+</ul>
+
+<h2 id="logs">Error log and download history</h2>
+
+<ul>
+  <li><strong>Error log:</strong> if Plasmify hits an unexpected error, it does not close; it shows a message and writes the details to <code>~/.local/state/plasmify/errors.log</code>. Please attach that file to bug reports.</li>
+  <li><strong>Apply log:</strong> the apply window shows every step and any notes. On the command line, <code>plasmify apply &lt;preset&gt;</code> prints the same.</li>
+  <li><strong>Download history:</strong> <span class="ui">File &gt; Download history…</span> or <code>plasmify log</code> lists the files, git sources, fonts and packages Plasmify fetched, newest first, with sizes, checksums and errors. <code>plasmify log</code> shows the newest 50; add <code>-n</code> with a number to see more. The history is stored in <code>~/.local/state/plasmify/activity.jsonl</code> and never leaves your computer.</li>
+</ul>
+
+<h2 id="report">Reporting a bug</h2>
+
+<p>Please open an issue on the project's page using the bug report template, and include:</p>
+
+<ul>
+  <li>the output of <code>plasmify --version</code>;</li>
+  <li>your distribution (<code>cat /etc/os-release</code>) and Plasma version (<code>plasmashell --version</code>);</li>
+  <li>the preset and the steps you applied;</li>
+  <li>the output of the failing command (<code>plasmify apply &lt;preset&gt;</code> prints every step), or the log from the apply window;</li>
+  <li><code>~/.local/state/plasmify/errors.log</code>, if it exists.</li>
+</ul>
+
+<p>Security problems should not go into a public issue; see <a href="security.html#report">Security and privacy</a>.</p>
+</article>
+<nav class="pager" aria-label="Previous and next page">
+  <a class="prev" href="cli.html"><span>Previous</span>Command line</a>
+  <a class="next" href="faq.html"><span>Next</span>FAQ</a>
+</nav>
+<footer class="site-footer">
+  <p>Plasmify is free software under the <a href="https://github.com/heyquatch/plasmify/blob/main/LICENSE">GNU General Public License, version 3 or later</a>. These pages live in <code>docs/wiki</code>; corrections are welcome as pull requests (see <a href="contributing.html">Contributing</a>).</p>
+</footer>
+</main>
+</div>
+</body>
+</html>

@@ -1,0 +1,493 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Customize | Plasmify documentation</title>
+<meta name="description" content="The Customize tab: build your own panels, pick a glass look, change window effects, wallpapers, splash screen, colours, icons, fonts, the terminal logo and greeting, and the login screen.">
+<link rel="canonical" href="https://plasmify.github.io/customize.html">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Plasmify">
+<meta property="og:title" content="Customize | Plasmify documentation">
+<meta property="og:description" content="The Customize tab: build your own panels, pick a glass look, change window effects, wallpapers, splash screen, colours, icons, fonts, the terminal logo and greeting, and the login screen.">
+<meta property="og:url" content="https://plasmify.github.io/customize.html">
+<meta property="og:image" content="https://plasmify.github.io/images/plasmify.png">
+<meta property="og:image:width" content="1274">
+<meta property="og:image:height" content="720">
+<meta property="og:image:alt" content="The Plasmify main window with the preset gallery, a live preview and the settings.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#content">Skip to the content</a>
+<header class="topbar">
+  <a class="brand" href="index.html"><svg viewBox="0 0 128 128" width="30" height="30" aria-hidden="true" focusable="false"><defs><linearGradient id="plasmify-logo-top" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#cba6f7"/><stop offset="0.55" stop-color="#89b4fa"/><stop offset="1" stop-color="#94e2d5"/></linearGradient></defs><rect x="8" y="8" width="112" height="112" rx="28" fill="url(#plasmify-logo-top)"/><rect x="22" y="24" width="84" height="10" rx="5" fill="#1e1e2e" opacity="0.85"/><rect x="40" y="94" width="48" height="12" rx="6" fill="#1e1e2e" opacity="0.85"/><circle cx="48" cy="100" r="3" fill="#f5c2e7"/><circle cx="58" cy="100" r="3" fill="#a6e3a1"/><circle cx="68" cy="100" r="3" fill="#f9e2af"/><circle cx="78" cy="100" r="3" fill="#89b4fa"/><path d="M64 44 L69.5 58.5 L84 64 L69.5 69.5 L64 84 L58.5 69.5 L44 64 L58.5 58.5 Z" fill="#ffffff"/><path d="M88 42 L90.5 48.5 L97 51 L90.5 53.5 L88 60 L85.5 53.5 L79 51 L85.5 48.5 Z" fill="#ffffff" opacity="0.85"/></svg><span>Plasmify<small>Documentation</small></span></a>
+  <a class="menu-link" href="#nav">Menu</a>
+</header>
+<div class="layout">
+<nav class="sidebar" id="nav" aria-label="Wiki pages">
+  <a class="brand" href="index.html"><svg viewBox="0 0 128 128" width="36" height="36" aria-hidden="true" focusable="false"><defs><linearGradient id="plasmify-logo-nav" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#cba6f7"/><stop offset="0.55" stop-color="#89b4fa"/><stop offset="1" stop-color="#94e2d5"/></linearGradient></defs><rect x="8" y="8" width="112" height="112" rx="28" fill="url(#plasmify-logo-nav)"/><rect x="22" y="24" width="84" height="10" rx="5" fill="#1e1e2e" opacity="0.85"/><rect x="40" y="94" width="48" height="12" rx="6" fill="#1e1e2e" opacity="0.85"/><circle cx="48" cy="100" r="3" fill="#f5c2e7"/><circle cx="58" cy="100" r="3" fill="#a6e3a1"/><circle cx="68" cy="100" r="3" fill="#f9e2af"/><circle cx="78" cy="100" r="3" fill="#89b4fa"/><path d="M64 44 L69.5 58.5 L84 64 L69.5 69.5 L64 84 L58.5 69.5 L44 64 L58.5 58.5 Z" fill="#ffffff"/><path d="M88 42 L90.5 48.5 L97 51 L90.5 53.5 L88 60 L85.5 53.5 L79 51 L85.5 48.5 Z" fill="#ffffff" opacity="0.85"/></svg><span>Plasmify<small>Documentation</small></span></a>
+  <p class="nav-group">Start here</p>
+  <ul>
+    <li><a href="index.html">Overview</a></li>
+    <li><a href="install.html">Install</a></li>
+    <li><a href="update.html">Update</a></li>
+    <li><a href="uninstall.html">Uninstall</a></li>
+  </ul>
+  <p class="nav-group">Using Plasmify</p>
+  <ul>
+    <li><a href="getting-started.html">Getting started</a></li>
+    <li><a href="customize.html" aria-current="page">Customize</a></li>
+    <li><a href="wallpapers.html">Wallpapers</a></li>
+    <li><a href="dark-light.html">Dark and light</a></li>
+    <li><a href="theme-studio.html">Theme studio</a></li>
+    <li><a href="sharing.html">Sharing presets</a></li>
+    <li><a href="backups.html">Backups and restore</a></li>
+  </ul>
+  <p class="nav-group">Reference</p>
+  <ul>
+    <li><a href="cli.html">Command line</a></li>
+    <li><a href="troubleshooting.html">Troubleshooting</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="security.html">Security and privacy</a></li>
+    <li><a href="contributing.html">Contributing</a></li>
+  </ul>
+</nav>
+<main id="content">
+<article>
+<h1>Customize</h1>
+<p class="lead">Every preset has a Customize tab. Change anything you like and watch the preview; options you leave alone keep the preset's values.</p>
+
+<nav class="toc" aria-label="On this page">
+  <strong>On this page</strong>
+  <ul>
+    <li><a href="#how">How the tab works</a></li>
+    <li><a href="#hints">Hints with one-click fixes</a></li>
+    <li><a href="#surprise">Surprise me and the toolbar</a></li>
+    <li><a href="#unsaved">Changes not applied yet</a></li>
+    <li><a href="#remembered">Remembered tweaks and Reset</a></li>
+    <li><a href="#panels">Panels</a></li>
+    <li><a href="#windows">Windows</a></li>
+    <li><a href="#glass">Glass</a></li>
+    <li><a href="#wallpapers">Wallpapers</a></li>
+    <li><a href="#shimmer">Living wallpapers (Shimmer)</a></li>
+    <li><a href="#splash">Splash screen</a></li>
+    <li><a href="#colours">Colours</a></li>
+    <li><a href="#icons">Icons and cursor</a></li>
+    <li><a href="#fonts">Fonts</a></li>
+    <li><a href="#terminal">Terminal and shell</a></li>
+    <li><a href="#login">Login screen</a></li>
+  </ul>
+</nav>
+
+<h2 id="how">How the tab works</h2>
+
+<ul>
+  <li><strong>Sections open on click.</strong> Click a section's title to open or close it. While closed, it shows a one-line summary of its settings, for example <q>top bar, bottom dock · 14 px corners</q>.</li>
+  <li><strong>Hover for help.</strong> Every option has a tooltip that explains what it does.</li>
+  <li><strong>Pictures, not just words.</strong> Choices are picture tiles, colours are swatches, icon and cursor themes show samples, fonts show a sample sentence, and every amount has a slider plus a number box.</li>
+  <li><strong>Drag and drop images.</strong> The dashed boxes take your own pictures: drag image files onto them from Dolphin, or click to choose. PNG, JPEG, WebP and GIF work. Right-click a box to go back to the default. Your pictures are copied into <code>~/.local/share/plasmify/custom</code>, so moving or deleting the originals later does no harm.</li>
+  <li><strong>Untouched means unchanged.</strong> Only what you actually change becomes a tweak. A window setting the preset leaves out shows what applying gives: its default (fall apart, the cube and dimming off, for example) or, for tiling, title bar buttons, window borders and animation speed, what you had before Plasmify.</li>
+  <li><strong>Always valid.</strong> Your changes are checked by the same strict rules as a preset file, so you cannot apply invalid settings. If you customize something the preset did not include (say, panel corners), the matching step in <span class="ui">What to apply</span> is switched on for you.</li>
+  <li><strong>Columns that fit the window.</strong> The sections sit in two columns while both fit side by side, and one below the other in a narrower window, so the page never scrolls sideways. A section you open that moves out of sight is scrolled back into view.</li>
+  <li><strong>Scrolling is safe.</strong> The mouse wheel scrolls the page. A list, font list, slider or number box under the pointer only takes the wheel after you click it or move to it with <kbd>Tab</kbd>, so scrolling past a setting never changes it by accident.</li>
+</ul>
+
+<h3 id="hints">Hints with one-click fixes</h3>
+
+<p>Some settings work, but not the way you might expect. Plasmify never refuses them; instead a hint appears at the top of the tab, usually with a button that fixes it:</p>
+
+<div class="table-wrap">
+<table class="stack">
+  <thead><tr><th>Situation</th><th>Fix button</th></tr></thead>
+  <tbody>
+    <tr><td>Tiling is on and a panel hides when a window touches it. With tiling, windows always touch it, so it stays hidden until you push the mouse to that edge.</td><td><span class="ui">Keep it visible</span></td></tr>
+    <tr><td>The corner radius is larger than the thinnest panel allows.</td><td><span class="ui">Make panels thicker</span></td></tr>
+    <tr><td>No app launcher in any panel (apps still open with <kbd>Alt+Space</kbd> or the Meta key).</td><td><span class="ui">Add a launcher</span></td></tr>
+    <tr><td>No system tray, so network, sound, battery and notification icons would be missing.</td><td><span class="ui">Add the tray</span></td></tr>
+    <tr><td>Window titles in the task bar of a side panel, where they need a lot of room.</td><td><span class="ui">Use icons instead</span></td></tr>
+    <tr><td>Very see-through panels without blur, which can make text hard to read.</td><td><span class="ui">Turn on blur</span></td></tr>
+    <tr><td>A terminal logo is chosen, but the system info greeting that shows it is off.</td><td><span class="ui">Show the greeting</span></td></tr>
+    <tr><td>Tiling with floating panels: rounded corners only show on an empty desktop.</td><td>(information only)</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h3 id="surprise">Surprise me and the toolbar</h3>
+
+<p>Out of ideas? <span class="ui">Surprise me</span> rolls a complete design on top of the selected preset: panels, corners, colours, motion, terminal logo, greeting and splash screen. Every surprise is checked so that it never triggers a warning, and your own wallpapers are kept. Click again for another one. Keep what you like and change the rest like any other tweak.</p>
+
+<p><span class="ui">Surprise me</span> sits in a slim toolbar at the top of the tab, next to <span class="ui">Reset to preset</span> and a count of your changes, such as <q>4 changes from the preset</q>. The toolbar sticks to the top while the sections scroll under it, so both buttons are always one click away.</p>
+
+<h3 id="unsaved">Changes not applied yet</h3>
+
+<p>As soon as the tab differs from what is on your desktop (or from the preset, if you have not applied it), a dark bar slides up at the bottom of the window. It says how many changes are waiting, such as <q>You have 2 changes that are not applied yet</q>, and has two buttons:</p>
+
+<ul>
+  <li><span class="ui">Reset</span> forgets the changes you have not applied yet and goes back to what you applied last (or to the preset).</li>
+  <li><span class="ui">Apply theme</span> applies the theme with your changes. It is the same as the button at the bottom of the window, which steps aside while the bar is shown, so there is only ever one.</li>
+</ul>
+
+<p>The page keeps room under its last options, so nothing hides behind the bar. The bar slides in and out at your desktop's animation speed (instantly when animations are off). Put every setting back by hand and it goes away by itself.</p>
+
+<h3 id="remembered">Remembered tweaks and Reset</h3>
+
+<ul>
+  <li><strong>Kept while you browse.</strong> Changes you have not applied yet are kept for each preset while you look at other presets, until you close the app. The tab title shows how many changes you made, such as <q>Customize (4)</q>.</li>
+  <li><strong>Remembered after Apply.</strong> When you apply, your tweaks are saved for that preset and shown again next time, also after a restart. The next Apply builds on them, so a second Apply never quietly falls back to the preset's own layout.</li>
+  <li><strong>Reset.</strong> <span class="ui">Reset to preset</span> in the toolbar forgets every change made on the tab and goes back to the preset's own settings. <span class="ui">Reset</span> in the bar at the bottom only drops what you have not applied yet.</li>
+  <li><strong>Shared with the command line.</strong> Changes made with <code>plasmify set</code> show up here as tweaks, and <code>plasmify theme &lt;name&gt;</code> applies a preset together with the changes you made here. <code>plasmify reset</code> drops them. See <a href="cli.html#quick">Command line</a>.</li>
+</ul>
+
+<h2 id="panels">Panels</h2>
+
+<p>The panel builder puts bars and docks on any screen edge, with any widgets, using only what ships with Plasma.</p>
+
+<h3>Starting points</h3>
+
+<p>Eight picture tiles give you a quick start. Picking one replaces your panels; you can change everything afterwards.</p>
+
+<div class="table-wrap">
+<table class="stack">
+  <thead><tr><th>Starting point</th><th>Layout</th></tr></thead>
+  <tbody>
+    <tr><td>Bar + dock</td><td>A slim bar at the top and a floating dock</td></tr>
+    <tr><td>Classic</td><td>One classic panel at the bottom</td></tr>
+    <tr><td>Top bar</td><td>Everything in one slim top bar; the most room for windows and tiling</td></tr>
+    <tr><td>Top + bottom</td><td>A top bar with the clock and a task bar at the bottom</td></tr>
+    <tr><td>Side dock</td><td>A top bar and a dock on the left</td></tr>
+    <tr><td>Side bar</td><td>One vertical bar on the left, great on wide screens</td></tr>
+    <tr><td>Islands</td><td>Separate islands at the top (menu and desktops on the left, the clock in the middle, the tray on the right), plus a dock</td></tr>
+    <tr><td>Just a dock</td><td>One floating dock with everything in it</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h3>Each panel</h3>
+
+<p>A tiny screen shows your panels. Click one of its edges (top, bottom, left or right) to add or edit the panel there. You can have up to four panels, one per edge, and there is always at least one.</p>
+
+<dl class="defs">
+  <dt>Style</dt>
+  <dd><span class="ui">Bar (full panel)</span> is a classic panel; <span class="ui">Dock (floating island)</span> is sized to its icons; <span class="ui">Islands (separate pieces)</span> splits the panel into up to three separate pieces along its edge (see below).</dd>
+  <dt>Length</dt>
+  <dd><span class="ui">Full length</span> spans the whole edge; <span class="ui">Fit the widgets</span> makes an island only as long as its widgets.</dd>
+  <dt>Position</dt>
+  <dd>Start, Centre or End: where a fitted panel or dock sits along its edge.</dd>
+  <dt>Islands</dt>
+  <dd>With the Islands style, each <span class="ui">Flexible space</span> in the widget list starts a new piece. What comes before the first space sits at the start of the edge, what is between two spaces in the centre, and what comes after the last space at the end. So <q>App launcher, Desktops, space, Clock, space, System tray</q> gives a menu island on the left, the clock alone in the middle and a small tray island on the right. One space gives two pieces (start and end); no space gives one centred island. Each piece is its own Plasma panel, sized to its widgets; length and position do not apply.</dd>
+  <dt>Thickness</dt>
+  <dd>20 to 128 pixels. Thicker panels allow rounder corners.</dd>
+  <dt>Floating</dt>
+  <dd>A small gap around the panel. Needed for visible rounded corners.</dd>
+  <dt>Visibility</dt>
+  <dd><span class="ui">Always visible</span> (keeps its space), <span class="ui">Hides when a window touches it</span>, or <span class="ui">Auto-hide (shows at the screen edge)</span>.</dd>
+</dl>
+
+<h3>Widgets</h3>
+
+<p>Each panel has a list of widgets in order. <strong>Drag them to rearrange</strong>, add more with <span class="ui">Add</span>, and remove one with <span class="ui">Remove</span> or the <kbd>Delete</kbd> key. A panel holds up to 24 widgets.</p>
+
+<div class="table-wrap">
+<table class="stack">
+  <thead><tr><th>Widget</th><th>What it is</th></tr></thead>
+  <tbody>
+    <tr><td>App launcher</td><td>The start menu with search and favourites</td></tr>
+    <tr><td>Classic menu</td><td>A compact cascading application menu</td></tr>
+    <tr><td>App grid *</td><td>A full-screen grid of all applications</td></tr>
+    <tr><td>Apps (icons)</td><td>Pinned and open apps as icons</td></tr>
+    <tr><td>Apps with titles</td><td>Open apps with their window titles</td></tr>
+    <tr><td>Window list</td><td>A menu of every open window</td></tr>
+    <tr><td>Desktops</td><td>Switch between virtual desktops</td></tr>
+    <tr><td>Flexible space</td><td>Pushes the widgets around it apart</td></tr>
+    <tr><td>Small gap</td><td>A small fixed gap</td></tr>
+    <tr><td>Clock</td><td>Time and date, with a calendar on click</td></tr>
+    <tr><td>Analog clock</td><td>A small clock face</td></tr>
+    <tr><td>System tray</td><td>Network, sound, battery and notifications</td></tr>
+    <tr><td>Now playing</td><td>Shows and controls the music or video</td></tr>
+    <tr><td>CPU graph, Memory graph, Network graph</td><td>Live usage graphs</td></tr>
+    <tr><td>Show desktop</td><td>Moves every window out of the way</td></tr>
+    <tr><td>Trash</td><td>Drop files on it to delete them</td></tr>
+    <tr><td>Lock and log out</td><td>Lock, log out or shut down</td></tr>
+    <tr><td>Weather *</td><td>The forecast for a place you choose</td></tr>
+    <tr><td>Colour picker *</td><td>Pick a colour from anywhere</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>Widgets marked * come from Plasma's add-ons (<code>kdeplasma-addons</code>). If that is not installed, they are left out with a warning. Apps you pinned to the task bar or dock stay pinned when you apply a theme, so a browser that is not your default one, say, is never lost. Only an empty task bar gets suggestions, picked from what you have installed: your file manager, terminal, default browser and System Settings. The system tray stays exactly as you set it up, too: a new tray would start from Plasma's defaults, with every item switched on, so Plasmify carries over which items are shown, hidden or always visible (Lock Keys stays off if you had it off, for example).</p>
+
+<h3 id="panel-style">Panel style</h3>
+
+<p>A theme without a panel style of its own keeps your own Plasma style on the panels: a style Plasmify made for an earlier preset gives way to the one you had before Plasmify, or your distribution's default. The section says so for those themes, and changing any setting here gives the panels Plasmify's style.</p>
+
+<dl class="defs">
+  <dt>Corners</dt>
+  <dd>0 to 30 pixels of corner radius. Plasma squeezes corners that are too large, so the radius is capped just below half the thinnest panel (a 32 px bar allows 14 px). If you make the panels thicker, the radius you asked for comes back.</dd>
+  <dt>Opacity</dt>
+  <dd>20 to 100 %. Lower values let the wallpaper show through.</dd>
+  <dt>Colour</dt>
+  <dd>Theme (darker background), Theme background, Darkest, Button colour or Accent follow the palette; <span class="ui">Custom colour…</span> picks any colour, which then stays fixed.</dd>
+  <dt>Border</dt>
+  <dd>No border, Subtle border or Accent border.</dd>
+</dl>
+
+<div class="callout">
+  <span class="callout-title">When are rounded corners visible?</span>
+  <p>Rounded corners show while a panel floats. Plasma attaches a panel to the screen edge whenever a window touches it (always, with tiling), and then its corners are square and it uses its solid background. Move the window away and the floating look comes back.</p>
+</div>
+
+<p>None of this adds a package: the panel style is a tiny generated Plasma style that only contains the panel background, and everything else comes from Breeze. If building the panels fails, Plasmify falls back to a plain panel, so you are never left without one.</p>
+
+<h2 id="windows">Windows</h2>
+
+<dl class="defs">
+  <dt>Automatic tiling (Polonium)</dt>
+  <dd>Windows arrange themselves side by side. Plasmify installs the Polonium tiling script (26 KB) for your user if needed, from a pinned release checked against its SHA-256. A preset that leaves tiling out puts it back the way you had it before Plasmify, so tiling from one preset never stays on in the next.</dd>
+</dl>
+
+<h3>Look</h3>
+
+<dl class="defs">
+  <dt>Blur</dt>
+  <dd><span class="ui">Blur behind panels and menus</span> for a frosted glass look, with a strength from 1 to 15.</dd>
+  <dt>Blur grain</dt>
+  <dd>0 to 14: a little grain in the blur, so it looks like frosted glass. 0 is none.</dd>
+  <dt>Blur saturation</dt>
+  <dd>100 to 500 %: how colourful things look through the blur. 100 % keeps their colours as they are.</dd>
+  <dt>See-through while moving</dt>
+  <dd>30 to 100 %: how solid a window stays while you move or resize it. 100 % is solid; less lets you see what is behind it.</dd>
+  <dt>Dim inactive windows</dt>
+  <dd>Off, or 10 to 90 %: the windows you are not using get darker, so the one you work in stands out.</dd>
+  <dt>Title bar buttons</dt>
+  <dd>As before Plasmify (the buttons you had before your first theme), Right side (Windows, KDE), Left side (macOS), Close button only, or No buttons (keyboard only).</dd>
+  <dt>Window borders</dt>
+  <dd>As before Plasmify, None, Tiny, Normal or Large. Larger borders are easier to grab for resizing.</dd>
+</dl>
+
+<h3>Motion</h3>
+
+<dl class="defs">
+  <dt>Animations</dt>
+  <dd>Open and close: Zoom, Glide, Fade or None. Minimise: Magic lamp, Squash or None. Desktop switch: Slide, Fade or None.</dd>
+  <dt>Fall apart on close</dt>
+  <dd>Closing windows break into pieces that fall away. The open and close animation still plays for everything else.</dd>
+  <dt>Desktop cube</dt>
+  <dd>Your virtual desktops on the sides of a cube that you spin with <kbd>Meta+C</kbd>. It needs at least three virtual desktops (add them in System Settings, Virtual Desktops) and your distribution's cube effect: <code>kdeplasma-addons</code> on Arch and Fedora, <code>kdeplasma6-addons</code> on openSUSE, <code>kwin-addons</code> on Debian and Ubuntu. Plasmify does not install it; if it is missing, the apply window names the package and leaves the cube out.</dd>
+  <dt>Dialogs slide in</dt>
+  <dd>Dialogs slide down out of the title bar of their window, like a sheet of paper.</dd>
+  <dt>Wobbly windows</dt>
+  <dd>Windows wobble like jelly while you drag them. <span class="ui">Wobbliness</span> sets how much, from 0 (barely) to 4 (very wobbly).</dd>
+  <dt>Animation speed</dt>
+  <dd>As before Plasmify, Fast, Normal or Relaxed.</dd>
+</dl>
+
+<p>Blur strength, grain and saturation are greyed out while blur is off, and Wobbliness while wobbly windows are off. While the section is closed, its summary shows tiling and the open and close animation, for example <q>floating windows · zoom</q>. See-through app windows have a section of their own: <a href="#glass">Glass</a>.</p>
+
+<h2 id="glass">Glass</h2>
+
+<p>The <span class="ui">Glass</span> section makes Dolphin, System Settings, Plasmify and other Qt apps see-through, so your wallpaper and the windows behind them show through. Pick one of four ready-made looks; each tile shows a small window in that look, over a wallpaper in the preset's colours:</p>
+
+<dl class="defs">
+  <dt>Solid</dt>
+  <dd>No glass: app windows stay solid.</dd>
+  <dt>Frosted</dt>
+  <dd>Blurred and a little see-through. What is behind a window turns into soft colours.</dd>
+  <dt>Glass</dt>
+  <dd>Clearly see-through with a light blur, so you can still tell what is behind a window. The classic glass look.</dd>
+  <dt>Clear</dt>
+  <dd>See-through with no blur behind windows, for the most open look.</dd>
+</dl>
+
+<h3 id="see-through">See-through</h3>
+
+<p>The <span class="ui">See-through</span> slider sets how see-through window backgrounds are, from 10 to 70 %. Each look comes with its own amount, a little lower on light palettes, because dark text over a bright wallpaper fades sooner:</p>
+
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Look</th><th>Dark palette</th><th>Light palette</th></tr></thead>
+  <tbody>
+    <tr><td>Frosted</td><td>25 %</td><td>18 %</td></tr>
+    <tr><td>Glass</td><td>40 %</td><td>30 %</td></tr>
+    <tr><td>Clear</td><td>50 %</td><td>38 %</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>Picking a look moves the slider to that look's amount. As long as you leave it there, the amount follows the mode too, so switching between <a href="dark-light.html">dark and light</a> picks the fitting one; an amount you choose yourself stays the same in both modes. The slider is greyed out while Solid is picked. Menus are half as see-through as windows (between 10 and 30 %) and blurred in every look, Clear included, so their text stays readable.</p>
+
+<h3 id="focused-solid">The window you use</h3>
+
+<p><span class="ui">Keep the window you use solid</span> makes only the windows behind the one you are working in see-through. Without it, wherever windows overlap, the text of the window behind shows through the text of the one in front, which is hard to read, most of all with little blur. With it, a window turns solid when you click it and see-through again when you click another one. It is on in every look, Clear included; untick it to see through the window you use as well, and that choice stays when you pick another look. Like the slider, it is greyed out while Solid is picked. The look, the see-through amount and this box count as one change.</p>
+
+<h3 id="glass-companions">What else glass changes</h3>
+
+<ul>
+  <li><strong>Blur.</strong> Frosted and Glass turn blur on. Frosted raises the blur strength to at least 10 and adds a little grain; Glass keeps the strength between 2 and 4 with little or no grain, so the background stays recognisable (from 5 on, a busy wallpaper melts into one tone). Clear leaves your blur settings as they are. When the preset has no window effects of its own, the application style part sets the blur for the look, starting from yours.</li>
+  <li><strong>Panels</strong> turn see-through along with the windows: their opacity is lowered to match the see-through amount. With Glass at 40 %, panels are at most 60 % opaque. For glass, Plasmify never lowers them below 35 %.</li>
+  <li><strong>The terminal</strong> turns a little see-through too, with blur behind it for Frosted and Glass. For glass, Plasmify never lowers it below 50 % opacity.</li>
+</ul>
+
+<p>Values that already fit the look are kept. Only parts the preset already includes are changed, so glass never switches on another part of the theme by itself; the blur is the one setting the application style part takes care of when the window effects part is not there.</p>
+
+<p>Glass uses the Kvantum application style. If the preset comes with a Kvantum theme, Plasmify writes a glass copy of it next to the original (<code>&lt;theme&gt;-glass</code>). Otherwise it colours one from your palette (<code>plasmify-glass</code>, made from Catppuccin's Kvantum theme, downloaded from a pinned version and checked against its SHA-256). Glass, the window you use and a see-through amount you chose yourself stay as they are when you <a href="dark-light.html">switch between dark and light</a>. In the other mode, glass uses <code>plasmify-glass</code> in the new colours. While the section is closed, its summary shows the look and the amount, for example <q>Glass, 40 % see-through, background windows only</q> (the last part while the window you use stays solid), or <q>Solid windows</q>.</p>
+
+<div class="callout">
+  <span class="callout-title">What glass needs, and where it stops</span>
+  <ul>
+    <li><strong>Kvantum,</strong> which Plasmify installs from your distribution when it is missing (the summary shows it before you apply). Apps that are already open, Plasmify included, turn see-through after you restart them. Plasmify takes the new colours at once; other open apps keep their old look until then.</li>
+    <li><strong>A whole-number screen scale.</strong> At a scale between whole numbers (such as 125 % or 150 %), Kvantum keeps windows solid; glass shows at 100 % or 200 %.</li>
+    <li><strong>Some parts stay solid.</strong> Glass makes window backgrounds see-through. Many apps paint their main area themselves (the text of an editor, a web page, a document), and that area stays solid. Dolphin is set up so its file view turns see-through as well, so it shows the effect everywhere. Photo, video and drawing apps such as Krita, Gwenview, Kdenlive and VLC stay solid on purpose.</li>
+    <li><strong>Your own themes are safe.</strong> A Kvantum theme of your own with the same name is never replaced: Plasmify only overwrites theme folders that carry its <code>made-by-plasmify.txt</code> file.</li>
+  </ul>
+</div>
+
+<h2 id="wallpapers">Wallpapers</h2>
+
+<p>The Wallpapers section shows the whole slideshow as numbered thumbnails, in order. Drag to reorder, remove the ones you do not want and add your own pictures (animated GIF and WebP too); choose how often it changes and whether it plays as listed or shuffled. With a single picture there is no slideshow, so <span class="ui">Change every</span> is disabled. Everything about it is on its own page: <a href="wallpapers.html">Wallpapers</a>.</p>
+
+<h3 id="shimmer">Living wallpapers (Shimmer)</h3>
+
+<p>Under the slideshow settings, <span class="ui">Shimmer</span> brings your still wallpapers to life: particles drift over the picture, a light plays across it and the picture itself slowly moves. The pictures are made on your computer when you apply, so nothing is downloaded for it.</p>
+
+<dl class="defs">
+  <dt>Shimmer</dt>
+  <dd>Off, Sparkles, Embers, Sakura petals, Snow, Fireflies, Bokeh, Shooting stars, Rain, Magic circle, Speed lines, or No particles (light only).</dd>
+  <dt>Colour</dt>
+  <dd>The colour of the particles and the light: Accent, Yellow, Orange, Red, Pink, Green, Blue, Cyan or Text, from your palette.</dd>
+  <dt>Light</dt>
+  <dd>Suits the style, Glint (a shine that sweeps across), Light rays (from a corner), Lens flare, Soft pulse, or No light.</dd>
+  <dt>Motion</dt>
+  <dd>Suits the style, Breathe (slow zoom), Drift (slow pan) or Still.</dd>
+  <dt>Particles</dt>
+  <dd>Low, Normal or High. Greyed out for No particles.</dd>
+  <dt>Frame rate</dt>
+  <dd>12 per second (lighter: half the file size and render time) or 24 per second (smoother).</dd>
+  <dt>Keep moving while windows are open</dt>
+  <dd>Plasma pauses moving wallpapers while a window fills the screen; this keeps them going, for a little more processor time and battery.</dd>
+</dl>
+
+<p><strong>A live preview</strong> under the settings plays your first picture with the chosen Shimmer, moving, at a small size. It is made in the background (it says <q>Making a preview…</q> for a moment), so the window never freezes while you try styles. Nothing is downloaded for it: until the wallpapers are on your computer, it shows the effect on a plain background in the theme's colours. Pictures that already move (GIF or animated WebP) play as they are and are never previewed with particles. How it works and where the files go: <a href="wallpapers.html#shimmer">Wallpapers</a>.</p>
+
+<h2 id="splash">Splash screen</h2>
+
+<p>The screen you see while Plasma starts after login. Four tiles:</p>
+
+<ul>
+  <li><strong>Keep it:</strong> keep your own splash screen. A splash Plasmify made for an earlier preset gives way to the one you had before Plasmify, or your distribution's default.</li>
+  <li><strong>Plasmify:</strong> a splash in your palette, with your choice of:
+    <ul>
+      <li><span class="ui">Background</span>: the palette colour, the wallpaper, or your own image (drop it on the box);</li>
+      <li><span class="ui">Logo</span>: your distribution's logo, the preset's picture, the Plasma logo, your own image (a PNG with transparency looks best) or no logo;</li>
+      <li><span class="ui">Text</span>: a short line under the logo, up to 40 characters (leave it empty for none);</li>
+      <li><span class="ui">Progress bar</span>: a thin bar that fills while Plasma starts.</li>
+    </ul>
+  </li>
+  <li><strong>Breeze:</strong> Plasma's own splash screen.</li>
+  <li><strong>Off:</strong> no splash screen; the desktop appears as soon as it is ready.</li>
+</ul>
+
+<p><span class="ui">Preview splash</span> shows the Plasmify or Breeze splash in a window for a few seconds. Nothing on your system changes. Dropping an image on one of the splash boxes switches to the Plasmify style for you. The Plasmify splash is one small generated file, not a package.</p>
+
+<h2 id="colours">Colours</h2>
+
+<ul>
+  <li><strong>Accent colour:</strong> click a swatch (the preset's accent, red, orange, yellow, green, cyan, blue or magenta) or use <span class="ui">Any colour…</span>. Buttons, highlights, the dock and the prompt use it.</li>
+  <li><strong>All colours…</strong> opens every palette colour: backgrounds (three shades), buttons and inputs, muted, normal and secondary text, and the status colours. Click one to change it. Here, text contrast is up to you.</li>
+</ul>
+
+<p>Everything is generated from this palette: the KDE colour scheme, the Konsole, Alacritty and kitty colours, the Starship prompt, the fastfetch greeting, the panel style and the splash screen. To flip a theme between dark and light, see <a href="dark-light.html">Dark and light</a>.</p>
+
+<h2 id="icons">Icons and cursor</h2>
+
+<ul>
+  <li><strong>Icons:</strong> any icon theme installed on your computer, with sample icons. Papirus, Papirus-Dark and Papirus-Light are always offered; Papirus is installed from your distribution if you pick one of them.</li>
+  <li><strong>Folders:</strong> the folder colour, for Papirus themes. Plasmify builds a small overlay theme in your home folder that only swaps the folder icons, so no root is needed and package updates do not undo it.</li>
+  <li><strong>Cursor:</strong> any cursor theme installed on your computer, with samples of the arrow, hand, text, busy and move cursors.</li>
+  <li><strong>Cursor size:</strong> 16 to 96 pixels.</li>
+</ul>
+
+<h2 id="fonts">Fonts</h2>
+
+<ul>
+  <li><strong>Interface:</strong> any font installed on your computer, for menus, buttons and window titles, with a size from 6 to 24 pt.</li>
+  <li><strong>Fixed width:</strong> any installed monospaced font, for terminals and code, with a size from 6 to 32 pt.</li>
+</ul>
+
+<p>Both show a sample. Fonts you pick from the list are already installed, so nothing is downloaded for them. If the preset's own fonts are not installed yet, the section says <q>Installed when you apply</q> and names them.</p>
+
+<h2 id="terminal">Terminal and shell</h2>
+
+<h3>The greeting</h3>
+
+<ul>
+  <li><span class="ui">Show system info when a terminal opens</span>: fastfetch prints a logo and system details when you open a terminal (fish, bash and zsh).</li>
+  <li><span class="ui">Include user@host in it</span>: off by default, so screenshots of your terminal do not reveal your user and computer name.</li>
+  <li><span class="ui">Shown lines</span>: tick the system details the greeting lists and <strong>drag them into any order</strong>: operating system, computer model, kernel, uptime, installed packages, shell, screens, desktop, window manager, theme, icons, font, cursor, terminal, terminal font, processor, graphics, memory, swap, disk, local IP address, battery, language, now playing, weather, date and time, and colour dots. The weather line asks wttr.in for the forecast every time a terminal opens, so it is off unless you tick it: presets you import never switch it on for you, and any other preset that lists it asks before it is applied.</li>
+</ul>
+
+<h3>The logo</h3>
+
+<dl class="defs">
+  <dt>Distribution logo</dt>
+  <dd>The logo of your Linux distribution, as fastfetch draws it.</dd>
+  <dt>Built-in logo</dt>
+  <dd>Any of the roughly 600 logos that come with fastfetch (arch, debian, tux and many more). Type to search.</dd>
+  <dt>The preset's picture</dt>
+  <dd>The picture the preset ships for the terminal (only for presets that have one).</dd>
+  <dt>My own photo</dt>
+  <dd>Any picture of yours. It is drawn as a <strong>real image</strong> in terminals that can show images: Konsole, kitty, Ghostty and WezTerm through the kitty graphics protocol, and foot through sixel. Other terminals show it as coloured text blocks.</dd>
+  <dt>My own text</dt>
+  <dd>A word in big block letters, drawn with a font built into Plasmify: up to 12 letters, digits, spaces and <code>! ? . - _ + # @ &amp; *</code>.</dd>
+  <dt>My own drawing</dt>
+  <dd>Your own character drawing, like a <code>[0-0]</code> face. Start from one of the samples and edit it. Up to 24 lines of 80 characters; any characters except <code>$</code> and tabs.</dd>
+</dl>
+
+<h3>Logo colours</h3>
+
+<p>Every logo made of characters can be coloured: the distribution logo, built-in logos, your own text and your own drawings. Pick a <span class="ui">Colour</span>:</p>
+
+<ul>
+  <li><strong>Original colours</strong> (distribution and built-in logos only, and their default): the logo as fastfetch draws it.</li>
+  <li><strong>A scheme</strong> that blends several colours: <span class="ui">Palette gradient</span> (accent, magenta, blue, cyan and green of your palette), <span class="ui">Rainbow</span> (the palette's own rainbow colours), <span class="ui">Mono</span> (the palette's text greys), or one of the fixed schemes <span class="ui">Sunset</span>, <span class="ui">Ocean</span>, <span class="ui">Forest</span>, <span class="ui">Fire</span>, <span class="ui">Candy</span>, <span class="ui">Pastel</span>, <span class="ui">Neon</span> and <span class="ui">Aurora</span>. The list shows a small strip of each scheme's colours.</li>
+  <li><strong>One colour</strong> of the palette: accent, text colour, red, green, yellow, blue, magenta, cyan or orange.</li>
+</ul>
+
+<p>For a scheme, <span class="ui">Direction</span> sets which way the colours run: <span class="ui">Top to bottom</span>, <span class="ui">Bottom to top</span>, <span class="ui">Left to right</span>, <span class="ui">Right to left</span> or <span class="ui">Diagonal</span>. Left, right and diagonal colour every character on its own, so the blend is smooth across the logo. With a single colour there is nothing to blend, so the direction is greyed out.</p>
+
+<p><span class="ui">Size</span> (Small, Medium or Large) applies to text logos and pictures.</p>
+
+<p>The preview below shows the logo in the colours you picked. Original colours are fastfetch's own, so the preview shows those logos in your accent colour.</p>
+
+<h3>Prompt and terminal</h3>
+
+<ul>
+  <li><span class="ui">Prompt</span>: Powerline (folder, git branch and more in coloured blocks), Minimal, or Off. The prompt is Starship.</li>
+  <li><span class="ui">Smarter cd (zoxide)</span>: <code>cd</code> learns the folders you use, so <code>cd docs</code> can jump straight to a folder you visit often.</li>
+  <li><span class="ui">Opacity</span> (30 to 100 %), <span class="ui">Blur behind the terminal</span> and <span class="ui">Text size</span> (6 to 32 pt).</li>
+</ul>
+
+<p>Plasmify themes Konsole, Alacritty and kitty, whichever are installed; it never installs a terminal for you. The prompt and greeting are added to <code>config.fish</code>, <code>.bashrc</code> or <code>.zshrc</code> as one clearly marked block, and only for shells you actually use.</p>
+
+<h2 id="login">Login screen</h2>
+
+<p>Three tiles: <span class="ui">Keep it</span>, <span class="ui">Wallpaper</span> (the preset's first wallpaper) or <span class="ui">My image</span> (drop it on the box). It works with Plasma Login, or SDDM with the Breeze theme, and the section tells you which one it found. Without either, the section is disabled.</p>
+
+<div class="callout warn">
+  <span class="callout-title">Asks for your password</span>
+  <p>This option changes system files, so applying it asks for your password once, and it affects every user on the computer. <span class="ui">Restore</span> puts the old setting back (again with your password). What runs as root: <a href="security.html#root">Security and privacy</a>.</p>
+</div>
+</article>
+<nav class="pager" aria-label="Previous and next page">
+  <a class="prev" href="getting-started.html"><span>Previous</span>Getting started</a>
+  <a class="next" href="wallpapers.html"><span>Next</span>Wallpapers</a>
+</nav>
+<footer class="site-footer">
+  <p>Plasmify is free software under the <a href="https://github.com/heyquatch/plasmify/blob/main/LICENSE">GNU General Public License, version 3 or later</a>. These pages live in <code>docs/wiki</code>; corrections are welcome as pull requests (see <a href="contributing.html">Contributing</a>).</p>
+</footer>
+</main>
+</div>
+</body>
+</html>

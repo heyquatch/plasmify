@@ -1,0 +1,125 @@
+schema = 1
+
+[meta]
+id = "glass-day"
+name = "Glass Day"
+description = "Frosted glass in daylight: bright One Light colours, blurred see-through windows, a floating top bar and dock, and airy KDE and elementary wallpapers."
+tags = ["glass", "translucent", "blur", "light"]
+
+# Atom's One Light syntax theme (MIT), https://github.com/atom/atom/tree/master/packages/one-light-syntax,
+# converted from the HSL values in colors.less. Mantle, surface and crust are darker steps of its
+# background, and yellow is its second orange because One Light has no yellow.
+[palette]
+base = "#fafafa"
+mantle = "#f2f2f2"
+crust = "#d6d6d7"
+surface = "#e5e5e6"
+overlay = "#a0a1a7"
+text = "#383a42"
+subtext = "#696c77"
+accent = "#4078f2"
+red = "#e45649"
+green = "#50a14f"
+yellow = "#cb7701"
+blue = "#4078f2"
+magenta = "#a626a4"
+cyan = "#0184bc"
+orange = "#b76b01"
+bright_black = "#a0a1a7"
+
+# Layan is translucent and blurred on its own, which suits glass.
+[style]
+glass = "frosted"
+
+[style.kvantum]
+repo = "https://github.com/vinceliuice/Layan-kde"
+path = "Kvantum/Layan"
+name = "Layan"
+
+[icons]
+theme = "Papirus-Light"
+folder_color = "blue"
+
+[cursor]
+name = "XCursor-Pro-Dark"
+url = "https://github.com/ful1e5/XCursor-pro/releases/download/v2.0.2/XCursor-Pro-Dark.tar.xz"
+size = 24
+
+[fonts]
+ui = "Inter"
+ui_size = 10
+mono = "Roboto Mono"
+mono_size = 10
+packages = ["inter-font", "ttf-roboto-mono"]
+
+# A floating top bar and a dock for apps that steps aside when a window needs the room.
+[[layout.panels]]
+edge = "top"
+thickness = 30
+widgets = ["launcher", "pager", "spacer", "clock", "spacer", "tray"]
+
+[[layout.panels]]
+edge = "bottom"
+style = "dock"
+thickness = 56
+hiding = "dodge"
+widgets = ["tasks"]
+
+[panel_style]
+radius = 12
+opacity = 0.6
+border = "subtle"
+padding = 3
+colour = "base"
+
+[effects]
+blur = true
+blur_strength = 12
+blur_noise = 5
+blur_saturation = 160
+open_close = "fade"
+minimize = "squash"
+desktop_switch = "slide"
+sheet = true
+moving_opacity = 0.85
+dim_inactive = 15
+
+[terminal]
+opacity = 0.78
+blur = true
+padding = 16
+font_size = 11
+
+[shell]
+prompt = "minimal"
+zoxide = true
+fastfetch_logo = "distro"
+
+[wallpaper]
+mode = "slideshow"
+interval = 1800
+
+[[wallpaper.images]]
+url = "https://raw.githubusercontent.com/KDE/plasma-workspace-wallpapers/master/Waterfall/contents/images/5120x2880.png"
+credit = "Waterfall by Krystian Zajdel, KDE Plasma wallpapers"
+license = "CC BY-SA 4.0"
+
+[[wallpaper.images]]
+url = "https://raw.githubusercontent.com/KDE/plasma-workspace-wallpapers/master/Volna/contents/images/5120x2880.jpg"
+credit = "Volna by Nikita Babin, KDE Plasma wallpapers"
+license = "CC BY-SA 4.0"
+
+[[wallpaper.images]]
+url = "https://raw.githubusercontent.com/elementary/wallpapers/main/backgrounds/odin.jpg"
+credit = "Odin by Ryan Gorley featuring the work of Brendon Porter, elementary OS wallpapers"
+license = "CC BY-SA 4.0"
+
+[[wallpaper.images]]
+url = "https://raw.githubusercontent.com/KDE/plasma-workspace-wallpapers/master/Kay/contents/images/5120x2880.png"
+credit = "Kay by ruvkr, KDE Plasma wallpapers"
+license = "CC BY-SA 4.0"
+
+[[wallpaper.images]]
+url = "https://raw.githubusercontent.com/elementary/wallpapers/main/backgrounds/A%20Large%20Body%20of%20Water%20Surrounded%20By%20Mountains.jpg"
+credit = "A Large Body of Water Surrounded By Mountains by Peter Thomas (Unsplash), via elementary/wallpapers"
+license = "Unsplash License"

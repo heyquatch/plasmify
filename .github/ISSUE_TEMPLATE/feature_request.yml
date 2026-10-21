@@ -1,0 +1,21 @@
+name: Feature request
+description: Suggest an idea for Plasmify
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What would you like to do?
+      description: Describe the problem or the look you want to achieve.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+  - type: checkboxes
+    id: bloat
+    attributes:
+      label: Bloat check
+      options:
+        - label: This does not need a background service, an AUR/COPR/PPA package or a new dependency

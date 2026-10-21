@@ -1,0 +1,47 @@
+name: Bug report
+description: Something does not work as expected
+labels: ["bug"]
+body:
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: What did you do, what did you expect, and what happened instead?
+    validations:
+      required: true
+  - type: input
+    id: preset
+    attributes:
+      label: Preset and steps
+      placeholder: "rose-pine-cozy, all steps"
+  - type: input
+    id: version
+    attributes:
+      label: Plasmify version
+      description: Output of `plasmify --version`
+    validations:
+      required: true
+  - type: dropdown
+    id: family
+    attributes:
+      label: Distribution family
+      options:
+        - Arch-based (Arch, CachyOS, EndeavourOS, Manjaro…)
+        - Fedora
+        - openSUSE
+        - Debian / Ubuntu / KDE neon
+    validations:
+      required: true
+  - type: input
+    id: distro
+    attributes:
+      label: Distribution and Plasma version
+      placeholder: "Fedora 43 KDE, Plasma 6.5.2 (Wayland)"
+    validations:
+      required: true
+  - type: textarea
+    id: log
+    attributes:
+      label: Output
+      description: Output of `plasmify apply <preset>` or the log shown in the apply window.
+      render: text

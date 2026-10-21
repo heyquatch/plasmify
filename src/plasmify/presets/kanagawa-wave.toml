@@ -1,0 +1,109 @@
+schema = 1
+
+[meta]
+id = "kanagawa-wave"
+name = "Kanagawa Wave"
+description = "Sumi ink blues and muted Edo tones from Hokusai's Great Wave, ink wave prints, calm dark landscapes and one top bar split into three islands."
+tags = ["japanese", "ukiyo-e", "ink", "dark"]
+
+# https://github.com/rebelot/kanagawa.nvim (MIT), "wave" theme: sumiInk backgrounds,
+# fujiWhite and oldWhite text, crystalBlue accent and fujiGray as bright black. Red is
+# waveRed; green, yellow and cyan are springGreen, carpYellow and waveAqua2 (Kanagawa's
+# bright terminal tones), which read better on sumi ink than the normal ones.
+[palette]
+base = "#1f1f28"
+mantle = "#181820"
+crust = "#16161d"
+surface = "#2a2a37"
+overlay = "#54546d"
+text = "#dcd7ba"
+subtext = "#c8c093"
+accent = "#7e9cd8"
+red = "#e46876"
+green = "#98bb6c"
+yellow = "#e6c384"
+blue = "#7e9cd8"
+magenta = "#957fb8"
+cyan = "#7aa89f"
+orange = "#ffa066"
+bright_black = "#727169"
+
+[icons]
+theme = "Papirus-Dark"
+folder_color = "bluegrey"
+
+[cursor]
+name = "Bibata-Original-Classic"
+url = "https://github.com/ful1e5/Bibata_Cursor/releases/download/v2.0.7/Bibata-Original-Classic.tar.xz"
+size = 24
+
+[fonts]
+ui = "Noto Sans"
+ui_size = 10
+mono = "JetBrains Mono"
+mono_size = 10
+packages = ["noto-fonts", "ttf-jetbrains-mono"]
+
+# One top edge split into three islands: menu and desktops, open apps, clock and tray.
+[[layout.panels]]
+edge = "top"
+style = "islands"
+thickness = 36
+widgets = ["launcher", "pager", "spacer", "tasks", "spacer", "clock", "tray"]
+
+[panel_style]
+radius = 12
+opacity = 0.85
+border = "subtle"
+padding = 4
+colour = "mantle"
+
+[effects]
+blur = true
+blur_strength = 8
+open_close = "glide"
+minimize = "magiclamp"
+desktop_switch = "slide"
+
+[terminal]
+opacity = 0.92
+blur = true
+padding = 14
+font_size = 11
+
+[shell]
+prompt = "powerline"
+zoxide = true
+logo = "text"
+logo_text = "KANAGAWA"
+logo_colour = "gradient"
+
+# krishna4a6av/Wallpapers moves files around, so its links point at one commit.
+[wallpaper]
+mode = "slideshow"
+interval = 1800
+
+[[wallpaper.images]]
+url = "https://raw.githubusercontent.com/omacom/omakub/master/themes/kanagawa/background.jpg"
+credit = "The Great Wave off Kanagawa by Katsushika Hokusai (public domain), via omacom/omakub"
+license = "Public domain"
+
+[[wallpaper.images]]
+url = "https://raw.githubusercontent.com/krishna4a6av/Wallpapers/c9930f6bef0aed650b377e2d07eb592aab756a2e/Kanagawa/wave.jpg"
+credit = "Line art after The Great Wave off Kanagawa by Katsushika Hokusai (tracer unknown), via krishna4a6av/Wallpapers"
+
+[[wallpaper.images]]
+url = "https://raw.githubusercontent.com/krishna4a6av/Wallpapers/c9930f6bef0aed650b377e2d07eb592aab756a2e/Kanagawa/scape.jpg"
+credit = "scape.jpg, from the krishna4a6av/Wallpapers collection (original artist uncredited)"
+
+[[wallpaper.images]]
+url = "https://raw.githubusercontent.com/krishna4a6av/Wallpapers/c9930f6bef0aed650b377e2d07eb592aab756a2e/Kanagawa/petals.jpg"
+credit = "petals.jpg, from the krishna4a6av/Wallpapers collection (original artist uncredited)"
+
+[[wallpaper.images]]
+url = "https://raw.githubusercontent.com/linuxdotexe/nordic-wallpapers/master/wallpapers/ign-0008.png"
+credit = "ign-0008.png, from the linuxdotexe/nordic-wallpapers collection (original artist uncredited)"
+
+[[wallpaper.images]]
+url = "https://raw.githubusercontent.com/Gurjaka/Kanagawa-Wallpapers/main/wallpapers/mountains-retreat.jpg"
+credit = "mountains-retreat.jpg, from the Gurjaka/Kanagawa-Wallpapers collection (original artist uncredited)"

@@ -1,0 +1,37 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+.ruff_cache/
+.pytest_cache/
+.coverage
+*.pkg.tar.zst
+packaging/arch/src/
+packaging/arch/pkg/
+*.egg
+.eggs/
+venv/
+env/
+.mypy_cache/
+.coverage.*
+htmlcov/
+coverage.xml
+# Arch packaging (makepkg in packaging/arch)
+packaging/arch/*.tar.gz
+packaging/arch/*.log
+*.pkg.tar.zst.sig
+# Local outputs of the app and the dev tools (exported presets can hold your own pictures)
+*.plasmify
+/*.png
+shots/
+# Editors and desktop files
+.vscode/
+.idea/
+*.swp
+*~
+*.kate-swp
+.directory
+.DS_Store
+Thumbs.db

@@ -1,0 +1,133 @@
+schema = 1
+
+[meta]
+id = "dracula-night"
+name = "Dracula Night"
+description = "Midnight purple and pink from the Dracula palette, gothic night illustrations, floating islands up top and a clean dock."
+tags = ["gothic", "night", "purple", "dark"]
+
+# https://github.com/dracula/dracula-theme (MIT). Dracula has nothing darker than its
+# background, so mantle and crust are the official "BG Dark" and "BG Darker" UI variants
+# from dracula/visual-studio-code. It has no blue either: blue is Purple, as in Dracula's
+# own ANSI colours, and the bright colours are its official ANSI brights. Subtext is
+# Foreground with 40% of Comment mixed in, because the spec has no secondary text colour.
+[palette]
+base = "#282a36"
+mantle = "#21222c"
+crust = "#191a21"
+surface = "#44475a"
+overlay = "#6272a4"
+text = "#f8f8f2"
+subtext = "#bcc2d3"
+accent = "#bd93f9"
+red = "#ff5555"
+green = "#50fa7b"
+yellow = "#f1fa8c"
+blue = "#bd93f9"
+magenta = "#ff79c6"
+cyan = "#8be9fd"
+orange = "#ffb86c"
+bright_black = "#6272a4"
+bright_red = "#ff6e6e"
+bright_green = "#69ff94"
+bright_yellow = "#ffffa5"
+bright_blue = "#d6acff"
+bright_magenta = "#ff92df"
+bright_cyan = "#a4ffff"
+bright_white = "#ffffff"
+
+[style.kvantum]
+repo = "https://github.com/dracula/gtk"
+path = "kde/kvantum/Dracula-purple-solid"
+name = "Dracula-purple-solid"
+
+[icons]
+theme = "Papirus-Dark"
+folder_color = "dracula-purple"
+folder_source = { repo = "https://github.com/dracula/papirus-folders", path = "Icons" }
+
+[cursor]
+name = "Dracula-cursors"
+url = "https://github.com/dracula/gtk/releases/download/v4.0.0/Dracula-cursors.tar.xz"
+size = 24
+
+[fonts]
+ui = "Inter"
+ui_size = 10
+mono = "Fira Code"
+mono_size = 10
+packages = ["inter-font", "ttf-fira-code"]
+
+[[layout.panels]]
+edge = "top"
+style = "islands"
+thickness = 34
+widgets = ["launcher", "pager", "spacer", "clock", "spacer", "tray"]
+
+[[layout.panels]]
+edge = "bottom"
+style = "dock"
+thickness = 52
+hiding = "dodge"
+widgets = ["tasks"]
+
+[panel_style]
+radius = 12
+opacity = 0.85
+border = "subtle"
+padding = 4
+colour = "mantle"
+
+[effects]
+blur = true
+blur_strength = 9
+open_close = "glide"
+minimize = "magiclamp"
+desktop_switch = "fade"
+
+[terminal]
+opacity = 0.9
+blur = true
+padding = 14
+font_size = 11
+
+[shell]
+prompt = "powerline"
+zoxide = true
+logo = "text"
+logo_text = "DRACULA"
+logo_colour = "gradient"
+
+[wallpaper]
+mode = "slideshow"
+interval = 1800
+lock_screen = true
+
+[[wallpaper.images]]
+url = "https://raw.githubusercontent.com/dracula/wallpaper/master/second-collection/spooky-minimal/dracula-spooky-44475a.png"
+credit = "dracula-spooky-44475a.png by Freepik, recoloured by helpotters, via dracula/wallpaper"
+
+[[wallpaper.images]]
+url = "https://raw.githubusercontent.com/dracula/wallpaper/master/second-collection/illustrations/cat-and-bats/dracula-cat-282a36.png"
+credit = "dracula-cat-282a36.png by Freepik, recoloured by helpotters, via dracula/wallpaper"
+
+[[wallpaper.images]]
+url = "https://raw.githubusercontent.com/dracula/wallpaper/master/second-collection/waves/dracula-waves-44475a.png"
+credit = "dracula-waves-44475a.png from a photo by Alex Perez (Unsplash), recoloured by helpotters, via dracula/wallpaper"
+
+[[wallpaper.images]]
+url = "https://raw.githubusercontent.com/dracula/wallpaper/master/second-collection/illustrations/trees-and-mountains/dracula-mnt-bd93f9.png"
+credit = "dracula-mnt-bd93f9.png by brgfx (Freepik), recoloured by helpotters, via dracula/wallpaper"
+
+[[wallpaper.images]]
+url = "https://raw.githubusercontent.com/dracula/wallpaper/master/second-collection/illustrations/galaxy/dracula-galaxy-282a36.png"
+credit = "dracula-galaxy-282a36.png by rawpixel (Freepik), recoloured by helpotters, via dracula/wallpaper"
+
+[[wallpaper.images]]
+url = "https://raw.githubusercontent.com/dracula/wallpaper/master/second-collection/soft-waves/dracula-soft-waves-44475a.png"
+credit = "dracula-soft-waves-44475a.png from a photo by Carl Raw (Unsplash), recoloured by helpotters, via dracula/wallpaper"
+
+[[wallpaper.images]]
+url = "https://raw.githubusercontent.com/aynp/dracula-wallpapers/main/Art/4k/Waves%201.png"
+credit = "Waves 1 by Aryan Pathania, via aynp/dracula-wallpapers"
+license = "CC BY-SA 4.0"

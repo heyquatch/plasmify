@@ -1,0 +1,142 @@
+schema = 1
+
+[meta]
+id = "crimson-moon"
+name = "Crimson Moon"
+description = "Black, crimson and gold under a crescent moon, gold shooting stars over a living wallpaper and frosted glass windows. Add your own character art in Customize and pick a Shimmer style."
+tags = ["crimson", "gold", "moon", "dark"]
+
+# A Plasmify palette: near black with ivory text, a gold accent (crust on gold reads well for
+# selections) and crimson through red, the panel border and the wallpapers.
+[palette]
+base = "#0e0a0b"
+mantle = "#090607"
+crust = "#040203"
+surface = "#24171a"
+overlay = "#7a6467"
+text = "#f0e6d8"
+subtext = "#c4b4a4"
+accent = "#d6a84e"
+red = "#dc3d55"
+green = "#9fb36f"
+yellow = "#e8c46a"
+blue = "#86a3cc"
+magenta = "#d07a98"
+cyan = "#7dbcb4"
+orange = "#e48f4e"
+bright_black = "#5a4649"
+
+# No Kvantum theme of its own: glass colours one from this palette.
+[style]
+glass = "frosted"
+
+[icons]
+theme = "Papirus-Dark"
+folder_color = "carmine"
+
+[cursor]
+name = "Bibata-Original-Amber"
+url = "https://github.com/ful1e5/Bibata_Cursor/releases/download/v2.0.7/Bibata-Original-Amber.tar.xz"
+size = 24
+
+[fonts]
+ui = "Noto Sans"
+ui_size = 10
+mono = "Fira Code"
+mono_size = 10
+packages = ["noto-fonts", "ttf-fira-code"]
+
+# Islands on top; the dock hides until the mouse reaches the bottom edge.
+[[layout.panels]]
+edge = "top"
+style = "islands"
+thickness = 34
+widgets = ["launcher", "pager", "spacer", "clock", "spacer", "tray"]
+
+[[layout.panels]]
+edge = "bottom"
+style = "dock"
+thickness = 54
+hiding = "autohide"
+widgets = ["tasks"]
+
+[panel_style]
+radius = 14
+opacity = 0.75
+border = "accent"
+padding = 4
+colour = "mantle"
+
+[effects]
+blur = true
+blur_strength = 10
+blur_noise = 5
+blur_saturation = 160
+open_close = "glide"
+minimize = "magiclamp"
+desktop_switch = "fade"
+fall_apart = true
+sheet = true
+dim_inactive = 20
+
+[terminal]
+opacity = 0.85
+blur = true
+padding = 14
+font_size = 11
+
+[shell]
+prompt = "powerline"
+zoxide = true
+logo = "text"
+logo_text = "CRIMSON"
+logo_colour = "gradient"
+
+[splash]
+style = "plasmify"
+background = "palette"
+logo = "distro"
+text = "Crimson Moon"
+progress = true
+
+[wallpaper]
+mode = "slideshow"
+interval = 1800
+shimmer = "starfall"
+shimmer_colour = "accent"
+shimmer_light = "glint"
+
+[[wallpaper.images]]
+url = "https://raw.githubusercontent.com/UbuntuBudgie/budgie-wallpapers/master/crescent_moon_by_stephen_rahn.jpg"
+credit = "Crescent Moon by Stephen Rahn, via UbuntuBudgie/budgie-wallpapers"
+license = "CC0 1.0"
+
+[[wallpaper.images]]
+url = "https://raw.githubusercontent.com/UbuntuBudgie/budgie-wallpapers/master/darksky_by_bryant_stiven_salazar_aguirre.jpg"
+credit = "Dark Sky by Bryant Stiven Salazar Aguirre, via UbuntuBudgie/budgie-wallpapers"
+license = "CC0 1.0"
+
+[[wallpaper.images]]
+url = "https://raw.githubusercontent.com/UbuntuBudgie/budgie-wallpapers/master/pointy_red_by_guy_renard.jpg"
+credit = "Pointy Red by Guy Renard, via UbuntuBudgie/budgie-wallpapers"
+license = "CC BY 2.0"
+
+[[wallpaper.images]]
+url = "https://raw.githubusercontent.com/AntouanK/floating-world/aa0a4d2846c7a85e094b85bd790b2179cd93e53c/backgrounds/Rainstorm%20Beneath%20the%20Summit.webp"
+credit = "Rainstorm Beneath the Summit by Katsushika Hokusai (public domain), via AntouanK/floating-world"
+license = "Public domain"
+
+[[wallpaper.images]]
+url = "https://raw.githubusercontent.com/UbuntuBudgie/budgie-wallpapers/master/abstract_lights_by_matthias_ripp.jpg"
+credit = "Abstract Lights by Matthias Ripp, via UbuntuBudgie/budgie-wallpapers"
+license = "CC BY 4.0"
+
+[[wallpaper.images]]
+url = "https://raw.githubusercontent.com/AntouanK/floating-world/aa0a4d2846c7a85e094b85bd790b2179cd93e53c/backgrounds/Full%20Moon%20Ishiyamadera.webp"
+credit = "Autumn Moon at Ishiyama-dera by Utagawa Hiroshige (public domain), via AntouanK/floating-world"
+license = "Public domain"
+
+[[wallpaper.images]]
+url = "https://raw.githubusercontent.com/UbuntuBudgie/budgie-wallpapers/master/starry-night_by_adrian_pelletier.jpg"
+credit = "Starry Night by Adrian Pelletier, via UbuntuBudgie/budgie-wallpapers"
+license = "CC0 1.0"

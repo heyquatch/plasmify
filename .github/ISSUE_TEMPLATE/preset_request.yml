@@ -1,0 +1,28 @@
+name: Preset request
+description: Suggest a new preset (or volunteer to build one)
+labels: ["preset"]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: Theme name
+      placeholder: "Everforest"
+    validations:
+      required: true
+  - type: input
+    id: palette
+    attributes:
+      label: Link to the official palette
+    validations:
+      required: true
+  - type: textarea
+    id: vibe
+    attributes:
+      label: Vibe, wallpapers and layout
+      description: What should it feel like? Links to wallpaper sources that credit their artists are a big help.
+  - type: checkboxes
+    id: help
+    attributes:
+      label: Contribution
+      options:
+        - label: I would like to build this preset myself

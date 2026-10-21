@@ -1,0 +1,97 @@
+schema = 1
+
+[meta]
+id = "nord-minimal"
+name = "Nord Minimal"
+description = "Calm arctic blues, a single classic panel and quiet mountain landscapes. The lightest preset."
+tags = ["minimal", "calm", "nature", "dark"]
+
+# https://github.com/nordtheme/nord (MIT). Nord has no colour darker than nord0,
+# so mantle and crust are darkened shades of it.
+[palette]
+base = "#2e3440"
+mantle = "#292e39"
+crust = "#242933"
+surface = "#3b4252"
+overlay = "#4c566a"
+text = "#eceff4"
+subtext = "#d8dee9"
+accent = "#88c0d0"
+red = "#bf616a"
+green = "#a3be8c"
+yellow = "#ebcb8b"
+blue = "#81a1c1"
+magenta = "#b48ead"
+cyan = "#8fbcbb"
+orange = "#d08770"
+bright_black = "#4c566a"
+
+[icons]
+theme = "Papirus-Dark"
+folder_color = "nordic"
+
+[cursor]
+name = "Bibata-Modern-Ice"
+url = "https://github.com/ful1e5/Bibata_Cursor/releases/download/v2.0.7/Bibata-Modern-Ice.tar.xz"
+size = 24
+
+[fonts]
+ui = "Noto Sans"
+ui_size = 10
+mono = "Hack"
+mono_size = 10
+packages = ["noto-fonts", "ttf-hack"]
+
+[layout]
+name = "bottom-panel"
+floating = true
+
+[effects]
+blur = true
+blur_strength = 6
+open_close = "fade"
+minimize = "squash"
+desktop_switch = "fade"
+
+[terminal]
+opacity = 0.95
+blur = true
+padding = 10
+font_size = 11
+
+[shell]
+prompt = "minimal"
+zoxide = true
+fastfetch_logo = "distro"
+
+[wallpaper]
+mode = "slideshow"
+interval = 3600
+
+[[wallpaper.images]]
+url = "https://raw.githubusercontent.com/linuxdotexe/nordic-wallpapers/master/wallpapers/nord_mountains.png"
+credit = "nord_mountains.png, from the linuxdotexe/nordic-wallpapers collection (original artist uncredited)"
+
+[[wallpaper.images]]
+url = "https://raw.githubusercontent.com/linuxdotexe/nordic-wallpapers/master/wallpapers/nord_lake.png"
+credit = "nord_lake.png, from the linuxdotexe/nordic-wallpapers collection (original artist uncredited)"
+
+[[wallpaper.images]]
+url = "https://raw.githubusercontent.com/linuxdotexe/nordic-wallpapers/master/wallpapers/nord_valley.png"
+credit = "nord_valley.png, from the linuxdotexe/nordic-wallpapers collection (original artist uncredited)"
+
+[[wallpaper.images]]
+url = "https://raw.githubusercontent.com/linuxdotexe/nordic-wallpapers/master/wallpapers/ign_nordhills.png"
+credit = "ign_nordhills.png, from the linuxdotexe/nordic-wallpapers collection (original artist uncredited)"
+
+[[wallpaper.images]]
+url = "https://raw.githubusercontent.com/linuxdotexe/nordic-wallpapers/master/wallpapers/misty_mountains.jpg"
+credit = "misty_mountains.jpg, from the linuxdotexe/nordic-wallpapers collection (original artist uncredited)"
+
+[[wallpaper.images]]
+url = "https://raw.githubusercontent.com/linuxdotexe/nordic-wallpapers/master/wallpapers/nord-arctic-fox.png"
+credit = "nord-arctic-fox.png, from the linuxdotexe/nordic-wallpapers collection (original artist uncredited)"
+
+[[wallpaper.images]]
+url = "https://raw.githubusercontent.com/linuxdotexe/nordic-wallpapers/master/wallpapers/Minimal-Nord.png"
+credit = "Minimal-Nord.png, from the linuxdotexe/nordic-wallpapers collection (original artist uncredited)"

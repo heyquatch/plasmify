@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=Plasmify
+GenericName=Desktop Theme Manager
+Comment=One-click, bloat-free themes for KDE Plasma
+Exec=plasmify gui
+Icon=io.github.heyquatch.plasmify
+Terminal=false
+Categories=Qt;KDE;Settings;DesktopSettings;
+Keywords=theme;rice;wallpaper;icons;cursor;colors;panel;dock;
+StartupNotify=true

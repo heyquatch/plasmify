@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Update | Plasmify documentation</title>
+<meta name="description" content="How to update Plasmify: pull the latest version and run install.sh again. Your settings, presets and backups are kept.">
+<link rel="canonical" href="https://plasmify.github.io/update.html">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Plasmify">
+<meta property="og:title" content="Update | Plasmify documentation">
+<meta property="og:description" content="How to update Plasmify: pull the latest version and run install.sh again. Your settings, presets and backups are kept.">
+<meta property="og:url" content="https://plasmify.github.io/update.html">
+<meta property="og:image" content="https://plasmify.github.io/images/plasmify.png">
+<meta property="og:image:width" content="1274">
+<meta property="og:image:height" content="720">
+<meta property="og:image:alt" content="The Plasmify main window with the preset gallery, a live preview and the settings.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#content">Skip to the content</a>
+<header class="topbar">
+  <a class="brand" href="index.html"><svg viewBox="0 0 128 128" width="30" height="30" aria-hidden="true" focusable="false"><defs><linearGradient id="plasmify-logo-top" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#cba6f7"/><stop offset="0.55" stop-color="#89b4fa"/><stop offset="1" stop-color="#94e2d5"/></linearGradient></defs><rect x="8" y="8" width="112" height="112" rx="28" fill="url(#plasmify-logo-top)"/><rect x="22" y="24" width="84" height="10" rx="5" fill="#1e1e2e" opacity="0.85"/><rect x="40" y="94" width="48" height="12" rx="6" fill="#1e1e2e" opacity="0.85"/><circle cx="48" cy="100" r="3" fill="#f5c2e7"/><circle cx="58" cy="100" r="3" fill="#a6e3a1"/><circle cx="68" cy="100" r="3" fill="#f9e2af"/><circle cx="78" cy="100" r="3" fill="#89b4fa"/><path d="M64 44 L69.5 58.5 L84 64 L69.5 69.5 L64 84 L58.5 69.5 L44 64 L58.5 58.5 Z" fill="#ffffff"/><path d="M88 42 L90.5 48.5 L97 51 L90.5 53.5 L88 60 L85.5 53.5 L79 51 L85.5 48.5 Z" fill="#ffffff" opacity="0.85"/></svg><span>Plasmify<small>Documentation</small></span></a>
+  <a class="menu-link" href="#nav">Menu</a>
+</header>
+<div class="layout">
+<nav class="sidebar" id="nav" aria-label="Wiki pages">
+  <a class="brand" href="index.html"><svg viewBox="0 0 128 128" width="36" height="36" aria-hidden="true" focusable="false"><defs><linearGradient id="plasmify-logo-nav" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#cba6f7"/><stop offset="0.55" stop-color="#89b4fa"/><stop offset="1" stop-color="#94e2d5"/></linearGradient></defs><rect x="8" y="8" width="112" height="112" rx="28" fill="url(#plasmify-logo-nav)"/><rect x="22" y="24" width="84" height="10" rx="5" fill="#1e1e2e" opacity="0.85"/><rect x="40" y="94" width="48" height="12" rx="6" fill="#1e1e2e" opacity="0.85"/><circle cx="48" cy="100" r="3" fill="#f5c2e7"/><circle cx="58" cy="100" r="3" fill="#a6e3a1"/><circle cx="68" cy="100" r="3" fill="#f9e2af"/><circle cx="78" cy="100" r="3" fill="#89b4fa"/><path d="M64 44 L69.5 58.5 L84 64 L69.5 69.5 L64 84 L58.5 69.5 L44 64 L58.5 58.5 Z" fill="#ffffff"/><path d="M88 42 L90.5 48.5 L97 51 L90.5 53.5 L88 60 L85.5 53.5 L79 51 L85.5 48.5 Z" fill="#ffffff" opacity="0.85"/></svg><span>Plasmify<small>Documentation</small></span></a>
+  <p class="nav-group">Start here</p>
+  <ul>
+    <li><a href="index.html">Overview</a></li>
+    <li><a href="install.html">Install</a></li>
+    <li><a href="update.html" aria-current="page">Update</a></li>
+    <li><a href="uninstall.html">Uninstall</a></li>
+  </ul>
+  <p class="nav-group">Using Plasmify</p>
+  <ul>
+    <li><a href="getting-started.html">Getting started</a></li>
+    <li><a href="customize.html">Customize</a></li>
+    <li><a href="wallpapers.html">Wallpapers</a></li>
+    <li><a href="dark-light.html">Dark and light</a></li>
+    <li><a href="theme-studio.html">Theme studio</a></li>
+    <li><a href="sharing.html">Sharing presets</a></li>
+    <li><a href="backups.html">Backups and restore</a></li>
+  </ul>
+  <p class="nav-group">Reference</p>
+  <ul>
+    <li><a href="cli.html">Command line</a></li>
+    <li><a href="troubleshooting.html">Troubleshooting</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="security.html">Security and privacy</a></li>
+    <li><a href="contributing.html">Contributing</a></li>
+  </ul>
+</nav>
+<main id="content">
+<article>
+<h1>Update</h1>
+<p class="lead">Updating replaces the app and nothing else. Your settings, presets and backups stay where they are.</p>
+
+<h2 id="install-sh">If you installed with install.sh</h2>
+
+<p>Go to the folder you cloned, pull the latest version and run the installer again:</p>
+
+<pre><code>cd plasmify
+git pull
+./install.sh</code></pre>
+
+<p>The installer removes the old copy in <code>~/.local/lib/plasmify</code>, copies the new one and rewrites the launcher, menu entry and icon. It never touches what Plasmify stored for you:</p>
+
+<div class="table-wrap">
+<table class="stack">
+  <thead><tr><th>What</th><th>Where</th></tr></thead>
+  <tbody>
+    <tr><td>Your own presets (saved, imported or made in the theme studio)</td><td><code>~/.config/plasmify/presets</code></td></tr>
+    <tr><td>Downloaded wallpapers and the pictures you dropped into Customize</td><td><code>~/.local/share/plasmify</code></td></tr>
+    <tr><td>Backups, download history, remembered Customize tweaks and the error log</td><td><code>~/.local/state/plasmify</code></td></tr>
+    <tr><td>Generated colour schemes, icon overlays, panel styles and splash screens</td><td>under <code>~/.local/share</code></td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>Check which version you have with:</p>
+
+<pre><code>plasmify --version</code></pre>
+
+<p>What changed in each version is listed in the <a href="https://github.com/heyquatch/plasmify/blob/main/CHANGELOG.md">changelog</a>.</p>
+
+<div class="callout tip">
+  <span class="callout-title">Lost the folder you cloned?</span>
+  <p>Clone the repository again into any folder and run <code>./install.sh</code> there. It replaces the installed copy in the same way.</p>
+</div>
+
+<h2 id="desktop">Your desktop after an update</h2>
+
+<p>Updating the app does not change your desktop: the theme you applied stays exactly as it is. To pick up improvements to a preset, or fixes in how a part is applied, select the preset and press <span class="ui">Apply theme</span> again. Your Customize tweaks for that preset are remembered and applied on top, and a new backup is taken first, as always.</p>
+
+<h2 id="arch">If you use the Arch package</h2>
+
+<p>After <code>git pull</code>, check that <code>pkgver</code> in <code>packaging/arch/PKGBUILD</code> names the release you want, then build and install again:</p>
+
+<pre><code>cd plasmify/packaging/arch
+makepkg -si</code></pre>
+
+<p>pacman replaces the old package. Your data in your home folder is kept, just like with <code>install.sh</code>.</p>
+
+<h2 id="checkout">If you run it from the cloned folder</h2>
+
+<p><code>git pull</code> is all you need.</p>
+</article>
+<nav class="pager" aria-label="Previous and next page">
+  <a class="prev" href="install.html"><span>Previous</span>Install</a>
+  <a class="next" href="uninstall.html"><span>Next</span>Uninstall</a>
+</nav>
+<footer class="site-footer">
+  <p>Plasmify is free software under the <a href="https://github.com/heyquatch/plasmify/blob/main/LICENSE">GNU General Public License, version 3 or later</a>. These pages live in <code>docs/wiki</code>; corrections are welcome as pull requests (see <a href="contributing.html">Contributing</a>).</p>
+</footer>
+</main>
+</div>
+</body>
+</html>

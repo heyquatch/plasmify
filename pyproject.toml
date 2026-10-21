@@ -1,0 +1,57 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "plasmify"
+dynamic = ["version"]
+description = "One-click, bloat-free desktop themes for KDE Plasma 6"
+readme = "README.md"
+license = "GPL-3.0-or-later"
+license-files = ["LICENSE"]
+requires-python = ">=3.11"
+dependencies = ["PyQt6>=6.5"]
+keywords = ["kde", "plasma", "theme", "rice", "linux", "desktop"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: X11 Applications :: KDE",
+    "Intended Audience :: End Users/Desktop",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3",
+    "Topic :: Desktop Environment :: K Desktop Environment (KDE) :: Themes",
+]
+
+[project.urls]
+Homepage = "https://github.com/heyquatch/plasmify"
+Documentation = "https://plasmify.github.io"
+Issues = "https://github.com/heyquatch/plasmify/issues"
+
+[project.scripts]
+plasmify = "plasmify.cli:main"
+
+[tool.setuptools.dynamic]
+version = { attr = "plasmify.__version__" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+plasmify = ["presets/*.toml", "templates/*", "assets/*.svg"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+# "S" = flake8-bandit security checks. Every exception below or inline needs a reason.
+select = ["E", "F", "W", "I", "B", "UP", "N", "SIM", "S"]
+ignore = [
+    "E501",
+    "S603",  # subprocess with an argument list: Plasmify never uses shell=True
+    "S607",  # tools are resolved from PATH on purpose (qdbus6, pacman, ...); the user's PATH is trusted
+]
+
+[tool.ruff.lint.per-file-ignores]
+# Seeded random layouts make the tests reproducible; nothing there is security related.
+"tests/**" = ["S311"]

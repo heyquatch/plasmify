@@ -1,0 +1,121 @@
+schema = 1
+
+[meta]
+id = "glass-night"
+name = "Glass Night"
+description = "Glass after dark: clearly see-through, lightly blurred windows and panels in One Dark colours, softly dimmed background windows and one floating dock over KDE's own night wallpapers."
+tags = ["glass", "translucent", "blur", "dark"]
+
+# Atom's One Dark syntax theme (MIT), https://github.com/atom/atom/tree/master/packages/one-dark-syntax,
+# converted from the HSL values in colors.less. It has nothing darker than its background, so
+# mantle and crust are darker steps of it.
+[palette]
+base = "#282c34"
+mantle = "#21252b"
+crust = "#1b1d23"
+surface = "#3a3f4b"
+overlay = "#5c6370"
+text = "#abb2bf"
+subtext = "#828997"
+accent = "#61afef"
+red = "#e06c75"
+green = "#98c379"
+yellow = "#e5c07b"
+blue = "#61afef"
+magenta = "#c678dd"
+cyan = "#56b6c2"
+orange = "#d19a66"
+bright_black = "#5c6370"
+
+# Layan is translucent and blurred on its own, which suits glass. The glass look keeps the
+# blur light, so the wallpaper still shows through the windows.
+[style]
+glass = "glass"
+
+[style.kvantum]
+repo = "https://github.com/vinceliuice/Layan-kde"
+path = "Kvantum/Layan"
+name = "LayanDark"
+
+[icons]
+theme = "Papirus-Dark"
+folder_color = "violet"
+
+[cursor]
+name = "XCursor-Pro-Light"
+url = "https://github.com/ful1e5/XCursor-pro/releases/download/v2.0.2/XCursor-Pro-Light.tar.xz"
+size = 24
+
+[fonts]
+ui = "Inter"
+ui_size = 10
+mono = "JetBrains Mono"
+mono_size = 10
+packages = ["inter-font", "ttf-jetbrains-mono"]
+
+# A single floating dock that holds everything and stays in view, so the glass is always on show.
+[[layout.panels]]
+edge = "bottom"
+style = "dock"
+thickness = 52
+hiding = "always"
+widgets = ["launcher", "pager", "separator", "tasks", "separator", "tray", "clock"]
+
+[panel_style]
+radius = 18
+opacity = 0.58
+border = "subtle"
+padding = 4
+colour = "base"
+
+[effects]
+blur = true
+blur_strength = 4
+blur_noise = 1
+blur_saturation = 180
+open_close = "scale"
+minimize = "magiclamp"
+desktop_switch = "fade"
+sheet = true
+moving_opacity = 0.85
+dim_inactive = 20
+
+[terminal]
+opacity = 0.72
+blur = true
+padding = 16
+font_size = 11
+
+[shell]
+prompt = "powerline"
+zoxide = true
+fastfetch_logo = "distro"
+
+[wallpaper]
+mode = "slideshow"
+interval = 1800
+
+[[wallpaper.images]]
+url = "https://raw.githubusercontent.com/KDE/plasma-workspace-wallpapers/master/Nuvole/contents/images_dark/5120x2880.png"
+credit = "Nuvole (dark) by Krystian Zajdel, KDE Plasma wallpapers"
+license = "CC BY-SA 4.0"
+
+[[wallpaper.images]]
+url = "https://raw.githubusercontent.com/KDE/plasma-workspace-wallpapers/master/Nexus/contents/images_dark/5120x2880.png"
+credit = "Nexus (dark) by Krystian Zajdel, KDE Plasma wallpapers"
+license = "CC BY-SA 4.0"
+
+[[wallpaper.images]]
+url = "https://raw.githubusercontent.com/KDE/plasma-workspace-wallpapers/master/Orionids/contents/images_dark/5120x2880.png"
+credit = "Orionids (dark) by Krystian Zajdel, KDE Plasma wallpapers"
+license = "CC BY-SA 4.0"
+
+[[wallpaper.images]]
+url = "https://raw.githubusercontent.com/elementary/wallpapers/main/backgrounds/odin-dark.jpg"
+credit = "Odin Dark by Ryan Gorley featuring the work of Brendon Porter, elementary OS wallpapers"
+license = "CC BY-SA 4.0"
+
+[[wallpaper.images]]
+url = "https://raw.githubusercontent.com/KDE/plasma-workspace-wallpapers/master/Mountain/contents/images_dark/5120x2880.png"
+credit = "Mountain (dark) by Andy Betts, KDE Plasma wallpapers"
+license = "CC BY-SA 4.0"

@@ -1,0 +1,103 @@
+schema = 1
+
+[meta]
+id = "rose-pine-cozy"
+name = "Rosé Pine Cozy"
+description = "Soho vibes in muted pinks and lavender, soft illustrations, wobbly windows and a floating dock."
+tags = ["pastel", "cozy", "flowers", "dark"]
+
+# https://github.com/rose-pine/rose-pine-palette (MIT), "main" variant
+[palette]
+base = "#191724"
+mantle = "#16141f"
+crust = "#12101a"
+surface = "#26233a"
+overlay = "#6e6a86"
+text = "#e0def4"
+subtext = "#908caa"
+accent = "#ebbcba"
+red = "#eb6f92"
+green = "#31748f"
+yellow = "#f6c177"
+blue = "#9ccfd8"
+magenta = "#c4a7e7"
+cyan = "#ebbcba"
+orange = "#f6c177"
+bright_black = "#6e6a86"
+
+[style.kvantum]
+url = "https://raw.githubusercontent.com/rose-pine/kvantum/master/dist/rose-pine-rose.tar.gz"
+name = "rose-pine-rose"
+
+[icons]
+theme = "Papirus-Dark"
+folder_color = "pink"
+
+[cursor]
+name = "BreezeX-RosePine-Linux"
+url = "https://github.com/rose-pine/cursors/releases/download/v1.1.0/BreezeX-RosePine-Linux.tar.xz"
+size = 24
+
+[fonts]
+ui = "Nunito"
+ui_size = 10
+mono = "Roboto Mono"
+mono_size = 10
+packages = ["ttf-nunito", "ttf-roboto-mono"]
+
+[layout]
+name = "topbar-dock"
+
+[effects]
+blur = true
+blur_strength = 12
+open_close = "scale"
+minimize = "magiclamp"
+desktop_switch = "slide"
+wobbly = true
+wobbly_level = 3
+
+[terminal]
+opacity = 0.88
+blur = true
+padding = 16
+font_size = 12
+
+[shell]
+prompt = "powerline"
+zoxide = true
+fastfetch_logo = "distro"
+
+[wallpaper]
+mode = "slideshow"
+interval = 1800
+
+[[wallpaper.images]]
+url = "https://raw.githubusercontent.com/rose-pine/wallpapers/main/anime/seaside-bus-stop-view.png"
+credit = "seaside-bus-stop-view.png by neyfua, via rose-pine/wallpapers"
+
+[[wallpaper.images]]
+url = "https://raw.githubusercontent.com/rose-pine/wallpapers/main/anime/cat-walking.jpeg"
+credit = "cat-walking.jpeg by neyfua, via rose-pine/wallpapers"
+
+[[wallpaper.images]]
+url = "https://raw.githubusercontent.com/rose-pine/wallpapers/main/anime/rearview-mirror.jpg"
+credit = "rearview-mirror.jpg by neyfua, via rose-pine/wallpapers"
+
+[[wallpaper.images]]
+url = "https://raw.githubusercontent.com/rose-pine/wallpapers/main/illustration/leafy.png"
+credit = "leafy.png by fvrests, via rose-pine/wallpapers"
+
+[[wallpaper.images]]
+url = "https://raw.githubusercontent.com/rose-pine/wallpapers/main/illustration/something-beautiful-in-nature.jpg"
+credit = "something-beautiful-in-nature.jpg by mvllow, via rose-pine/wallpapers"
+
+[[wallpaper.images]]
+url = "https://raw.githubusercontent.com/rose-pine/wallpapers/main/photography/kainoa-kanter/roses.jpg"
+credit = "Roses by Kainoa Kanter, via rose-pine/wallpapers"
+license = "CC BY-SA 4.0"
+
+[[wallpaper.images]]
+url = "https://raw.githubusercontent.com/rose-pine/wallpapers/main/photography/kainoa-kanter/flower.jpg"
+credit = "Flower by Kainoa Kanter, via rose-pine/wallpapers"
+license = "CC BY-SA 4.0"

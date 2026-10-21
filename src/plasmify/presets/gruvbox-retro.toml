@@ -1,0 +1,105 @@
+schema = 1
+
+[meta]
+id = "gruvbox-retro"
+name = "Gruvbox Retro"
+description = "Warm, earthy retro tones with cosy pixel-art wallpapers and a classic bottom panel."
+tags = ["retro", "warm", "pixel-art", "dark"]
+
+# https://github.com/morhetz/gruvbox (MIT), dark palette with the bright accents
+[palette]
+base = "#282828"
+mantle = "#1d2021"
+crust = "#161819"
+surface = "#3c3836"
+overlay = "#665c54"
+text = "#ebdbb2"
+subtext = "#a89984"
+accent = "#fe8019"
+red = "#fb4934"
+green = "#b8bb26"
+yellow = "#fabd2f"
+blue = "#83a598"
+magenta = "#d3869b"
+cyan = "#8ec07c"
+orange = "#fe8019"
+bright_black = "#928374"
+
+[style.kvantum]
+repo = "https://github.com/sachnr/gruvbox-kvantum-themes"
+path = "Gruvbox-Dark-Brown"
+name = "Gruvbox-Dark-Brown"
+
+[icons]
+theme = "Papirus-Dark"
+folder_color = "paleorange"
+
+[cursor]
+name = "Bibata-Modern-Amber"
+url = "https://github.com/ful1e5/Bibata_Cursor/releases/download/v2.0.7/Bibata-Modern-Amber.tar.xz"
+size = 24
+
+[fonts]
+ui = "Ubuntu"
+ui_size = 10
+mono = "Ubuntu Mono"
+mono_size = 12
+packages = ["ttf-ubuntu-font-family"]
+
+[layout]
+name = "bottom-panel"
+floating = false
+
+[effects]
+blur = false
+open_close = "scale"
+minimize = "magiclamp"
+desktop_switch = "slide"
+fall_apart = true
+
+[terminal]
+opacity = 1.0
+blur = false
+padding = 12
+font_size = 13
+
+[shell]
+prompt = "powerline"
+zoxide = true
+fastfetch_logo = "distro"
+
+[wallpaper]
+mode = "slideshow"
+interval = 1800
+
+[[wallpaper.images]]
+url = "https://raw.githubusercontent.com/AngelJumbo/gruvbox-wallpapers/main/wallpapers/pixelart/girl-reading-book.png"
+credit = "girl-reading-book.png, from the AngelJumbo/gruvbox-wallpapers collection (original artist uncredited)"
+
+[[wallpaper.images]]
+url = "https://raw.githubusercontent.com/AngelJumbo/gruvbox-wallpapers/main/wallpapers/pixelart/dock.png"
+credit = "dock.png, from the AngelJumbo/gruvbox-wallpapers collection (original artist uncredited)"
+
+[[wallpaper.images]]
+url = "https://raw.githubusercontent.com/AngelJumbo/gruvbox-wallpapers/main/wallpapers/pixelart/secluded-grove-pixel.png"
+credit = "secluded-grove-pixel.png, from the AngelJumbo/gruvbox-wallpapers collection (original artist uncredited)"
+
+[[wallpaper.images]]
+url = "https://raw.githubusercontent.com/AngelJumbo/gruvbox-wallpapers/main/wallpapers/pixelart/chinatown.png"
+credit = "chinatown.png, from the AngelJumbo/gruvbox-wallpapers collection (original artist uncredited)"
+
+[[wallpaper.images]]
+url = "https://raw.githubusercontent.com/AngelJumbo/gruvbox-wallpapers/main/wallpapers/anime/totoro_bus_stand.png"
+credit = "totoro_bus_stand.png, from the AngelJumbo/gruvbox-wallpapers collection (original artist uncredited)"
+
+[[wallpaper.images]]
+url = "https://raw.githubusercontent.com/AngelJumbo/gruvbox-wallpapers/main/wallpapers/mix/houses.png"
+credit = "houses.png, from the AngelJumbo/gruvbox-wallpapers collection (original artist uncredited)"
+
+[[wallpaper.images]]
+url = "https://raw.githubusercontent.com/AngelJumbo/gruvbox-wallpapers/main/wallpapers/mix/gruvy-night.jpg"
+credit = "gruvy-night.jpg, from the AngelJumbo/gruvbox-wallpapers collection (original artist uncredited)"
+
+[[wallpaper.images]]
+url = "https://raw.githubusercontent.com/AngelJumbo/gruvbox-wallpapers/main/wallpapers/mix/desk-gruvbox-material.jpg"
+credit = "desk-gruvbox-material.jpg, from the AngelJumbo/gruvbox-wallpapers collection (original artist uncredited)"

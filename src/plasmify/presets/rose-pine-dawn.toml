@@ -1,0 +1,110 @@
+schema = 1
+
+[meta]
+id = "rose-pine-dawn"
+name = "Rosé Pine Dawn"
+description = "Rosé Pine in the morning: warm parchment tones, pine blue accents, airy illustrations, slower gentle motion and a dock that stays hidden until you need it."
+tags = ["cozy", "calm", "minimal", "light"]
+
+# https://github.com/rose-pine/palette (MIT), "dawn" variant. The core palette has no green and
+# nothing darker than overlay, so green is "leaf" and crust is "highlight med", both from the
+# official Dawn palette in rose-pine/neovim (MIT).
+[palette]
+base = "#faf4ed"
+mantle = "#f2e9e1"
+crust = "#dfdad9"
+surface = "#fffaf3"
+overlay = "#9893a5"
+text = "#464261"
+subtext = "#797593"
+accent = "#286983"
+red = "#b4637a"
+green = "#6d8f89"
+yellow = "#ea9d34"
+blue = "#286983"
+magenta = "#907aa9"
+cyan = "#56949f"
+orange = "#d7827e"
+bright_black = "#9893a5"
+
+[style.kvantum]
+url = "https://raw.githubusercontent.com/rose-pine/kvantum/master/dist/rose-pine-dawn-pine.tar.gz"
+name = "rose-pine-dawn-pine"
+
+[icons]
+theme = "Papirus-Light"
+folder_color = "teal"
+
+[cursor]
+name = "BreezeX-RosePineDawn-Linux"
+url = "https://github.com/rose-pine/cursors/releases/download/v1.1.0/BreezeX-RosePineDawn-Linux.tar.xz"
+size = 24
+
+[fonts]
+ui = "Ubuntu"
+ui_size = 10
+mono = "Ubuntu Mono"
+mono_size = 12
+packages = ["ttf-ubuntu-font-family"]
+
+[layout]
+name = "topbar-dock"
+clock = "right"
+dock_hiding = "autohide"
+bar_height = 30
+
+[panel_style]
+radius = 12
+opacity = 0.9
+border = "none"
+padding = 3
+colour = "mantle"
+
+[effects]
+blur = true
+blur_strength = 6
+open_close = "fade"
+minimize = "squash"
+desktop_switch = "fade"
+animation_speed = 1.25
+
+[terminal]
+opacity = 0.96
+blur = true
+padding = 16
+font_size = 12
+
+[shell]
+prompt = "minimal"
+zoxide = true
+fastfetch_logo = "distro"
+
+[wallpaper]
+mode = "slideshow"
+interval = 3600
+
+[[wallpaper.images]]
+url = "https://raw.githubusercontent.com/rose-pine/wallpapers/main/illustration/leafy-dawn.png"
+credit = "Leafy (Dawn) by fvrests, via rose-pine/wallpapers"
+
+[[wallpaper.images]]
+url = "https://raw.githubusercontent.com/rose-pine/wallpapers/main/illustration/obliquas-light.jpg"
+credit = "Obliquas Light by W47K3R9, via rose-pine/wallpapers"
+
+[[wallpaper.images]]
+url = "https://raw.githubusercontent.com/rose-pine/wallpapers/main/photography/kainoa-kanter/field.jpg"
+credit = "Field by Kainoa Kanter, via rose-pine/wallpapers"
+license = "CC BY-SA 4.0"
+
+[[wallpaper.images]]
+url = "https://raw.githubusercontent.com/rose-pine/wallpapers/main/illustration/block-wave-dawn.png"
+credit = "Block Wave Dawn by ng-hai, via rose-pine/wallpapers"
+
+[[wallpaper.images]]
+url = "https://raw.githubusercontent.com/rose-pine/wallpapers/main/photography/kainoa-kanter/ocean-drone-1.jpg"
+credit = "Ocean Drone I by Kainoa Kanter, via rose-pine/wallpapers"
+license = "CC BY-SA 4.0"
+
+[[wallpaper.images]]
+url = "https://raw.githubusercontent.com/rose-pine/wallpapers/main/illustration/n-cubed-2025-dawn.png"
+credit = "Sum of n^3 (n=1..9) = 2025 (Dawn) by kirasok, via rose-pine/wallpapers"

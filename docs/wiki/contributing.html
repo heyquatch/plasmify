@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Contributing | Plasmify documentation</title>
+<meta name="description" content="How to set up Plasmify for development, run the tests, the fuzzers and the Plasma sandbox, and contribute presets, fixes and features.">
+<link rel="canonical" href="https://plasmify.github.io/contributing.html">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Plasmify">
+<meta property="og:title" content="Contributing | Plasmify documentation">
+<meta property="og:description" content="How to set up Plasmify for development, run the tests, the fuzzers and the Plasma sandbox, and contribute presets, fixes and features.">
+<meta property="og:url" content="https://plasmify.github.io/contributing.html">
+<meta property="og:image" content="https://plasmify.github.io/images/plasmify.png">
+<meta property="og:image:width" content="1274">
+<meta property="og:image:height" content="720">
+<meta property="og:image:alt" content="The Plasmify main window with the preset gallery, a live preview and the settings.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#content">Skip to the content</a>
+<header class="topbar">
+  <a class="brand" href="index.html"><svg viewBox="0 0 128 128" width="30" height="30" aria-hidden="true" focusable="false"><defs><linearGradient id="plasmify-logo-top" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#cba6f7"/><stop offset="0.55" stop-color="#89b4fa"/><stop offset="1" stop-color="#94e2d5"/></linearGradient></defs><rect x="8" y="8" width="112" height="112" rx="28" fill="url(#plasmify-logo-top)"/><rect x="22" y="24" width="84" height="10" rx="5" fill="#1e1e2e" opacity="0.85"/><rect x="40" y="94" width="48" height="12" rx="6" fill="#1e1e2e" opacity="0.85"/><circle cx="48" cy="100" r="3" fill="#f5c2e7"/><circle cx="58" cy="100" r="3" fill="#a6e3a1"/><circle cx="68" cy="100" r="3" fill="#f9e2af"/><circle cx="78" cy="100" r="3" fill="#89b4fa"/><path d="M64 44 L69.5 58.5 L84 64 L69.5 69.5 L64 84 L58.5 69.5 L44 64 L58.5 58.5 Z" fill="#ffffff"/><path d="M88 42 L90.5 48.5 L97 51 L90.5 53.5 L88 60 L85.5 53.5 L79 51 L85.5 48.5 Z" fill="#ffffff" opacity="0.85"/></svg><span>Plasmify<small>Documentation</small></span></a>
+  <a class="menu-link" href="#nav">Menu</a>
+</header>
+<div class="layout">
+<nav class="sidebar" id="nav" aria-label="Wiki pages">
+  <a class="brand" href="index.html"><svg viewBox="0 0 128 128" width="36" height="36" aria-hidden="true" focusable="false"><defs><linearGradient id="plasmify-logo-nav" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#cba6f7"/><stop offset="0.55" stop-color="#89b4fa"/><stop offset="1" stop-color="#94e2d5"/></linearGradient></defs><rect x="8" y="8" width="112" height="112" rx="28" fill="url(#plasmify-logo-nav)"/><rect x="22" y="24" width="84" height="10" rx="5" fill="#1e1e2e" opacity="0.85"/><rect x="40" y="94" width="48" height="12" rx="6" fill="#1e1e2e" opacity="0.85"/><circle cx="48" cy="100" r="3" fill="#f5c2e7"/><circle cx="58" cy="100" r="3" fill="#a6e3a1"/><circle cx="68" cy="100" r="3" fill="#f9e2af"/><circle cx="78" cy="100" r="3" fill="#89b4fa"/><path d="M64 44 L69.5 58.5 L84 64 L69.5 69.5 L64 84 L58.5 69.5 L44 64 L58.5 58.5 Z" fill="#ffffff"/><path d="M88 42 L90.5 48.5 L97 51 L90.5 53.5 L88 60 L85.5 53.5 L79 51 L85.5 48.5 Z" fill="#ffffff" opacity="0.85"/></svg><span>Plasmify<small>Documentation</small></span></a>
+  <p class="nav-group">Start here</p>
+  <ul>
+    <li><a href="index.html">Overview</a></li>
+    <li><a href="install.html">Install</a></li>
+    <li><a href="update.html">Update</a></li>
+    <li><a href="uninstall.html">Uninstall</a></li>
+  </ul>
+  <p class="nav-group">Using Plasmify</p>
+  <ul>
+    <li><a href="getting-started.html">Getting started</a></li>
+    <li><a href="customize.html">Customize</a></li>
+    <li><a href="wallpapers.html">Wallpapers</a></li>
+    <li><a href="dark-light.html">Dark and light</a></li>
+    <li><a href="theme-studio.html">Theme studio</a></li>
+    <li><a href="sharing.html">Sharing presets</a></li>
+    <li><a href="backups.html">Backups and restore</a></li>
+  </ul>
+  <p class="nav-group">Reference</p>
+  <ul>
+    <li><a href="cli.html">Command line</a></li>
+    <li><a href="troubleshooting.html">Troubleshooting</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="security.html">Security and privacy</a></li>
+    <li><a href="contributing.html" aria-current="page">Contributing</a></li>
+  </ul>
+</nav>
+<main id="content">
+<article>
+<h1>Contributing</h1>
+<p class="lead">Plasmify is small on purpose, so contributions are easy to review. You can contribute a new preset, a bug fix or a feature.</p>
+
+<p>This page is an overview. The full guide is <a href="https://github.com/heyquatch/plasmify/blob/main/CONTRIBUTING.md">CONTRIBUTING.md</a>, and the preset format is described in the <a href="https://github.com/heyquatch/plasmify/blob/main/docs/presets.md">preset reference</a>.</p>
+
+<nav class="toc" aria-label="On this page">
+  <strong>On this page</strong>
+  <ul>
+    <li><a href="#rules">Ground rules</a></li>
+    <li><a href="#setup">Development setup</a></li>
+    <li><a href="#tests">Tests and checks</a></li>
+    <li><a href="#fuzzers">Fuzzers</a></li>
+    <li><a href="#sandbox">The Plasma sandbox</a></li>
+    <li><a href="#security">Security rules</a></li>
+    <li><a href="#presets">Adding a preset</a></li>
+    <li><a href="#distros">Testing on other distributions</a></li>
+    <li><a href="#code">Code changes and commits</a></li>
+    <li><a href="#docs">Editing this documentation</a></li>
+  </ul>
+</nav>
+
+<h2 id="rules">Ground rules</h2>
+
+<ol>
+  <li><strong>No bloat.</strong> No background services, no AUR, COPR or PPA packages, no new runtime dependencies beyond Python's standard library and PyQt6. Every package a preset installs must be justified in the pull request.</li>
+  <li><strong>Published sources only.</strong> Assets are downloaded at apply time from where they are published. Never commit wallpapers, icon themes or cursors to the repository.</li>
+  <li><strong>Stock Plasma only.</strong> Layouts use widgets that ship with Plasma 6.</li>
+  <li><strong>Reversible.</strong> Every configuration file and generated folder Plasmify changes must be listed by its step, so that Restore can undo it. Downloads are left to <code>plasmify clean</code>.</li>
+</ol>
+
+<h2 id="setup">Development setup</h2>
+
+<pre><code>git clone https://github.com/heyquatch/plasmify.git
+cd plasmify
+
+# Install Python, PyQt6 and git for your distribution:
+# Arch:          sudo pacman -S --needed python python-pyqt6 git
+# Fedora:        sudo dnf install python3 python3-pyqt6 git
+# openSUSE:      sudo zypper install python3 python3-PyQt6 git
+# Debian/Ubuntu: sudo apt install python3 python3-pyqt6 git
+
+PYTHONPATH=src python -m plasmify          # run the window from the checkout
+PYTHONPATH=src python -m plasmify --help   # or the command line</code></pre>
+
+<p>Try changes that touch your desktop with <code>--dry-run</code> first, for example <code>PYTHONPATH=src python -m plasmify apply nord-minimal --dry-run</code>.</p>
+
+<h2 id="tests">Tests and checks</h2>
+
+<p>Before opening a pull request, run:</p>
+
+<pre><code>PYTHONPATH=src python -m unittest discover -s tests -t .   # unit tests
+PYTHONPATH=src python -m plasmify validate                 # all built-in presets
+ruff check . &amp;&amp; ruff format --check .                      # lint (pip install ruff)
+PYTHONPATH=src python scripts/check_packages.py            # package names exist on your distribution
+shellcheck install.sh</code></pre>
+
+<p>Continuous integration runs the unit tests on Python 3.11, 3.12 and 3.13, validates the presets, builds the main window offscreen, and checks the package names against the real package managers of Arch, Fedora, openSUSE, Debian and Ubuntu in containers.</p>
+
+<h2 id="fuzzers">Fuzzers</h2>
+
+<ul>
+  <li><strong>GUI fuzzer</strong> (<code>tests/test_gui_fuzz.py</code>): clicks through the Customize tab in a seeded random order and checks after every action that nothing raised, the settings are valid, Apply never uses an outdated plan and saved tweaks survive a reload. When you touch the GUI, run it longer and with other seeds:
+<pre><code>PLASMIFY_FUZZ_STEPS=3000 PLASMIFY_FUZZ_SEED=7 QT_QPA_PLATFORM=offscreen PYTHONPATH=src:. python -m unittest tests.test_gui_fuzz</code></pre>
+  </li>
+  <li><strong>Security fuzzer</strong> (<code>tests/test_security_fuzz.py</code>): hostile text in every free-text field must leave every generated config file, script and QML file with exactly its normal structure.</li>
+  <li><strong>Bundle fuzzer</strong> (<code>tests/test_bundle_fuzz.py</code>): hundreds of corrupted and malicious bundles must be refused cleanly and never write outside the preset folder.</li>
+  <li><strong>Panel script tests</strong> (<code>tests/test_layout_script.py</code>): every combination of panel options and hundreds of random layouts run against a mock of Plasma's scripting API.</li>
+</ul>
+
+<p>All of these run as part of the normal unit test command above (the GUI tests are skipped when PyQt6 is not installed). The sandbox tests below are skipped unless you opt in.</p>
+
+<h2 id="sandbox">The Plasma sandbox</h2>
+
+<p>Anything that touches panels, wallpapers, the splash screen or Plasma shell restarts must be tried in the sandbox: a throwaway Plasma desktop that cannot touch yours. <code>tools/sandbox.py</code> starts a nested KWin on an invisible screen, with its own D-Bus session, home folder and <code>plasmashell</code>, and takes screenshots inside it. It needs <code>kwin_wayland</code>, <code>plasmashell</code>, <code>dbus-run-session</code>, <code>spectacle</code> and <code>qdbus6</code>, which a full Plasma 6 desktop usually has. On some distributions Spectacle and <code>qdbus6</code> (part of the Qt tools) are separate packages.</p>
+
+<pre><code>PLASMIFY_SANDBOX=1 PLASMIFY_SANDBOX_SHOTS=/tmp/shots PYTHONPATH=src:. python -m unittest discover -s tests/integration -t . -v
+python3 tools/sandbox.py apply catppuccin-anime     # one preset, one screenshot</code></pre>
+
+<ul>
+  <li>The integration tests apply, to a real <code>plasmashell</code>: every subset of screen edges with bars and docks, all pairs of panel options, every widget on horizontal and vertical panels, 108 combinations of panel corner radius, opacity, border and colour, every starting layout on every preset, quick repeated applies, and every preset in full.</li>
+  <li>After each one they check that the shell is alive, that every panel has exactly the requested edge, widgets, thickness, visibility, length, alignment and floating, and that the screen is not black.</li>
+  <li>New layout or panel style options belong in the option tables of <code>tests/integration/test_patterns.py</code>.</li>
+  <li>The whole run takes about fifteen minutes and keeps screenshots in <code>PLASMIFY_SANDBOX_SHOTS</code>; please look at them before you open the pull request. CI cannot run it (there is no Plasma there), so mention in the pull request that you did.</li>
+</ul>
+
+<h2 id="security">Security rules</h2>
+
+<p>Presets are shared between strangers, so every value in a preset is untrusted input. Read the threat model in <a href="https://github.com/heyquatch/plasmify/blob/main/SECURITY.md">SECURITY.md</a> once before your first code change. In short:</p>
+
+<ul>
+  <li>Every new preset field gets the narrowest possible check in <code>src/plasmify/schema.py</code>, and an abuse case in <code>tests/test_security.py</code>.</li>
+  <li>Paths only through <code>safe_child()</code>; commands only as argument lists through <code>ctx.runner</code>; downloads only through <code>plasmify.downloads</code>.</li>
+  <li>No new packages without review (they must be listed in <code>package_map.py</code> for every distribution family).</li>
+  <li>Preset text is shown as plain text; no network calls outside apply; panel scripts only through <code>panel_script()</code>.</li>
+  <li>Root actions live in <code>rootops.py</code>, apart from package installs in <code>packages.py</code>. Bundles are read only through <code>bundle.read_bundle()</code>.</li>
+</ul>
+
+<p><code>ruff</code> runs the flake8-bandit security rules in CI. Changes to security-sensitive files need a maintainer's review.</p>
+
+<h2 id="presets">Adding a preset</h2>
+
+<ol class="steps">
+  <li>Copy an existing file from <code>src/plasmify/presets/</code> and read the <a href="https://github.com/heyquatch/plasmify/blob/main/docs/presets.md">preset reference</a>.</li>
+  <li>Use the theme's official palette and link to it in a comment.</li>
+  <li>Pick wallpapers of at least 1920×1080 from sources that credit the artist where possible, and fill in <code>credit</code> (and <code>license</code> when known) for every image.</li>
+  <li>Run <code>plasmify validate</code>, then apply it on a real Plasma 6 session and check every step.</li>
+  <li>Open a pull request using the template. Include a screenshot and the <q>Installs N packages (X MB)</q> line shown by the app.</li>
+</ol>
+
+<h2 id="distros">Testing on other distributions</h2>
+
+<p>Plasmify is developed on Arch-based systems. Fedora, openSUSE and Debian/Ubuntu support is implemented and the package names are checked in CI, but reports from real desktops are very welcome. Run <code>plasmify apply &lt;preset&gt; --dry-run</code>, then a real apply, and tell the project in Discussions what worked and what did not (include <code>cat /etc/os-release</code> and <code>plasmashell --version</code>).</p>
+
+<h2 id="code">Code changes and commits</h2>
+
+<ul>
+  <li>Code, comments, commit messages and docs are in English. <code>ruff</code> enforces formatting and imports.</li>
+  <li>One logical change per pull request; add or update tests when behaviour changes.</li>
+  <li>New steps live in <code>src/plasmify/steps/</code>, subclass <code>Step</code> and are registered in <code>steps/__init__.py</code>. Use <code>ctx.runner</code> for every command that changes the system, so <code>--dry-run</code> keeps working.</li>
+  <li>Commit messages use the imperative mood with an optional scope, for example <code>presets: add Everforest Forest</code>.</li>
+</ul>
+
+<h2 id="docs">Editing this documentation</h2>
+
+<p>These pages are plain HTML files in <code>docs/wiki</code> with one shared <code>style.css</code>: no build step, no JavaScript and nothing loaded from the internet. The folder is published as it is at <code>plasmify.github.io</code>. Each page carries the same left navigation, so add a new page to every page's menu, copy the canonical and Open Graph tags from another page's head and list the page in <code>sitemap.xml</code>. Keep links between pages relative. Only this folder is published, so link files outside it (such as <code>LICENSE</code>) on GitHub. Then check the links:</p>
+
+<pre><code>python3 scripts/check_wiki.py</code></pre>
+
+<p>It reports every link in <code>docs/wiki/*.html</code> that points to a file (or a <code>#section</code>) that does not exist or lies outside the folder, a wrong canonical link and pages missing from <code>sitemap.xml</code>.</p>
+</article>
+<nav class="pager" aria-label="Previous and next page">
+  <a class="prev" href="security.html"><span>Previous</span>Security and privacy</a>
+</nav>
+<footer class="site-footer">
+  <p>Plasmify is free software under the <a href="https://github.com/heyquatch/plasmify/blob/main/LICENSE">GNU General Public License, version 3 or later</a>. These pages live in <code>docs/wiki</code>; corrections are welcome as pull requests (see <a href="contributing.html">Contributing</a>).</p>
+</footer>
+</main>
+</div>
+</body>
+</html>
