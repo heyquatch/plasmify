@@ -88,6 +88,20 @@ class MaliciousPresetTests(unittest.TestCase):
     def test_file_url(self):
         self.assertRejected(lambda d: d["layout"].__setitem__("launcher_icon", "file:///etc/shadow"), "launcher_icon")
 
+    def test_look_alike_host(self):
+        # A Cyrillic "і": the question about untrusted hosts would show it as github.com.
+        self.assertRejected(lambda d: d["cursor"].__setitem__("url", "https://gіthub.com/c.zip"), "plain letters")
+
+    def test_percent_encoded_host(self):
+        # urllib decodes the host before connecting, so the question would name another host.
+        self.assertRejected(lambda d: d["cursor"].__setitem__("url", "https://g%D1%96thub.com/c.zip"), "plain letters")
+
+    def test_punycode_host_is_shown_as_written(self):
+        data = copy.deepcopy(base_preset())
+        data["wallpaper"]["images"][0]["url"] = "https://xn--gthub-n2e.com/pixel.png"
+        self.assertEqual(schema.validate(data), [])
+        self.assertEqual(schema.untrusted_hosts(data), ["xn--gthub-n2e.com"])
+
     def test_untrusted_hosts_are_reported(self):
         data = copy.deepcopy(base_preset())
         data["wallpaper"]["images"][0]["url"] = "https://tracker.example.net/pixel.png"

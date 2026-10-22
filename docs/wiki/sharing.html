@@ -116,6 +116,7 @@
   <li>In the window, a dialog lists the servers when you press <span class="ui">Apply theme</span>.</li>
   <li>On the command line, Plasmify asks in the terminal, or you approve each server with <code>--allow-host HOST</code>. <code>--yes</code> never approves them.</li>
   <li>Downloads from servers you did not approve are refused, and so are redirects to such servers or to plain HTTP. Git downloads follow no redirects at all.</li>
+  <li>Server names must be written in plain letters a-z, digits, dots and dashes. A look-alike such as <code>gіthub.com</code> with a Cyrillic letter is refused, so it can never be listed as if it were GitHub. International names are listed in their <code>xn--</code> form.</li>
 </ul>
 
 <h2 id="privacy">Privacy notes</h2>

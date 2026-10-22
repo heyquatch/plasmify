@@ -34,6 +34,24 @@ class MainWindowSmokeTest(unittest.TestCase):
             self.assertFalse(pixmap.isNull())
         window.close()
 
+    def test_restore_list_shows_preset_names_as_plain_text(self):
+        # Backup labels carry the preset name ("Before <name>"), and Qt renders HTML in tooltips.
+        from pathlib import Path
+        from unittest import mock
+
+        from plasmify import backup
+        from plasmify.gui.dialogs import RestoreDialog
+
+        label = 'Before <b>Nord</b> <a href="https://example.net">y</a>'
+        snap = backup.Backup("1", Path("/nonexistent"), 0.0, label, [])
+        with mock.patch.object(backup, "list_backups", return_value=[snap]):
+            dialog = RestoreDialog()
+        tooltip = dialog.list.item(0).toolTip()
+        self.assertTrue(tooltip.startswith("<qt>"), tooltip)
+        self.assertNotIn("<b>", tooltip)
+        self.assertIn("&lt;b&gt;Nord&lt;/b&gt;", tooltip)
+        dialog.close()
+
     def test_customizing_switches_on_the_needed_steps(self):
         from plasmify.gui.main_window import MainWindow
 

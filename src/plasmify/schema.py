@@ -97,6 +97,11 @@ _CONTROL = re.compile("[\x00-\x1f\x7f-\x9f\u200b\u2028\u2029\u200e\u200f\u202a-\
 _NAME = re.compile(r"^[A-Za-z0-9][A-Za-z0-9._+-]{0,79}$")
 # Words joined by single dashes: "a--b" or "a-" would map to the same colour scheme as "a-b".
 _ID = re.compile(r"^(?=.{1,48}$)[a-z0-9]+(?:-[a-z0-9]+)*$")
+# Host names in plain ASCII (urlsplit lowercases them). A look-alike letter from another
+# alphabet ("gіthub.com" with a Cyrillic і) or a percent-encoded one (urllib decodes it before
+# connecting) would pass for a trusted host in the question about untrusted hosts.
+# International names still work when written as xn-- punycode, which is shown as such.
+_HOST = re.compile(r"^(?=.{1,253}$)[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?(?:\.[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?)+$")
 _FONT = re.compile(r"^[A-Za-z0-9][A-Za-z0-9 ._+-]{0,63}$")
 # Path segments never start with "-", so a path can never be read as a git option.
 _RELPATH = re.compile(r"^[A-Za-z0-9._+][A-Za-z0-9._+-]*(/[A-Za-z0-9._+][A-Za-z0-9._+-]*)*$")
@@ -193,6 +198,8 @@ def url(value: Any) -> str | None:
     parts = urlsplit(value)
     if parts.scheme != "https" or not parts.hostname:
         return "must be an https:// URL"
+    if not _HOST.fullmatch(parts.hostname):
+        return "must name its host in plain letters a-z, digits, dots and dashes (xn-- for international names)"
     if parts.username or parts.password:
         return "must not contain credentials"
     return None

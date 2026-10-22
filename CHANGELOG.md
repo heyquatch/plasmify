@@ -4,6 +4,13 @@ All notable changes to this project are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the project uses
 [Semantic Versioning](https://semver.org/).
 
+## [Unreleased]
+
+### Security
+
+- Download addresses in presets must name their host in plain letters a-z, digits, dots and dashes, so a look-alike such as `gіthub.com` (with a Cyrillic і) or a percent-encoded name can no longer pass for a trusted host in the question about untrusted hosts. International names still work written as `xn--` punycode.
+- The Restore window's tooltips show preset names as plain text, like the rest of the app.
+
 ## [0.1.0] - 2026-10-21
 
 The first public release, under the GNU General Public License, version 3 or later.

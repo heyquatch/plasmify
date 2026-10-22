@@ -132,7 +132,7 @@ class RestoreDialog(QDialog):
         for snap in backup.list_backups():
             created = time.strftime("%d %b %Y, %H:%M", time.localtime(snap.created))
             item = QListWidgetItem(f"{created}   {snap.label}" + ("   (always kept)" if snap.pinned else ""))
-            item.setToolTip(item.text())
+            item.setToolTip(plain_tooltip(item.text()))  # labels carry preset names
             item.setData(Qt.ItemDataRole.UserRole, snap)
             self.list.addItem(item)
         if self.list.count():

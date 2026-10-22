@@ -93,7 +93,7 @@
 <h2 id="downloads">Downloads</h2>
 
 <ul>
-  <li>HTTPS only, and download redirects are checked by the same rules. Git downloads follow no redirects at all, so git only ever talks to the server that was checked.</li>
+  <li>HTTPS only, and download redirects are checked by the same rules. Git downloads follow no redirects at all, so git only ever talks to the server that was checked. Server names must be plain letters, digits, dots and dashes, so a look-alike of a trusted name is refused.</li>
   <li>Archives are checked before they are unpacked: no paths or links that climb out of the folder, no hard links, and limits on size and file count. One apply may download at most 1.5 GB in total.</li>
   <li>Git sources are fetched over HTTPS only, without submodules, with symbolic links and Git LFS turned off.</li>
   <li>Polonium, the one piece of downloaded code, is pinned to a release and checked against its SHA-256 before it is installed.</li>
