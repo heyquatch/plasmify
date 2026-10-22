@@ -18,7 +18,7 @@ in under a minute. Change your mind? Your settings are backed up before every ap
 
 **[Documentation](https://plasmify.github.io)**: install, customize, back up, uninstall and more.
 
-<img src="docs/images/plasmify-demo.webp" alt="Plasmify main window going through the presets, the islands panel layout and light mode" width="900">
+https://github.com/user-attachments/assets/897a508b-0a13-4691-827c-8c6d915ec19e
 
 </div>
 
