@@ -6,6 +6,8 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [0.1.1] - 2026-10-28
+
 ### Fixed
 
 - Emoji and symbol fonts such as Noto Color Emoji can no longer become the interface or fixed-width font. As the interface font one left Dolphin with empty boxes instead of files and drew numbers in the emoji font. Customize now lists only fonts with Latin letters (so a font made for another script only, such as an Arabic-only one, is not listed either), and a preset that names a font without them keeps the current font with a warning.

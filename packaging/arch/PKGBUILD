@@ -1,6 +1,6 @@
 # Maintainer: heyquatch <70372296+heyquatch@users.noreply.github.com>
 pkgname=plasmify
-pkgver=0.1.0
+pkgver=0.1.1
 pkgrel=1
 pkgdesc="One-click, bloat-free desktop themes for KDE Plasma 6"
 arch=('any')
