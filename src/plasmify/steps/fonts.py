@@ -4,6 +4,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
+from plasmify.fonts import no_latin_letters
 from plasmify.presets import Preset
 from plasmify.steps.base import Context, Step
 from plasmify.system import CONFIG_HOME
@@ -36,9 +37,17 @@ class FontsStep(Step):
         if not ctx.dry_run:
             ctx.runner.run(["fc-cache"], check=False)
         w = ctx.runner.kwrite
-        w("kdeglobals", "General", "font", qfont(ui, ui_size))
-        w("kdeglobals", "General", "menuFont", qfont(ui, ui_size))
-        w("kdeglobals", "General", "toolBarFont", qfont(ui, max(ui_size - 1, 8)))
-        w("kdeglobals", "General", "smallestReadableFont", qfont(ui, max(ui_size - 2, 7)))
-        w("kdeglobals", "WM", "activeFont", qfont(ui, ui_size, 600))
-        w("kdeglobals", "General", "fixed", qfont(mono, mono_size))
+        # An emoji or symbol font (say, picked in an older version or in a shared preset) would
+        # leave the desktop without letters; the font in use stays instead.
+        if no_latin_letters(ui):
+            ctx.warn(f"{ui} has no Latin letters, so the interface font stays as it is")
+        else:
+            w("kdeglobals", "General", "font", qfont(ui, ui_size))
+            w("kdeglobals", "General", "menuFont", qfont(ui, ui_size))
+            w("kdeglobals", "General", "toolBarFont", qfont(ui, max(ui_size - 1, 8)))
+            w("kdeglobals", "General", "smallestReadableFont", qfont(ui, max(ui_size - 2, 7)))
+            w("kdeglobals", "WM", "activeFont", qfont(ui, ui_size, 600))
+        if no_latin_letters(mono):
+            ctx.warn(f"{mono} has no Latin letters, so the fixed-width font stays as it is")
+        else:
+            w("kdeglobals", "General", "fixed", qfont(mono, mono_size))

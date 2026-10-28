@@ -6,8 +6,6 @@ import argparse
 import copy
 import difflib
 import re
-import shutil
-import subprocess
 import sys
 import time
 import unicodedata
@@ -25,6 +23,7 @@ from plasmify import (
     bundle,
     capture,
     engine,
+    fonts,
     glass,
     packages,
     presets,
@@ -485,16 +484,7 @@ def _dim(raw: str, _state: record.Applied) -> dict[str, Any]:
 
 def installed_fonts() -> set[str] | None:
     """Font families installed here (None when fontconfig cannot tell)."""
-    tool = shutil.which("fc-list")
-    if tool is None:
-        return None
-    try:
-        found = subprocess.run([tool, ":", "family"], capture_output=True, text=True, timeout=30, check=False)
-    except (OSError, subprocess.SubprocessError):
-        return None
-    if found.returncode != 0:
-        return None
-    return {name.strip() for line in found.stdout.splitlines() for name in line.split(",") if name.strip()}
+    return fonts.families()
 
 
 def _installed(name: str, available: list[str] | set[str] | None, what: str) -> str:

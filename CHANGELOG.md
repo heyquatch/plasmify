@@ -6,6 +6,10 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+### Fixed
+
+- Emoji and symbol fonts such as Noto Color Emoji can no longer become the interface or fixed-width font. As the interface font one left Dolphin with empty boxes instead of files and drew numbers in the emoji font. Customize now lists only fonts with Latin letters (so a font made for another script only, such as an Arabic-only one, is not listed either), and a preset that names a font without them keeps the current font with a warning.
+
 ### Security
 
 - Download addresses in presets must name their host in plain letters a-z, digits, dots and dashes, so a look-alike such as `gіthub.com` (with a Cyrillic і) or a percent-encoded name can no longer pass for a trusted host in the question about untrusted hosts. International names still work written as `xn--` punycode.

@@ -17,7 +17,7 @@ os.environ.setdefault("QT_QPA_PLATFORM", "offscreen")
 
 try:
     from PyQt6.QtCore import QMimeData, QPoint, QPointF, Qt, QThread, QUrl
-    from PyQt6.QtGui import QWheelEvent
+    from PyQt6.QtGui import QFontDatabase, QWheelEvent
     from PyQt6.QtTest import QTest
     from PyQt6.QtWidgets import (
         QAbstractSlider,
@@ -223,6 +223,15 @@ class WheelTests(OverhaulTestCase):
         QSpinBox(holder)  # added later
         self.assertEqual(guard_wheel(holder), 1)
         holder.deleteLater()
+
+
+class FontPickerTests(OverhaulTestCase):
+    def test_only_fonts_that_can_write_text_are_offered(self):
+        """Noto Color Emoji as the interface font left Dolphin with empty boxes for files."""
+        for box in (self.custom.ui_font, self.custom.mono_font):
+            with self.subTest(name=box.toolTip()[:30]):
+                self.assertEqual(box.writingSystem(), QFontDatabase.WritingSystem.Latin)
+                self.assertNotIn("Noto Color Emoji", {box.itemText(i) for i in range(box.count())})
 
 
 class UnsavedBarTests(OverhaulTestCase):

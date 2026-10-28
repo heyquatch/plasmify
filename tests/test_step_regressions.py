@@ -1,5 +1,6 @@
 """Regression tests for steps, capture and restore: splash text that stays plain text, Shimmer
-copies in saved desktops, slideshows when a render fails, glass themes and restored styles.
+copies in saved desktops, slideshows when a render fails, glass themes, restored styles and
+fonts without letters.
 
 Every test runs in a temporary folder with mocked Plasma calls; nothing touches the desktop.
 """
@@ -15,8 +16,9 @@ from unittest import mock
 
 os.environ.setdefault("QT_QPA_PLATFORM", "offscreen")
 
-from plasmify import backup, capture, engine, glass, presets, schema, system  # noqa: E402
+from plasmify import backup, capture, engine, fonts, glass, presets, schema, system  # noqa: E402
 from plasmify.presets import Preset  # noqa: E402
+from plasmify.steps import fonts as font_step  # noqa: E402
 from plasmify.steps import panelstyle as ps  # noqa: E402
 from plasmify.steps import wallpaper  # noqa: E402
 from plasmify.steps.base import Context  # noqa: E402
@@ -394,6 +396,52 @@ class RestoreStyleTests(unittest.TestCase):
 
     def test_nothing_is_sent_without_kdeglobals(self):
         self.assertEqual(self.restore(["kscreenlockerrc"]), [])
+
+
+class SymbolFontTests(unittest.TestCase):
+    """Noto Color Emoji as the interface font left Dolphin with empty boxes for files and drew
+    numbers in the emoji font, so an emoji or symbol font never becomes a desktop font."""
+
+    def apply(self, ui: str, mono: str, without_letters: set[str]) -> tuple[dict, list]:
+        writes, warnings = {}, []
+        runner = Runner()
+        runner.run = lambda *a, **k: ""
+        runner.kwrite = lambda file, group, key, value, **k: writes.update({key: value})
+        preset = presets.customized(presets.find("kanagawa-wave"), {"fonts": {"ui": ui, "mono": mono}})
+        ctx = Context(preset, runner, Path(tempfile.gettempdir()), log=lambda _: None)
+        ctx.warn = warnings.append
+        with mock.patch.object(font_step, "no_latin_letters", lambda family: family in without_letters):
+            font_step.FontsStep().apply(ctx)
+        return writes, warnings
+
+    def test_an_emoji_interface_font_keeps_the_current_one(self):
+        writes, warnings = self.apply("Noto Color Emoji", "JetBrains Mono", {"Noto Color Emoji"})
+        self.assertFalse({"font", "menuFont", "toolBarFont", "smallestReadableFont", "activeFont"} & set(writes))
+        self.assertTrue(writes["fixed"].startswith("JetBrains Mono,"))
+        self.assertEqual(len(warnings), 1)
+        self.assertIn("Noto Color Emoji", warnings[0])
+
+    def test_a_symbol_fixed_width_font_keeps_the_current_one(self):
+        writes, warnings = self.apply("Noto Sans", "Noto Color Emoji", {"Noto Color Emoji"})
+        self.assertNotIn("fixed", writes)
+        self.assertTrue(writes["font"].startswith("Noto Sans,"))
+        self.assertEqual(len(warnings), 1)
+
+    def test_fonts_with_letters_are_written(self):
+        writes, warnings = self.apply("Noto Sans", "JetBrains Mono", set())
+        self.assertTrue(writes["font"].startswith("Noto Sans,"))
+        self.assertTrue(writes["fixed"].startswith("JetBrains Mono,"))
+        self.assertEqual(warnings, [])
+
+    def test_only_installed_fonts_without_english_count(self):
+        listed = {":": {"Noto Sans", "Noto Color Emoji", "Dingbats"}, ":lang=en": {"Noto Sans"}}
+        with mock.patch.object(fonts, "families", lambda pattern=":": listed[pattern]):
+            self.assertTrue(fonts.no_latin_letters("Noto Color Emoji"))
+            self.assertTrue(fonts.no_latin_letters("dingbats"))
+            self.assertFalse(fonts.no_latin_letters("Noto Sans"))
+            self.assertFalse(fonts.no_latin_letters("Inter"))  # not installed yet: its package comes first
+        with mock.patch.object(fonts, "families", lambda pattern=":": None):
+            self.assertFalse(fonts.no_latin_letters("Noto Color Emoji"))
 
 
 if __name__ == "__main__":

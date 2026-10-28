@@ -1,8 +1,10 @@
-"""Per-user font installation from upstream, for fonts a distribution does not package."""
+"""Per-user font installation from upstream, for fonts a distribution does not package, and what
+fontconfig knows about the fonts installed here."""
 
 from __future__ import annotations
 
 import shutil
+import subprocess
 from pathlib import Path
 from urllib.parse import unquote, urlparse
 
@@ -16,6 +18,35 @@ FONT_SUFFIXES = (".ttf", ".otf")
 
 def font_dir(canonical: str) -> Path:
     return FONT_ROOT / canonical
+
+
+def families(pattern: str = ":") -> set[str] | None:
+    """Font families fontconfig lists for ``pattern`` (None when fontconfig cannot tell)."""
+    tool = shutil.which("fc-list")
+    if tool is None:
+        return None
+    try:
+        found = subprocess.run([tool, pattern, "family"], capture_output=True, text=True, timeout=30, check=False)
+    except (OSError, subprocess.SubprocessError):
+        return None
+    if found.returncode != 0:
+        return None
+    return {name.strip() for line in found.stdout.splitlines() for name in line.split(",") if name.strip()}
+
+
+def no_latin_letters(family: str) -> bool:
+    """Whether ``family`` is installed but cannot write English: an emoji, symbol or dingbat font,
+    or one made for another script only (an Arabic-only font, say).
+
+    As a desktop font an emoji font leaves letters and digits to fallback fonts, and apps that
+    size their items by the font, such as Dolphin, draw empty boxes. A font that is not
+    installed (yet) does not count, so packages still install first.
+    """
+    installed, english = families(), families(":lang=en")
+    if not installed or english is None:
+        return False
+    wanted = family.casefold()
+    return wanted in {f.casefold() for f in installed} and wanted not in {f.casefold() for f in english}
 
 
 def downloaded(canonical: str) -> bool:

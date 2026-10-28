@@ -1360,15 +1360,19 @@ class CustomizePanel(QWidget):
         return card
 
     def _build_fonts(self) -> Card:
-        card = Card("Fonts", "preferences-desktop-font", "Pick any font installed on this computer.")
+        card = Card("Fonts", "preferences-desktop-font", "Pick any text font installed on this computer.")
         self.fonts_box = card
         self.ui_font = tip(QFontComboBox(), "The font for menus, buttons and window titles.")
         self.ui_font.setFontFilters(QFontComboBox.FontFilter.ScalableFonts)
+        # Only fonts with Latin letters: emoji and symbol fonts (Noto Color Emoji, Dingbats)
+        # leave apps without letters and Dolphin with empty boxes.
+        self.ui_font.setWritingSystem(QFontDatabase.WritingSystem.Latin)
         self.ui_size = tip(QSpinBox(), "Interface text size.")
         self.ui_size.setRange(6, 24)
         self.ui_size.setSuffix(" pt")
         self.mono_font = tip(QFontComboBox(), "The font for terminals and code. Only fixed-width fonts are listed.")
         self.mono_font.setFontFilters(QFontComboBox.FontFilter.MonospacedFonts)
+        self.mono_font.setWritingSystem(QFontDatabase.WritingSystem.Latin)
         self.mono_size = tip(QSpinBox(), "Fixed-width text size (code, terminals that follow the system).")
         self.mono_size.setRange(6, 32)
         self.mono_size.setSuffix(" pt")
